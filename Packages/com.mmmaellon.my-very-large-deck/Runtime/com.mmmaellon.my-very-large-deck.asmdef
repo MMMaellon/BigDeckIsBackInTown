@@ -1,0 +1,24 @@
+{
+    "name": "com.mmmaellon.my-very-large-deck",
+    "rootNamespace": "",
+    "references": [
+        "VRC.SDK3",
+        "VRC.SDKBase",
+        "VRC.Udon",
+        "UdonSharp.Runtime",
+        "UdonSharp.Editor",
+        "Unity.TextMeshPro",
+        "si.iwa.udontask",
+        "VRC.Udon.Serialization.OdinSerializer",
+        "com.mmmaellon.smartobjectsync"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

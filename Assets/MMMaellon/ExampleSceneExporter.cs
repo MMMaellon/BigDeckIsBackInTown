@@ -20,7 +20,7 @@ namespace MMMaellon
         {
             string sourceDir = "Assets/MMMaellon/ExampleScene/";
             // string tempDir = "Assets/MMMaellon/Temp/";
-            string exampleDir = "Packages/com.mmmaellon.lower-case-name/Samples~/Example/";
+            string exampleDir = "Packages/com.mmmaellon.my-very-large-deck/Samples~/Example/";
             // Save the current scene
             EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
 
