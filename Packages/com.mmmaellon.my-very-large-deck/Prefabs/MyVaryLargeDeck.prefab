@@ -1479,7 +1479,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -1512,7 +1512,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 9172415271310005250}
 --- !u!114 &5684618369634672745
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -1887,7 +1887,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1699675846844714329}
 --- !u!114 &4457438285832260875
@@ -2247,7 +2247,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4797471223397226975}
 --- !u!114 &7076868334599968250
@@ -2622,7 +2622,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -2655,7 +2655,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 8923102189333731403}
 --- !u!114 &779542911296831721
@@ -3003,7 +3003,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 812167660221792431}
 --- !u!114 &7997340978936018452
@@ -3390,7 +3390,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 813170090068742267}
 --- !u!114 &3160684429393461008
@@ -3771,7 +3771,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -3804,7 +3804,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3063733895202983641}
 --- !u!114 &4979721732127600001
@@ -4146,7 +4146,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -4179,7 +4179,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5420300585296320628}
 --- !u!114 &7365328726682313396
@@ -4683,7 +4683,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -4716,7 +4716,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5625398798610361376}
 --- !u!114 &7820646749100071905
@@ -5064,7 +5064,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -5097,7 +5097,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 9218494162962168245}
 --- !u!114 &4612855726235589356
@@ -5451,7 +5451,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -5484,7 +5484,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2269232177547471399}
 --- !u!114 &7199820699092049952
@@ -5838,7 +5838,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -5871,7 +5871,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 341124665372749531}
 --- !u!114 &322612072503914910
@@ -6213,7 +6213,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -6246,7 +6246,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7974500722279889267}
 --- !u!114 &2080485252864983736
@@ -6756,7 +6756,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -6789,7 +6789,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2579556250930309046}
 --- !u!114 &6965887716076629114
@@ -7131,7 +7131,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -7164,7 +7164,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5317698179564391739}
 --- !u!114 &2575755325382393154
@@ -7524,7 +7524,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -7557,7 +7557,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5311937921473907438}
 --- !u!114 &742944151155498198
@@ -7893,7 +7893,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -7926,7 +7926,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5465323574663665664}
 --- !u!114 &7360332723103691096
@@ -8280,7 +8280,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -8313,7 +8313,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4555577859085696897}
 --- !u!114 &8138709221576455355
@@ -9141,7 +9141,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -9174,7 +9174,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6582785967293971315}
 --- !u!114 &4078139099189879407
@@ -9528,7 +9528,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -9561,7 +9561,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3557211579921565902}
 --- !u!114 &3481009090756064898
@@ -10071,7 +10071,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -10104,7 +10104,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6570792349854801108}
 --- !u!114 &1028514408502741708
@@ -10446,7 +10446,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -10479,7 +10479,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 8351868629462883216}
 --- !u!114 &3700877737571724341
@@ -10839,7 +10839,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -10872,7 +10872,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7597118224392950534}
 --- !u!114 &5146601210431960133
@@ -11214,7 +11214,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -11247,7 +11247,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5673944105958201862}
 --- !u!114 &6962541647584099042
@@ -11595,7 +11595,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -11628,7 +11628,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5414121004591645099}
 --- !u!114 &6743481300437965924
@@ -11982,7 +11982,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -12015,7 +12015,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1545529453004392840}
 --- !u!114 &8365107646744343597
@@ -12363,7 +12363,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -12396,7 +12396,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5233148431468566266}
 --- !u!114 &1487352678249285256
@@ -12738,7 +12738,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -12771,7 +12771,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5900381320475872868}
 --- !u!114 &8608116722183718358
@@ -13275,7 +13275,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -13308,7 +13308,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2487518794347043755}
 --- !u!114 &6595964213071003737
@@ -13662,7 +13662,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -13695,7 +13695,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5687217467490295492}
 --- !u!114 &3217938719311279962
@@ -14043,7 +14043,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -14076,7 +14076,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 9140702882394199638}
 --- !u!114 &4644783651991853113
@@ -14586,7 +14586,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -14619,7 +14619,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1771184030958391753}
 --- !u!114 &593762140979467962
@@ -14973,7 +14973,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -15006,7 +15006,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6954474994969798854}
 --- !u!114 &4815369596362519828
@@ -15348,7 +15348,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -15381,7 +15381,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4440131754503239248}
 --- !u!114 &8474588609310020519
@@ -15729,7 +15729,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -15762,7 +15762,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5422258691246952047}
 --- !u!114 &3631901457810968153
@@ -16116,7 +16116,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -16149,7 +16149,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3049214706490409323}
 --- !u!114 &1441674072991238088
@@ -16491,7 +16491,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -16524,7 +16524,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3470322670066852643}
 --- !u!114 &5596073742640076868
@@ -17028,7 +17028,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -17061,7 +17061,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2620786811276202969}
 --- !u!114 &2250488706792116892
@@ -17421,7 +17421,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -17454,7 +17454,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3743663023160376848}
 --- !u!114 &2021036337480262015
@@ -17796,7 +17796,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -17829,7 +17829,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6943178384392853497}
 --- !u!114 &7788859084308227481
@@ -18177,7 +18177,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -18210,7 +18210,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6325510164380231020}
 --- !u!114 &3095361526007389907
@@ -18558,7 +18558,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -18591,7 +18591,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 734814948821960640}
 --- !u!114 &352160276705768954
@@ -18933,7 +18933,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -18966,7 +18966,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5917025253800763271}
 --- !u!114 &8285341437551570552
@@ -19326,7 +19326,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -19359,7 +19359,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1317510406735087191}
 --- !u!114 &6598934797149072031
@@ -19695,7 +19695,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -19728,7 +19728,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7578310317820957365}
 --- !u!114 &4028670636581422931
@@ -20088,7 +20088,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -20121,7 +20121,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 8429883799363279159}
 --- !u!114 &3796021837314457217
@@ -20625,7 +20625,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -20658,7 +20658,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 8971882624430444331}
 --- !u!114 &4697376355233035581
@@ -21006,7 +21006,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -21039,7 +21039,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3209715970846562247}
 --- !u!114 &8422342772545536993
@@ -21387,7 +21387,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -21420,7 +21420,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 766779395574623192}
 --- !u!114 &6124951180190711239
@@ -22001,7 +22001,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -22034,7 +22034,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4514065110667410236}
 --- !u!114 &7347630525304161434
@@ -22388,7 +22388,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -22421,7 +22421,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 381005746119182047}
 --- !u!114 &1239014076166762625
@@ -22931,7 +22931,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -22964,7 +22964,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3340296152094274112}
 --- !u!114 &4544285917568458913

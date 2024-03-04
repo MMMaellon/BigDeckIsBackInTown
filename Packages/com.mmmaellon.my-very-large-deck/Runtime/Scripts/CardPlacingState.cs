@@ -13,9 +13,9 @@ namespace MMMaellon
         public bool deal_on_throw = true;
         [Tooltip("Larger number requires better accuracy and shorter distances")]
         public float throw_threshold = 1f;
-        public float throw_min_velocity = 0.5f;
+        public float throw_min_velocity = 1f;
         public Vector3 throw_power = Vector3.up * 5f;
-        [UdonSynced, System.NonSerialized]
+        [UdonSynced, System.NonSerialized, FieldChangeCallback(nameof(placement_id))]
         public int _placement_id = -1001;
         public int placement_id
         {
@@ -51,27 +51,35 @@ namespace MMMaellon
             transform.rotation = sync.HermiteInterpolateRotation(start_rot, start_spin, spot.placement_transform.rotation, Vector3.zero, real_interpolation);
             if (real_interpolation >= 1.0f && sync.IsOwnerLocal())
             {
-                ExitState();
+                sync.rigid.detectCollisions = true;
             }
         }
 
+        bool last_kinematic;
         public override void OnEnterState()
         {
             sync.rigid.detectCollisions = false;
+            last_kinematic = sync.rigid.isKinematic;
+            sync.rigid.isKinematic = true;
         }
 
         public override void OnExitState()
         {
             sync.rigid.detectCollisions = true;
+            sync.rigid.isKinematic = last_kinematic;
         }
 
         public override bool OnInterpolationEnd()
         {
-            if (sync.IsOwnerLocal() && spot == null)
+            if (spot == null)
             {
-                ExitState();
+                if (sync.IsOwnerLocal())
+                {
+                    ExitState();
+                }
+                return true;
             }
-            return true;
+            return real_interpolation < 1.0f;
         }
 
         Vector3 start_pos;

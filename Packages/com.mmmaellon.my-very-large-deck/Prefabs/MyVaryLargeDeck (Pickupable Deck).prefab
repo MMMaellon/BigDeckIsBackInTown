@@ -1,5 +1,156 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &261228955755127500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3371055528552645188}
+  - component: {fileID: 202304540203137727}
+  - component: {fileID: 2507686089718438985}
+  - component: {fileID: 3365864991501789003}
+  - component: {fileID: 2764639896854696064}
+  m_Layer: 0
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3371055528552645188
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261228955755127500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1873656213047767606}
+  m_Father: {fileID: 7485234920411364656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 92, y: 65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &202304540203137727
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261228955755127500}
+  m_CullTransparentMesh: 1
+--- !u!114 &2507686089718438985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261228955755127500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3365864991501789003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261228955755127500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 0.4862745, b: 0.4862745, a: 1}
+    m_HighlightedColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2507686089718438985}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2764639896854696064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261228955755127500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 625643427777937142}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: SendCustomEvent
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Respawn
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &305268932044919710
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +235,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
   m_PresetInfoIsWorld: 1
---- !u!1 &1007947322159154230
+--- !u!1 &1398297804859442492
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,134 +243,135 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6428638367328580726}
-  - component: {fileID: 581610321785001281}
-  - component: {fileID: 8250745026307010625}
-  m_Layer: 5
-  m_Name: ResetMessage
+  - component: {fileID: 7485234920411364656}
+  - component: {fileID: 5097754167237727081}
+  - component: {fileID: 1320931570464195908}
+  - component: {fileID: 8535346059149623864}
+  - component: {fileID: 8603934481380101982}
+  - component: {fileID: 3052755494940451459}
+  m_Layer: 0
+  m_Name: ResetButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6428638367328580726
+--- !u!224 &7485234920411364656
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007947322159154230}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9999434}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1398297804859442492}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.50000006, w: 0.50000006}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.0009999999}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 859651086708629226}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_Children:
+  - {fileID: 3371055528552645188}
+  m_Father: {fileID: 1180330433305505291}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.075, y: 0.001}
+  m_SizeDelta: {x: 92, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &581610321785001281
-CanvasRenderer:
+--- !u!223 &5097754167237727081
+Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007947322159154230}
-  m_CullTransparentMesh: 1
---- !u!114 &8250745026307010625
+  m_GameObject: {fileID: 1398297804859442492}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &1320931570464195908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007947322159154230}
+  m_GameObject: {fileID: 1398297804859442492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 50
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 2
+  m_PresetInfoIsWorld: 1
+--- !u!65 &8535346059149623864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398297804859442492}
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: '<B>Respawn</b>
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f7b7ff5b43a4113459bbf4a25b5dbf0b, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
+  m_IncludeLayers:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
+    m_Bits: 0
+  m_ExcludeLayers:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 92, y: 65, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8603934481380101982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398297804859442492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &3052755494940451459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398297804859442492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2114519365297911723
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +655,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &3278501376978400297
+--- !u!1 &2770389868803408914
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,82 +663,136 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 859651086708629226}
-  - component: {fileID: 556402435712556467}
-  - component: {fileID: 5159705642519137894}
-  m_Layer: 5
-  m_Name: Canvas (1)
+  - component: {fileID: 1873656213047767606}
+  - component: {fileID: 2601413471686208896}
+  - component: {fileID: 2006510859221804145}
+  m_Layer: 0
+  m_Name: ResetMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &859651086708629226
+--- !u!224 &1873656213047767606
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278501376978400297}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.008000016}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_GameObject: {fileID: 2770389868803408914}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.9999499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6428638367328580726}
-  m_Father: {fileID: 1045278827454745380}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_Children: []
+  m_Father: {fileID: 3371055528552645188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &556402435712556467
-Canvas:
+--- !u!222 &2601413471686208896
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278501376978400297}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!114 &5159705642519137894
+  m_GameObject: {fileID: 2770389868803408914}
+  m_CullTransparentMesh: 1
+--- !u!114 &2006510859221804145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278501376978400297}
+  m_GameObject: {fileID: 2770389868803408914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 50
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 2
-  m_PresetInfoIsWorld: 1
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '<B>Respawn
+
+    Deck</b>
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f7b7ff5b43a4113459bbf4a25b5dbf0b, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3997254384503933426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,7 +1259,7 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 625643427777937142}
   takeOwnershipOfOtherObjectsOnCollision: 1
   allowOthersToTakeOwnershipOnCollision: 1
-  allowTheftFromSelf: 1
+  allowTheftFromSelf: 0
   syncParticleCollisions: 0
   respawnHeight: -100
   printDebugMessages: 0
@@ -1061,7 +1267,7 @@ MonoBehaviour:
   worldSpaceTeleport: 0
   worldSpaceSleep: 1
   worldSpacePhysics: 1
-  forceContinuousSpeculative: 1
+  forceContinuousSpeculative: 0
   kinematicWhileHeld: 1
   nonKinematicPickupJitterPreventionTime: 0
   reduceJitterDuringSleep: 1
@@ -1303,7 +1509,7 @@ Transform:
   - {fileID: 2324719133544881161}
   - {fileID: 8461882887752393959}
   - {fileID: 4779077803620127313}
-  - {fileID: 1045278827454745380}
+  - {fileID: 7485234920411364656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8093146368435943169
@@ -1747,7 +1953,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -1780,7 +1986,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3486693338987798847}
 --- !u!114 &2407374218697643656
@@ -1978,7 +2184,7 @@ MonoBehaviour:
   allowTheftFromSelf: 1
   syncParticleCollisions: 0
   respawnHeight: -100
-  printDebugMessages: 1
+  printDebugMessages: 0
   performanceModeCollisions: 1
   worldSpaceTeleport: 0
   worldSpaceSleep: 1
@@ -2128,7 +2334,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -2161,7 +2367,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7507452106063057463}
 --- !u!114 &1826786469341702117
@@ -2677,7 +2883,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -2710,7 +2916,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4854272244455352894}
 --- !u!114 &2016399699121155034
@@ -3058,7 +3264,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -3091,7 +3297,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6705903248952370232}
 --- !u!114 &7536889762469275166
@@ -3125,178 +3331,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 583df4c94e347e24a9f62996eb9bd886,
     type: 3}
   m_PrefabInstance: {fileID: 993179899992180711}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1045278827454615972
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1180330433305505291}
-    m_Modifications:
-    - target: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_Name
-      value: RespawnButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.70710677
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 587b9b8a037ee0446bcf9a2c1087f24d, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 859651086708629226}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8354827560414692124}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3353127739905417208}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1079443426472322931}
-  m_SourcePrefab: {fileID: 100100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a, type: 3}
---- !u!1 &1045278827454584580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1045278827454615972}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8354827560414692124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045278827454584580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7340fe1eaeff040acef753f64e9329, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 3353127739905417208}
-  udon: {fileID: 625643427777937142}
-  eventName: Respawn
---- !u!114 &3353127739905417208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045278827454584580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactTextPlacement: {fileID: 0}
-  interactText: Use
-  interactTextGO: {fileID: 0}
-  proximity: 0.25
-  SynchronizePosition: 0
-  AllowCollisionOwnershipTransfer: 0
-  Reliable: 0
-  _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: 919a6531c20697a439b3803f10fd76b3,
-    type: 2}
-  programSource: {fileID: 11400000, guid: 4386fd53e13a78e4ab43f8375dd72b06, type: 2}
-  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
-  publicVariablesUnityEngineObjects: []
-  publicVariablesSerializationDataFormat: 0
---- !u!65 &1079443426472322931
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045278827454584580}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.06480575, y: 0.09082155, z: 0.013312509}
-  m_Center: {x: 0, y: 0, z: 6.9849193e-10}
---- !u!4 &1045278827454745380 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: b2f3a35b9b7b98b42ae41b95e5efde0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1045278827454615972}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1073020586517185882
 PrefabInstance:
@@ -3779,7 +3813,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -3812,7 +3846,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6134216632251888410}
 --- !u!114 &8968820141540073176
@@ -4154,7 +4188,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -4187,7 +4221,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1274800440544725437}
 --- !u!114 &60996732940886674
@@ -4529,7 +4563,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -4562,7 +4596,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 377267157704602249}
 --- !u!114 &1547702766484521723
@@ -4916,7 +4950,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -4949,7 +4983,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6870239188233730991}
 --- !u!114 &6719540222742842728
@@ -5291,7 +5325,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -5324,7 +5358,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2370293952682464053}
 --- !u!114 &1266654903615761956
@@ -5678,7 +5712,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -5711,7 +5745,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 840822126376406266}
 --- !u!114 &3430890699177279869
@@ -6059,7 +6093,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -6092,7 +6126,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 169845888919004201}
 --- !u!114 &5667985275531429727
@@ -6440,7 +6474,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -6473,7 +6507,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6524522803925828816}
 --- !u!114 &5509676530750199795
@@ -6821,7 +6855,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -6854,7 +6888,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 9064652412432991237}
 --- !u!114 &3725315366681966953
@@ -7202,7 +7236,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -7235,7 +7269,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4304329245632378692}
 --- !u!114 &3232205791081294905
@@ -7577,7 +7611,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -7610,7 +7644,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3294531453804414468}
 --- !u!114 &5174101885461453361
@@ -7958,7 +7992,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -7991,7 +8025,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6542966059744580491}
 --- !u!114 &1717209352195964871
@@ -8345,7 +8379,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -8378,7 +8412,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 8632009407598437854}
 --- !u!114 &3797815945325083595
@@ -8726,7 +8760,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -8759,7 +8793,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7335111311622101724}
 --- !u!114 &6572712916937706418
@@ -9107,7 +9141,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -9140,7 +9174,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7349737907642467229}
 --- !u!114 &2236666188129708769
@@ -9488,7 +9522,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -9521,7 +9555,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4193021653513453705}
 --- !u!114 &3348835257208680104
@@ -9875,7 +9909,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -9908,7 +9942,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1938557982180607312}
 --- !u!114 &2551983639835987160
@@ -10250,7 +10284,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -10283,7 +10317,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 3564074320118483150}
 --- !u!114 &1449512891610333436
@@ -10631,7 +10665,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -10664,7 +10698,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 638100605338671112}
 --- !u!114 &2189573574048166932
@@ -11018,7 +11052,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -11051,7 +11085,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4071994595526594488}
 --- !u!114 &2172735841900363617
@@ -11555,7 +11589,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -11588,7 +11622,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2712229088841385366}
 --- !u!114 &2755444397064487759
@@ -11942,7 +11976,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -11975,7 +12009,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2404438017901021063}
 --- !u!114 &6336189460739469807
@@ -12473,7 +12507,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -12506,7 +12540,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5047212450752353435}
 --- !u!114 &1413679978108052377
@@ -13016,7 +13050,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -13049,7 +13083,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2445262931096981776}
 --- !u!114 &2840933185819186810
@@ -13565,7 +13599,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -13598,7 +13632,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2646116767088944440}
 --- !u!114 &470951796005141364
@@ -13952,7 +13986,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -13985,7 +14019,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 4824521013117501494}
 --- !u!114 &2098295121401128492
@@ -14327,7 +14361,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -14360,7 +14394,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5667132861018365653}
 --- !u!114 &2539561851816124173
@@ -14564,7 +14598,7 @@ MonoBehaviour:
   allowTheftFromSelf: 1
   syncParticleCollisions: 0
   respawnHeight: -100
-  printDebugMessages: 1
+  printDebugMessages: 0
   performanceModeCollisions: 1
   worldSpaceTeleport: 0
   worldSpaceSleep: 1
@@ -14714,7 +14748,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -14747,7 +14781,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2625953365224915796}
 --- !u!114 &733338849590239430
@@ -15095,7 +15129,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -15128,7 +15162,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6242370170315645650}
 --- !u!114 &8835776314362767614
@@ -15470,7 +15504,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -15503,7 +15537,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 45644811170478899}
 --- !u!114 &8331407264930026077
@@ -15851,7 +15885,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -15884,7 +15918,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5010851698779791614}
 --- !u!114 &4730919563194172462
@@ -16232,7 +16266,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -16265,7 +16299,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2247903647621698387}
 --- !u!114 &1133480580163223517
@@ -16769,7 +16803,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -16802,7 +16836,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6837789294944563654}
 --- !u!114 &2383410945807368483
@@ -17407,7 +17441,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -17440,7 +17474,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2337753926945802256}
 --- !u!114 &7517751178170468386
@@ -18027,7 +18061,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -18060,7 +18094,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 48377896256084005}
 --- !u!114 &8727134895562036240
@@ -18402,7 +18436,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -18435,7 +18469,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7749492579561766264}
 --- !u!114 &5929092199302021134
@@ -18783,7 +18817,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -18816,7 +18850,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1747033465326603332}
 --- !u!114 &7246615771503077545
@@ -19170,7 +19204,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -19203,7 +19237,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1974440576724565888}
 --- !u!114 &2522730505907867757
@@ -19557,7 +19591,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -19590,7 +19624,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 8211839097043451063}
 --- !u!114 &7540215750293876271
@@ -19938,7 +19972,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -19971,7 +20005,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 681841302757659470}
 --- !u!114 &1745321914376663360
@@ -20313,7 +20347,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -20346,7 +20380,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2265695259434025376}
 --- !u!114 &6042889087706460927
@@ -20694,7 +20728,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -20727,7 +20761,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 1454144040270288536}
 --- !u!114 &3866763784900554263
@@ -21075,7 +21109,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -21108,7 +21142,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 6946264857312928745}
 --- !u!114 &7688818545223447323
@@ -21618,7 +21652,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -21651,7 +21685,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5332035449646646422}
 --- !u!114 &7360805582145783274
@@ -21999,7 +22033,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -22032,7 +22066,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 7117375909557557830}
 --- !u!114 &8494471802284517628
@@ -22698,7 +22732,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -22731,7 +22765,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2729478788292410631}
 --- !u!114 &5103636073222651406
@@ -23091,7 +23125,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -23124,7 +23158,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 2372801878095556485}
 --- !u!114 &6073788316136454153
@@ -23460,7 +23494,7 @@ MonoBehaviour:
   PickupEventName: 
   DropEventName: 
   ThrowVelocityBoostMinSpeed: 1
-  ThrowVelocityBoostScale: 1.5
+  ThrowVelocityBoostScale: 1
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
@@ -23493,7 +23527,7 @@ MonoBehaviour:
   deal_power: {x: 0, y: 10, z: 0}
   deal_on_throw: 1
   throw_threshold: 1
-  throw_min_velocity: 0.5
+  throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   card: {fileID: 5439066141126803781}
 --- !u!114 &240108815935470384
