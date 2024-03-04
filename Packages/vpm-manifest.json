@@ -11,6 +11,9 @@
     },
     "com.mmmaellon.smartobjectsync": {
       "version": "3.10.7"
+    },
+    "dev.onevr.vrworldtoolkit": {
+      "version": "2.1.5"
     }
   },
   "locked": {
@@ -38,6 +41,12 @@
       "version": "3.10.7",
       "dependencies": {
         "com.vrchat.worlds": "^3.4.0"
+      }
+    },
+    "dev.onevr.vrworldtoolkit": {
+      "version": "2.1.5",
+      "dependencies": {
+        "com.vrchat.base": "^3.2.x"
       }
     }
   }

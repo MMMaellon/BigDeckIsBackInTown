@@ -1,0 +1,1803 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1126 &-8310635096981694287
+PackedAssets:
+  m_ShortPath: BuildPlayer-ExampleScene.sharedAssets
+  m_Overhead: 119301
+  m_Contents:
+  - fileID: 1
+    classID: 150
+    packedSize: 61
+    offset: 120352
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 
+  - fileID: 2
+    classID: 142
+    packedSize: 176
+    offset: 120416
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 
+  - fileID: 3
+    classID: 21
+    packedSize: 912
+    offset: 120592
+    sourceAssetGUID: 9ee0c0f61555c5343ba463a354fdaf6c
+    buildTimeAssetPath: Assets/Scenes/VRCDefaultWorldScene/GridFloor_udon.mat
+  - fileID: 4
+    classID: 21
+    packedSize: 696
+    offset: 121504
+    sourceAssetGUID: 56ecc293444a4d941a977dab0cb0e4e6
+    buildTimeAssetPath: Assets/Scenes/VRCDefaultWorldScene/SKY_UdonLab.mat
+  - fileID: 5
+    classID: 21
+    packedSize: 932
+    offset: 122200
+    sourceAssetGUID: 6220227d41f5bca49b5b60e34e845b9e
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/Materials/Cards_Texture_Free.mat
+  - fileID: 6
+    classID: 21
+    packedSize: 972
+    offset: 123136
+    sourceAssetGUID: 5dded07d4ea311a47a34ff4c29821391
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/Materials/Grey.mat
+  - fileID: 7
+    classID: 21
+    packedSize: 1612
+    offset: 124112
+    sourceAssetGUID: f7b7ff5b43a4113459bbf4a25b5dbf0b
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/Materials/LiberationSans
+      SDF - Soft Shadow.mat
+  - fileID: 8
+    classID: 21
+    packedSize: 916
+    offset: 125728
+    sourceAssetGUID: 587b9b8a037ee0446bcf9a2c1087f24d
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/Materials/Red.mat
+  - fileID: 9
+    classID: 21
+    packedSize: 148
+    offset: 126648
+    sourceAssetGUID: e3265ab4bf004d28a9537516768c1c75
+    buildTimeAssetPath: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  - fileID: 10
+    classID: 21
+    packedSize: 2016
+    offset: 126800
+    sourceAssetGUID: 2e498d1c8094910479dc3e1b768306a4
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF - Fallback.asset
+  - fileID: 11
+    classID: 21
+    packedSize: 956
+    offset: 128816
+    sourceAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF.asset
+  - fileID: 12
+    classID: 28
+    packedSize: 5584
+    offset: 129776
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 13
+    classID: 28
+    packedSize: 5588
+    offset: 135360
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 14
+    classID: 28
+    packedSize: 699196
+    offset: 140952
+    sourceAssetGUID: 2808e1b85cfe40748bbdaacbbf354f97
+    buildTimeAssetPath: Assets/Scenes/VRCDefaultWorldScene/GridFloor_udon.png
+  - fileID: 15
+    classID: 28
+    packedSize: 174912
+    offset: 840152
+    sourceAssetGUID: 8966d328f0e8fd742a5c307d817190bb
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/Materials/Cards_Texture_Free.jpg
+  - fileID: 16
+    classID: 28
+    packedSize: 128
+    offset: 1015064
+    sourceAssetGUID: e3265ab4bf004d28a9537516768c1c75
+    buildTimeAssetPath: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  - fileID: 17
+    classID: 28
+    packedSize: 140
+    offset: 1015192
+    sourceAssetGUID: 2e498d1c8094910479dc3e1b768306a4
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF - Fallback.asset
+  - fileID: 18
+    classID: 28
+    packedSize: 1048716
+    offset: 1015336
+    sourceAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF.asset
+  - fileID: 19
+    classID: 43
+    packedSize: 1504
+    offset: 2064056
+    sourceAssetGUID: 0238c29503b9d524c86b29611ec292af
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_10Spades.fbx
+  - fileID: 20
+    classID: 43
+    packedSize: 1500
+    offset: 2065560
+    sourceAssetGUID: 0983ab3d045912846ac4079f7aa1a635
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_4Club.fbx
+  - fileID: 21
+    classID: 43
+    packedSize: 1500
+    offset: 2067064
+    sourceAssetGUID: 0ce4ed33de5f7874c82df132cb2e06d9
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_2Spades.fbx
+  - fileID: 22
+    classID: 43
+    packedSize: 1500
+    offset: 2068568
+    sourceAssetGUID: 15ed08db6d3bbf6448a2db2ff65395ae
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_10Heart.fbx
+  - fileID: 23
+    classID: 43
+    packedSize: 1500
+    offset: 2070072
+    sourceAssetGUID: 1d8c6ffb6859da84aace751faa70163d
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_9Heart.fbx
+  - fileID: 24
+    classID: 43
+    packedSize: 1500
+    offset: 2071576
+    sourceAssetGUID: 270161fbc9dca6d4e9df3a22d51ebc57
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_2Club.fbx
+  - fileID: 25
+    classID: 43
+    packedSize: 1500
+    offset: 2073080
+    sourceAssetGUID: 28120b6192fea2044b77e1f972bd9f92
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_6Spades.fbx
+  - fileID: 26
+    classID: 43
+    packedSize: 1500
+    offset: 2074584
+    sourceAssetGUID: 2af55c969fe59644aa75f41d7dae9425
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_5Spades.fbx
+  - fileID: 27
+    classID: 43
+    packedSize: 1504
+    offset: 2076088
+    sourceAssetGUID: 2b4b8c4bb0796f04093a50f8a8b21c6c
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_QDiamond.fbx
+  - fileID: 28
+    classID: 43
+    packedSize: 1500
+    offset: 2077592
+    sourceAssetGUID: 2df549f656beb1c4da454bb838d8240e
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_8Club.fbx
+  - fileID: 29
+    classID: 43
+    packedSize: 1500
+    offset: 2079096
+    sourceAssetGUID: 36360c12a6623f94f813098c06e74a10
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_QClub.fbx
+  - fileID: 30
+    classID: 43
+    packedSize: 1500
+    offset: 2080600
+    sourceAssetGUID: 41465da6a6671b54b8c867e4ed4b2250
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_5Heart.fbx
+  - fileID: 31
+    classID: 43
+    packedSize: 1500
+    offset: 2082104
+    sourceAssetGUID: 464cdfddb63bd3c408457cb626984107
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_7Club.fbx
+  - fileID: 32
+    classID: 43
+    packedSize: 1500
+    offset: 2083608
+    sourceAssetGUID: 4ac91e5593af8ca4f8137a558dfaf8f2
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_8Spades.fbx
+  - fileID: 33
+    classID: 43
+    packedSize: 1504
+    offset: 2085112
+    sourceAssetGUID: 4f2151ce02311614b8387ec98d6596e9
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_4Diamond.fbx
+  - fileID: 34
+    classID: 43
+    packedSize: 1500
+    offset: 2086616
+    sourceAssetGUID: 5284c480af0cfdd46a33d341be0f9164
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_3Club.fbx
+  - fileID: 35
+    classID: 43
+    packedSize: 1500
+    offset: 2088120
+    sourceAssetGUID: 562d9024df022824badf74c951979904
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_9Club.fbx
+  - fileID: 36
+    classID: 43
+    packedSize: 1504
+    offset: 2089624
+    sourceAssetGUID: 583df4c94e347e24a9f62996eb9bd886
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_5Diamond.fbx
+  - fileID: 37
+    classID: 43
+    packedSize: 1500
+    offset: 2091128
+    sourceAssetGUID: 5ed5e9b1f70bb544cb4ea990bba41bef
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_9Spades.fbx
+  - fileID: 38
+    classID: 43
+    packedSize: 1504
+    offset: 2092632
+    sourceAssetGUID: 5f56c611ee86cf54d99e43961cfd6d3f
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_9Diamond.fbx
+  - fileID: 39
+    classID: 43
+    packedSize: 1500
+    offset: 2094136
+    sourceAssetGUID: 625a1b694d9bf454ea6f900d711436d0
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_4Heart.fbx
+  - fileID: 40
+    classID: 43
+    packedSize: 1504
+    offset: 2095640
+    sourceAssetGUID: 692951e1fcd6eca45bfaeeadc4647e0c
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_ADiamond.fbx
+  - fileID: 41
+    classID: 43
+    packedSize: 1500
+    offset: 2097144
+    sourceAssetGUID: 73f139cb661472d46af4e88f82175051
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_KClub.fbx
+  - fileID: 42
+    classID: 43
+    packedSize: 1500
+    offset: 2098648
+    sourceAssetGUID: 7450257b07d30ee45b5b72c5754e7c0c
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_3Heart.fbx
+  - fileID: 43
+    classID: 43
+    packedSize: 1504
+    offset: 2100152
+    sourceAssetGUID: 75a891c2b1c784f4da76061244438046
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_10Diamond.fbx
+  - fileID: 44
+    classID: 43
+    packedSize: 1500
+    offset: 2101656
+    sourceAssetGUID: 7b4f101821a976641865e1afd1fad89c
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_3Spades.fbx
+  - fileID: 45
+    classID: 43
+    packedSize: 1500
+    offset: 2103160
+    sourceAssetGUID: 7c35a63a60497664bac4e1b96da1b04f
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_6Club.fbx
+  - fileID: 46
+    classID: 43
+    packedSize: 1500
+    offset: 2104664
+    sourceAssetGUID: 844ae378b328e784fb6bcecb1c18e9f5
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_10Club.fbx
+  - fileID: 47
+    classID: 43
+    packedSize: 1500
+    offset: 2106168
+    sourceAssetGUID: 8e70cfa2499b0d242850d42b5ff84a2d
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_JHeart.fbx
+  - fileID: 48
+    classID: 43
+    packedSize: 1500
+    offset: 2107672
+    sourceAssetGUID: 8fef523a36fb4384dbd542c31b34f451
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_QHeart.fbx
+  - fileID: 49
+    classID: 43
+    packedSize: 1504
+    offset: 2109176
+    sourceAssetGUID: 90a50e6dbd636c84295b725a2bf625eb
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_KDiamond.fbx
+  - fileID: 50
+    classID: 43
+    packedSize: 1504
+    offset: 2110680
+    sourceAssetGUID: a5b5cae8b116f0643a8f1d62ecd747ad
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_6Diamond.fbx
+  - fileID: 51
+    classID: 43
+    packedSize: 1500
+    offset: 2112184
+    sourceAssetGUID: b234d635c6b4d0c489f4f873832ca399
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_8Heart.fbx
+  - fileID: 52
+    classID: 43
+    packedSize: 1504
+    offset: 2113688
+    sourceAssetGUID: b2baf2c9d8e9b6c4aab2d30284e432c0
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_7Diamond.fbx
+  - fileID: 53
+    classID: 43
+    packedSize: 1640
+    offset: 2115192
+    sourceAssetGUID: b2f3a35b9b7b98b42ae41b95e5efde0a
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_Box.fbx
+  - fileID: 54
+    classID: 43
+    packedSize: 1500
+    offset: 2116832
+    sourceAssetGUID: b67a12bfee1820c419f7e5a8aed87ee4
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_AHeart.fbx
+  - fileID: 55
+    classID: 43
+    packedSize: 1500
+    offset: 2118336
+    sourceAssetGUID: b6cf9c34e3fc75646bb7d83e75ecd2eb
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_KSpades.fbx
+  - fileID: 56
+    classID: 43
+    packedSize: 1500
+    offset: 2119840
+    sourceAssetGUID: b767677409213e24098e98e2490c551e
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_JClub.fbx
+  - fileID: 57
+    classID: 43
+    packedSize: 904
+    offset: 2121344
+    sourceAssetGUID: bc1d1a549b7abd745ae0856f1eb478c8
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCard_Revers.fbx
+  - fileID: 58
+    classID: 43
+    packedSize: 1500
+    offset: 2122248
+    sourceAssetGUID: be387c29fcf9ecf438ff4a57c9cc4a4f
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_7Heart.fbx
+  - fileID: 59
+    classID: 43
+    packedSize: 1500
+    offset: 2123752
+    sourceAssetGUID: c613a166e38964249b90f3849aeecbd2
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_2Heart.fbx
+  - fileID: 60
+    classID: 43
+    packedSize: 1500
+    offset: 2125256
+    sourceAssetGUID: c7a44176f2063cc48863fa81dbb2d0b2
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_JSpades.fbx
+  - fileID: 61
+    classID: 43
+    packedSize: 1500
+    offset: 2126760
+    sourceAssetGUID: cacbf1ac0f47070438e43d6607fba4d3
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_6Heart.fbx
+  - fileID: 62
+    classID: 43
+    packedSize: 1500
+    offset: 2128264
+    sourceAssetGUID: cafbd75bb165b3c4b8df30b4080d7f27
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_KHeart.fbx
+  - fileID: 63
+    classID: 43
+    packedSize: 1504
+    offset: 2129768
+    sourceAssetGUID: d1d6e7d66abdd21488c3409dc86a8314
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_3Diamond.fbx
+  - fileID: 64
+    classID: 43
+    packedSize: 1500
+    offset: 2131272
+    sourceAssetGUID: da2d1fefc52dcde4db0b9c8ab07e55a3
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_QSpades.fbx
+  - fileID: 65
+    classID: 43
+    packedSize: 1504
+    offset: 2132776
+    sourceAssetGUID: db5c9937d5295c04983ef22a72d944ad
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_2Diamond.fbx
+  - fileID: 66
+    classID: 43
+    packedSize: 1500
+    offset: 2134280
+    sourceAssetGUID: dcf38305f6a653347a98083d1b69c33f
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_ASpades.fbx
+  - fileID: 67
+    classID: 43
+    packedSize: 1500
+    offset: 2135784
+    sourceAssetGUID: e002d9a98ed1ada40b5fbecb22ab0689
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_4Spades.fbx
+  - fileID: 68
+    classID: 43
+    packedSize: 1504
+    offset: 2137288
+    sourceAssetGUID: e970db0d17241c64c926dc914d1eb976
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_JDiamond.fbx
+  - fileID: 69
+    classID: 43
+    packedSize: 1500
+    offset: 2138792
+    sourceAssetGUID: ebb8293faa82c4544ad3ac92fb34dacd
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_5Club.fbx
+  - fileID: 70
+    classID: 43
+    packedSize: 1500
+    offset: 2140296
+    sourceAssetGUID: f100bd56e4d38bb4191b5676772f708d
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_AClub.fbx
+  - fileID: 71
+    classID: 43
+    packedSize: 1500
+    offset: 2141800
+    sourceAssetGUID: fd695fbbe83d11b4e826b7265f3f1bcb
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_7Spades.fbx
+  - fileID: 72
+    classID: 43
+    packedSize: 1504
+    offset: 2143304
+    sourceAssetGUID: fdda9def695112b4aa1c383dc8b3b3fe
+    buildTimeAssetPath: Packages/com.mmmaellon.my-very-large-deck/Runtime/Resources/Free_Playing_Cards/PlayingCards_8Diamond.fbx
+  - fileID: 73
+    classID: 48
+    packedSize: 17324
+    offset: 2144808
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 74
+    classID: 48
+    packedSize: 100228
+    offset: 2162136
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 75
+    classID: 48
+    packedSize: 10256
+    offset: 2262368
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 76
+    classID: 48
+    packedSize: 15396
+    offset: 2272624
+    sourceAssetGUID: fe393ace9b354375a9cb14cdbbc28be4
+    buildTimeAssetPath: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+  - fileID: 77
+    classID: 115
+    packedSize: 96
+    offset: 119024
+    sourceAssetGUID: 4ecd63eff847044b68db9453ce219299
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Plugins/VRCCore-Editor.dll
+  - fileID: 78
+    classID: 115
+    packedSize: 108
+    offset: 119120
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 79
+    classID: 115
+    packedSize: 92
+    offset: 119232
+    sourceAssetGUID: 0cd44c1031e13a943bb63640046fad76
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs
+  - fileID: 80
+    classID: 115
+    packedSize: 84
+    offset: 119328
+    sourceAssetGUID: 45115577ef41a5b4ca741ed302693907
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/Udon/UdonBehaviour.cs
+  - fileID: 81
+    classID: 115
+    packedSize: 124
+    offset: 119416
+    sourceAssetGUID: 4f231c4fb786f3946a6b90b886c48677
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs
+  - fileID: 82
+    classID: 115
+    packedSize: 84
+    offset: 119544
+    sourceAssetGUID: 67db9e8f0e2ae9c40bc1e2b64352a6b4
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Slider.cs
+  - fileID: 83
+    classID: 115
+    packedSize: 96
+    offset: 119632
+    sourceAssetGUID: 71c1514a6bd24e1e882cebbe1904ce04
+    buildTimeAssetPath: Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_FontAsset.cs
+  - fileID: 84
+    classID: 115
+    packedSize: 100
+    offset: 119728
+    sourceAssetGUID: 76c392e42b5098c458856cdf6ecaaaa1
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs
+  - fileID: 85
+    classID: 115
+    packedSize: 124
+    offset: 119832
+    sourceAssetGUID: bf61d954ecb803046953c666facfb904
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/Udon/ProgramSources/SerializedUdonProgramAsset.cs
+  - fileID: 86
+    classID: 115
+    packedSize: 112
+    offset: 119960
+    sourceAssetGUID: bf950a60ad1c528408f9eb68f31b8ce9
+    buildTimeAssetPath: Packages/com.mmmaellon.smartobjectsync/Runtime/Scripts/SmartObjectSync.cs
+  - fileID: 87
+    classID: 115
+    packedSize: 96
+    offset: 120072
+    sourceAssetGUID: f4688fdb7df04437aeb418b961361dc5
+    buildTimeAssetPath: Packages/com.unity.textmeshpro/Scripts/Runtime/TextMeshProUGUI.cs
+  - fileID: 88
+    classID: 115
+    packedSize: 84
+    offset: 120168
+    sourceAssetGUID: fe87c0e1cc204ed48ad3b37840f39efc
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Image.cs
+  - fileID: 89
+    classID: 115
+    packedSize: 92
+    offset: 120256
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 90
+    classID: 128
+    packedSize: 352462
+    offset: 2288024
+    sourceAssetGUID: e3265ab4bf004d28a9537516768c1c75
+    buildTimeAssetPath: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  - fileID: 91
+    classID: 213
+    packedSize: 568
+    offset: 2640488
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 92
+    classID: 213
+    packedSize: 572
+    offset: 2641056
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 93
+    classID: 114
+    packedSize: 3028
+    offset: 2641632
+    sourceAssetGUID: 50c1c88133446f544a7a031562c304c4
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/332c07164d7923a4ea807d58b7499307.asset
+  - fileID: 94
+    classID: 114
+    packedSize: 1348
+    offset: 2644664
+    sourceAssetGUID: 919a6531c20697a439b3803f10fd76b3
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/4386fd53e13a78e4ab43f8375dd72b06.asset
+  - fileID: 95
+    classID: 114
+    packedSize: 46044
+    offset: 2646016
+    sourceAssetGUID: a3f881aba8335c6438d6c58d7a045a68
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/5590289dbbc8c9e4383d1d53c095e59c.asset
+  - fileID: 96
+    classID: 114
+    packedSize: 2828
+    offset: 2692064
+    sourceAssetGUID: 15dae607035a5f643b076484f04cbbec
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/566cc00e27d5822449529a3785eae366.asset
+  - fileID: 97
+    classID: 114
+    packedSize: 10924
+    offset: 2694896
+    sourceAssetGUID: ce3ebffe86d0f5f4fa2c82510ed23513
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/5e3328c73b055e74da81339745250122.asset
+  - fileID: 98
+    classID: 114
+    packedSize: 11688
+    offset: 2705824
+    sourceAssetGUID: 1d7c5f0e6f1c259458f5bcd06e39f4e9
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/696d4a684cc3d2544a22e12cbc03653a.asset
+  - fileID: 99
+    classID: 114
+    packedSize: 1648
+    offset: 2717512
+    sourceAssetGUID: c0f1df021238d5d4bb3e5b54e1124151
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/c8df303ceb45ae84f85a11591f741734.asset
+  - fileID: 100
+    classID: 114
+    packedSize: 6024
+    offset: 2719160
+    sourceAssetGUID: 01153eded4ff04741b761cf1d5c10220
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/e97af8560c9eeb2479e0f38de1875a87.asset
+  - fileID: 101
+    classID: 114
+    packedSize: 5348
+    offset: 2725184
+    sourceAssetGUID: ffe67febc956c9b4ca4c1a6a508a1ddf
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/f25e67c634ce39a4bbfc4baf69531187.asset
+  - fileID: 102
+    classID: 114
+    packedSize: 1156
+    offset: 2730536
+    sourceAssetGUID: 2e498d1c8094910479dc3e1b768306a4
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF - Fallback.asset
+  - fileID: 103
+    classID: 114
+    packedSize: 28764
+    offset: 2731696
+    sourceAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF.asset
+--- !u!641289076 &-7116916396490729121
+AudioBuildInfo:
+  m_IsAudioDisabled: 0
+  m_AudioClipCount: 0
+  m_AudioMixerCount: 0
+--- !u!668709126 &-1906093478190687785
+BuiltAssetBundleInfoSet:
+  bundleInfos:
+  - bundleName: scene-standalonewindows64-examplescene.vrcw
+    bundleArchiveFile: 2
+    packagedFileIndices: 0000000001000000
+  - bundleName: template-package
+    bundleArchiveFile: 5
+    packagedFileIndices: 04000000
+--- !u!1126 &-1604324778481002863
+PackedAssets:
+  m_ShortPath: CAB-9e0e3c425e26a1732e937508d0c9bea0
+  m_Overhead: 4032
+  m_Contents:
+  - fileID: 1
+    classID: 142
+    packedSize: 104
+    offset: 4032
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: AssetBundle Object
+  - fileID: 2
+    classID: 290
+    packedSize: 112
+    offset: 4136
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 'Built-in AssetBundleManifest: AssetBundleManifest'
+--- !u!1521398425 &-1162096064858590878
+VideoBuildInfo:
+  m_VideoClipCount: 0
+  m_IsVideoModuleDisabled: 0
+--- !u!1125 &1
+BuildReport:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Build AssetBundles
+  m_Summary:
+    buildStartTime:
+      serializedVersion: 2
+      ticks: 638451334433653799
+    buildGUID: 00000000000000000000000000000000
+    platformName: Win64
+    platformGroupName: Standalone
+    subtarget: 0
+    options: 0
+    assetBundleOptions: 32
+    outputPath: C:/Users/MMMAEL~1/AppData/Local/Temp/DefaultCompany/template-package
+    crc: 1713572361
+    totalSize: 692191
+    totalTimeTicks: 67164818
+    totalErrors: 312
+    totalWarnings: 0
+    buildType: 2
+    buildResult: 1
+  m_Files:
+  - path: D:/Archive/MyVeryLargeDeck/scene-standalonewindows64-examplescene.vrcw/BuildPlayer-ExampleScene
+    role: Scene
+    id: 0
+    totalSize: 4180040
+  - path: D:/Archive/MyVeryLargeDeck/scene-standalonewindows64-examplescene.vrcw/BuildPlayer-ExampleScene.sharedAssets
+    role: SharedAssets
+    id: 1
+    totalSize: 2760460
+  - path: D:/Archive/MyVeryLargeDeck/scene-standalonewindows64-examplescene.vrcw
+    role: AssetBundle
+    id: 2
+    totalSize: 688462
+  - path: D:/Archive/MyVeryLargeDeck/scene-standalonewindows64-examplescene.vrcw.manifest
+    role: AssetBundleTextManifest
+    id: 3
+    totalSize: 2506
+  - path: D:/Archive/MyVeryLargeDeck/template-package/CAB-9e0e3c425e26a1732e937508d0c9bea0
+    role: ResourcesFile
+    id: 4
+    totalSize: 4248
+  - path: D:/Archive/MyVeryLargeDeck/template-package
+    role: ManifestAssetBundle
+    id: 5
+    totalSize: 1052
+  - path: D:/Archive/MyVeryLargeDeck/template-package.manifest
+    role: AssetBundleTextManifest
+    id: 6
+    totalSize: 171
+  m_BuildSteps:
+  - stepName: Build Asset Bundles
+    durationTicks: 67164818
+    depth: 0
+    messages: []
+  - stepName: Calculate asset bundles to be built
+    durationTicks: 254648
+    depth: 1
+    messages: []
+  - stepName: Prebuild Cleanup and Recompile
+    durationTicks: 11632859
+    depth: 1
+    messages: []
+  - stepName: Compile scripts
+    durationTicks: 11453241
+    depth: 2
+    messages: []
+  - stepName: Generate and validate platform script types
+    durationTicks: 122865
+    depth: 2
+    messages: []
+  - stepName: Build Scene AssetBundle(s)
+    durationTicks: 41916156
+    depth: 1
+    messages: []
+  - stepName: 'Build bundle: scene-standalonewindows64-examplescene.vrcw'
+    durationTicks: 39080225
+    depth: 2
+    messages: []
+  - stepName: Verify Build setup
+    durationTicks: 236785
+    depth: 3
+    messages: []
+  - stepName: Prepare assets for target platform
+    durationTicks: 293930
+    depth: 3
+    messages: []
+  - stepName: Prepare splash screen
+    durationTicks: 38978
+    depth: 3
+    messages:
+    - type: 3
+      content: Including Unity Splash Screen logo because 'Show Unity Logo' is enabled.
+  - stepName: Building scenes
+    durationTicks: 23000169
+    depth: 3
+    messages: []
+  - stepName: Building scene Assets/MMMaellon/ExampleScene/ExampleScene.unity
+    durationTicks: 23000076
+    depth: 4
+    messages:
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove Card (Script) because CardPlacingState (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+    - type: 0
+      content: Can't remove SmartObjectSync (Script) because Card (Script) depends
+        on it
+  - stepName: Writing asset files
+    durationTicks: 3450351
+    depth: 3
+    messages: []
+  - stepName: Packaging assets - archive:/BuildPlayer-ExampleScene/BuildPlayer-ExampleScene.sharedAssets
+    durationTicks: 3415566
+    depth: 4
+    messages: []
+  - stepName: Creating compressed player package
+    durationTicks: 7083541
+    depth: 3
+    messages: []
+  - stepName: Write data build dirty tracking information
+    durationTicks: 131373
+    depth: 3
+    messages: []
+  - stepName: Postprocess built player
+    durationTicks: 47836
+    depth: 3
+    messages: []
+  m_Appendices:
+  - {fileID: -1906093478190687785}
+  - {fileID: -8310635096981694287}
+  - {fileID: 92584954263009206}
+  - {fileID: -7116916396490729121}
+  - {fileID: -1162096064858590878}
+  - {fileID: -1604324778481002863}
+--- !u!382020655 &92584954263009206
+PluginBuildInfo:
+  m_RuntimePlugins:
+  - VRC.Udon.VM
+  - VRC.SDK3.Dynamics.PhysBone
+  - VRC.Udon.Security
+  - VRCEconomy
+  - libvrc_image_loader
+  - YamlDotNet
+  - VRCSDK3
+  - nunit.framework
+  - VRCCore-Editor
+  - Serilog.Sinks.File
+  - VRC.SDK3.Dynamics.Contact
+  - System.Collections.Immutable
+  - OculusXRPlugin
+  - VRC.Udon.Wrapper
+  - vrc_image_loader
+  - Unity.Burst.Unsafe
+  - SemanticVersioning
+  - librsync.net
+  - OVRPlugin
+  - System.Runtime.CompilerServices.Unsafe
+  - Newtonsoft.Json
+  - Unity.Collections.LowLevel.ILSupport
+  - VRC.Udon.Common
+  - VRC.Udon.VRCWrapperModules
+  - VRC.Dynamics
+  - VRCSDKBase
+  - VRC.Utility
+  - portmidi
+  - VRC.Udon.ClientBindings
+  - Blake2Sharp
+  - System.Text.Encoding.CodePages
+  - SDKBase-Legacy
+  - Serilog
+  - Collections.Pooled
+  - AudioPluginOculusSpatializer
+  m_EditorPlugins:
+  - VRC.Udon.VRCGraphModules
+  - VRC.Udon.EditorBindings
+  - 0Harmony
+  - VRC.SDK3.Dynamics.Contact.Editor
+  - libvrc_shader_compiler_plugin
+  - Mono.Cecil.Pdb
+  - vrc_shader_compiler_plugin
+  - VRCSDKBase-Editor
+  - Microsoft.CodeAnalysis.CSharp
+  - VRC.Udon.VRCTypeResolverModules
+  - VRCEconomy-Editor
+  - ICSharpCode.SharpZipLib
+  - AppleEventIntegration
+  - Mono.Cecil
+  - VRC.Udon.Graph
+  - Unity.Burst.Cecil.Pdb
+  - Mono.Cecil.Rocks
+  - Microsoft.CodeAnalysis
+  - VRC.Udon.Compiler
+  - System.Reflection.Metadata
+  - VRCSDK3-Editor
+  - Mono.Cecil.Mdb
+  - Serilog.Sinks.Unity3D
+  - Unity.Burst.Cecil.Mdb
+  - VRC.SDK3.Dynamics.PhysBone.Editor
+  - Unity.Burst.Cecil
+  - Unity.Burst.Cecil.Rocks
+  - vpm-core-lib
+  - VRC.Udon.UAssembly

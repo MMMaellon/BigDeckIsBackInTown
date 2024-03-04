@@ -23,6 +23,7 @@ namespace MMMaellon
             set
             {
                 _placement_id = value;
+
                 if (value < 0 || value >= card.deck.placement_spots.Length)
                 {
                     spot = null;
@@ -44,9 +45,10 @@ namespace MMMaellon
                 return;
             }
 
+
             real_interpolation = deal_duration <= 0 ? 1.0f : (Time.timeSinceLevelLoad - start_time) / deal_duration;
-            transform.position = sync.HermiteInterpolatePosition(start_pos, start_vel, spot.placement_point.position, Vector3.zero, real_interpolation);
-            transform.rotation = sync.HermiteInterpolateRotation(start_rot, start_spin, spot.placement_point.rotation, Vector3.zero, real_interpolation);
+            transform.position = sync.HermiteInterpolatePosition(start_pos, start_vel, spot.placement_transform.position, Vector3.zero, real_interpolation);
+            transform.rotation = sync.HermiteInterpolateRotation(start_rot, start_spin, spot.placement_transform.rotation, Vector3.zero, real_interpolation);
             if (real_interpolation >= 1.0f && sync.IsOwnerLocal())
             {
                 ExitState();
@@ -106,6 +108,7 @@ namespace MMMaellon
                 Networking.SetOwner(Networking.LocalPlayer, gameObject);
             }
             placement_id = new_spot.id;
+
             EnterState();
         }
         float new_score = -1001f;
@@ -132,7 +135,6 @@ namespace MMMaellon
         {
             if (sync.state != SmartObjectSync.STATE_INTERPOLATING || sync.rigid.velocity.magnitude < throw_min_velocity)
             {
-                Debug.LogWarning("vel: " + sync.rigid.velocity.magnitude);
                 return;
             }
             best_score = -1001f;
@@ -143,7 +145,7 @@ namespace MMMaellon
                 {
                     continue;
                 }
-                new_score = Vector3.Dot(sync.rigid.velocity.normalized, (spot.placement_point.position - transform.position).normalized) / Mathf.Sqrt(Vector3.Distance(spot.placement_point.position, transform.position));
+                new_score = Vector3.Dot(sync.rigid.velocity.normalized, (spot.placement_transform.position - transform.position).normalized) / Mathf.Sqrt(Vector3.Distance(spot.placement_transform.position, transform.position));
 
                 if (new_score > best_score)
                 {
@@ -151,7 +153,6 @@ namespace MMMaellon
                     best_spot = spot;
                 }
             }
-            Debug.LogWarning("best_score: " + best_score);
             if (best_spot && best_score > throw_threshold)
             {
                 Place(best_spot);
