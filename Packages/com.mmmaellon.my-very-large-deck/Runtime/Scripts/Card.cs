@@ -37,9 +37,14 @@ namespace MMMaellon
         public Deck deck;
 
         Transform starting_parent;
+        bool start_parent_set = false;
         public void Start()
         {
-            starting_parent = transform.parent;
+            if (!start_parent_set)
+            {
+                starting_parent = transform.parent;
+                start_parent_set = true;
+            }
         }
 
         bool last_kinematic;
@@ -54,6 +59,11 @@ namespace MMMaellon
             sync.rigid.isKinematic = true;
             if (deck.reparent_cards_to_attach_point)
             {
+                if (!start_parent_set)
+                {
+                    starting_parent = transform.parent;
+                    start_parent_set = true;
+                }
                 transform.SetParent(deck.card_attach_point, true);
             }
         }

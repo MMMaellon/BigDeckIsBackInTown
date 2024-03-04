@@ -1831,8 +1831,6 @@ MonoBehaviour:
     ID: 183
   - gameObject: {fileID: 5926529043737041025}
     ID: 184
-  - gameObject: {fileID: 0}
-    ID: 193
   - gameObject: {fileID: 1071021393}
     ID: 195
   - gameObject: {fileID: 1842120216}

@@ -1,7 +1,7 @@
 {
   "name": "com.mmmaellon.my-very-large-deck",
   "displayName": "My Very Large Deck",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "unity": "2019.1",
   "url": "https://github.com/MMMaellon/MyVeryLargeDeck.git",
   "gitDependencies": {},
