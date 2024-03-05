@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.mmmaellon.my-very-large-deck": {
-      "version": "file:com.mmmaellon.my-very-large-deck",
+    "com.mmmaellon.big-deck-is-back-in-town": {
+      "version": "file:com.mmmaellon.big-deck-is-back-in-town",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
