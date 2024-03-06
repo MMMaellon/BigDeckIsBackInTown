@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: main
-    paths: Packages/com.mmmaellon.my-very-large-deck/**
+    paths: Packages/com.mmmaellon.big-deck-is-back-in-town/**
 
 env:
-  packageName: "com.mmmaellon.my-very-large-deck"
+  packageName: "com.mmmaellon.big-deck-is-back-in-town"
 
 permissions:
   contents: write
