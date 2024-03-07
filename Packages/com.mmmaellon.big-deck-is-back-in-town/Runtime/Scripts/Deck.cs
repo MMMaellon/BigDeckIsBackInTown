@@ -15,9 +15,10 @@ namespace MMMaellon
     {
         public GameObject deck_model;
         public GameObject empty_deck_model;
-        public Transform card_attach_point;
+        public Transform cards_in_deck_parent;
+        public Transform cards_outside_deck_parent;
         public CardPlacementSpot[] placement_spots;
-        public bool reparent_cards_to_attach_point = false;
+        public bool reparent_cards = false;
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(next_card))]
         public int _next_card = -1001;
         public int next_card
@@ -198,7 +199,7 @@ namespace MMMaellon
         }
         public void Reset()
         {
-            card_attach_point = transform;
+            cards_in_deck_parent = transform;
         }
 
 #endif

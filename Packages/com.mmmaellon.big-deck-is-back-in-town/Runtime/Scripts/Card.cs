@@ -11,6 +11,7 @@ namespace MMMaellon
     public class Card : SmartObjectSyncState
     {
         public int id;
+        public bool card_physics = true;
         public Renderer render_component;
         public Collider collider_component;
         [NonSerialized, UdonSynced, FieldChangeCallback(nameof(selected))]
@@ -36,35 +37,26 @@ namespace MMMaellon
         }
         public Deck deck;
 
-        Transform starting_parent;
-        bool start_parent_set = false;
-        public void Start()
-        {
-            if (!start_parent_set)
-            {
-                starting_parent = transform.parent;
-                start_parent_set = true;
+        public override void OnDrop(){
+            SendCustomEventDelayedFrames(nameof(AfterDrop), 2);
+        }
+        public void AfterDrop(){
+            if(sync.state < SmartObjectSync.STATE_CUSTOM){
+                sync.rigid.isKinematic = !card_physics;
             }
         }
 
-        bool last_kinematic;
         public override void OnEnterState()
         {
             collider_component.enabled = _selected;
             collider_component.isTrigger = true;
             render_component.enabled = _selected;
-            transform.position = deck.card_attach_point.position;
-            transform.rotation = deck.card_attach_point.rotation;
-            last_kinematic = sync.rigid.isKinematic;
+            transform.position = deck.cards_in_deck_parent.position;
+            transform.rotation = deck.cards_in_deck_parent.rotation;
             sync.rigid.isKinematic = true;
-            if (deck.reparent_cards_to_attach_point)
+            if (deck.reparent_cards)
             {
-                if (!start_parent_set)
-                {
-                    starting_parent = transform.parent;
-                    start_parent_set = true;
-                }
-                transform.SetParent(deck.card_attach_point, true);
+                transform.SetParent(deck.cards_in_deck_parent, true);
             }
         }
 
@@ -73,11 +65,11 @@ namespace MMMaellon
             collider_component.enabled = true;
             collider_component.isTrigger = false;
             render_component.enabled = true;
-            sync.rigid.isKinematic = last_kinematic;
+            sync.rigid.isKinematic = !card_physics;
             _selected = false;
-            if (deck.reparent_cards_to_attach_point)
+            if (deck.reparent_cards)
             {
-                transform.SetParent(starting_parent, true);
+                transform.SetParent(deck.cards_outside_deck_parent, true);
             }
         }
 
