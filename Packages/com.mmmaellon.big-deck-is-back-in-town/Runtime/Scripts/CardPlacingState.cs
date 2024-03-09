@@ -20,7 +20,7 @@ namespace MMMaellon
             real_interpolation = deal_duration <= 0 ? 1.0f : (Time.timeSinceLevelLoad - start_time) / deal_duration;
             transform.position = sync.HermiteInterpolatePosition(start_pos, start_vel, sync.pos, Vector3.zero, real_interpolation);
             transform.rotation = sync.HermiteInterpolateRotation(start_rot, start_spin, sync.rot, Vector3.zero, real_interpolation);
-            if (real_interpolation >= 1.0f && sync.IsOwnerLocal())
+            if (real_interpolation >= 1.0f)
             {
                 sync.rigid.detectCollisions = true;
             }
