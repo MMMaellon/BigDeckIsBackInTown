@@ -13,6 +13,7 @@ namespace MMMaellon
         public int id;
         public bool card_physics = true;
         public Renderer render_component;
+        public GameObject child;
         public Collider collider_component;
         [NonSerialized, UdonSynced, FieldChangeCallback(nameof(selected))]
         public bool _selected = false;
@@ -27,6 +28,10 @@ namespace MMMaellon
                 {
                     collider_component.enabled = _selected;
                     render_component.enabled = _selected;
+                    if (child)
+                    {
+                        child.SetActive(_selected);
+                    }
                 }
 
                 if (sync.IsOwnerLocal())
@@ -37,11 +42,14 @@ namespace MMMaellon
         }
         public Deck deck;
 
-        public override void OnDrop(){
+        public override void OnDrop()
+        {
             SendCustomEventDelayedFrames(nameof(AfterDrop), 2);
         }
-        public void AfterDrop(){
-            if(sync.state < SmartObjectSync.STATE_CUSTOM){
+        public void AfterDrop()
+        {
+            if (sync.state < SmartObjectSync.STATE_CUSTOM)
+            {
                 sync.rigid.isKinematic = !card_physics;
             }
         }
@@ -51,6 +59,10 @@ namespace MMMaellon
             collider_component.enabled = _selected;
             collider_component.isTrigger = true;
             render_component.enabled = _selected;
+            if (child)
+            {
+                child.SetActive(_selected);
+            }
             transform.position = deck.cards_in_deck_parent.position;
             transform.rotation = deck.cards_in_deck_parent.rotation;
             sync.rigid.isKinematic = true;
@@ -65,6 +77,10 @@ namespace MMMaellon
             collider_component.enabled = true;
             collider_component.isTrigger = false;
             render_component.enabled = true;
+            if (child)
+            {
+                child.SetActive(true);
+            }
             sync.rigid.isKinematic = !card_physics;
             _selected = false;
             if (deck.reparent_cards)

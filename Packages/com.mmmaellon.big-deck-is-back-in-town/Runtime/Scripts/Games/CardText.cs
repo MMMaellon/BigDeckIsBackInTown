@@ -1,7 +1,9 @@
 ﻿
+using System;
 using TMPro;
 using UdonSharp;
 using UnityEngine;
+using VRC.SDK3.Data;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -21,21 +23,36 @@ namespace MMMaellon
             set
             {
                 _text_id = value;
-                if (text)
+                if (value < 0)
                 {
-                    if (value < 0)
-                    {
-                        text.text = "";
-                    }
-                    else if (value < bank.texts.Length)
-                    {
-                        text.text = bank.texts[value];
-                    }
-                    else
-                    {
-                        text.text = "";
-                    }
+                    text.text = "<color=red>ERROR PREFAB BROKE</color>";
                 }
+                else if (value < bank.texts.Length)
+                {
+                    text.text = bank.ReplaceStringVariables(bank.texts[value], card.sync.owner, random_player);
+                }
+                else
+                {
+                    text.text = "<color=red>ERROR PREFAB BROKE</color>";
+                }
+                if (card.sync.IsLocalOwner())
+                {
+                    RequestSerialization();
+                }
+            }
+        }
+        public string RandomNameVariable = "[RANDOM_NAME]";
+        public string PlayerNameVariable = "[PLAYER_NAME]";
+        [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(player_id))]
+        public int _player_id = -1001;
+        public int player_id
+        {
+            get => _player_id;
+            set
+            {
+                _player_id = value;
+                random_player = VRCPlayerApi.GetPlayerById(value);
+                text.text = bank.ReplaceStringVariables(text.text, card.sync.owner, random_player);
                 if (card.sync.IsLocalOwner())
                 {
                     RequestSerialization();
@@ -46,20 +63,32 @@ namespace MMMaellon
         {
 
         }
+        public void Start()
+        {
+            card.sync.AddListener(this);
+        }
 
         public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
         {
-
+            if (oldState == card.stateID + SmartObjectSync.STATE_CUSTOM)
+            {
+                if (card.sync.IsLocalOwner())
+                {
+                    text_id = bank.RandomCardId();
+                    player_id = bank.RandomPlayerId();
+                }
+            }
         }
 
+        VRCPlayerApi random_player;
 
-        void Start()
-        {
-
-        }
 #if COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset(){
             card = GetComponent<Card>();
+            card.sync.AddListener(this);
+        }
+        public void OnValidate(){
+            card.sync.AddListener(this);
         }
 #endif
     }

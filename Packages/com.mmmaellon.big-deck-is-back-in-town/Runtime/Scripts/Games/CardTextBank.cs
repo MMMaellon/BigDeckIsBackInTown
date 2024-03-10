@@ -25,7 +25,28 @@ namespace MMMaellon
         [NonSerialized]
         public int[] lengths = { 0 };
         [NonSerialized, UdonSynced]
-        public bool[] active = { true };
+        public bool[] _active = { true };
+        public bool[] active
+        {
+            get => _active;
+            set
+            {
+                _active = value;
+                CalcActiveBanks();
+            }
+        }
+        public string RandomNameVariable = "[RANDOM_NAME]";
+        public string PlayerNameVariable = "[PLAYER_NAME]";
+        public string ReplaceStringVariables(string input_str, VRCPlayerApi player, VRCPlayerApi random){
+            if (!Utilities.IsValid(player) || !Utilities.IsValid(random) || PlayerNameVariable.Length == 0)
+            {
+                return input_str;
+            }
+
+            input_str = input_str.Replace(PlayerNameVariable, player.displayName);
+            input_str = input_str.Replace(RandomNameVariable, random.displayName);
+            return input_str;
+        }
 
         [NonSerialized]
         public int total_active_length;
@@ -38,9 +59,11 @@ namespace MMMaellon
             total_active_length = 0;
         }
 
-        public int retries = 5;
+        public int retries = 3;
         int retry_count = 0;
+        [Header("Will try URL first unless it's blank. Falls back to the text file")]
         public VRCUrl url = new VRCUrl("https://gist.githubusercontent.com/MMMaellon/389fc91566655506f14e8571cf279ad5/raw/7566b25ad4bc526f29438d064e1a122ba1a7b9ae/example_bank.json");
+        public TextAsset text_file;
         public override void OnStringLoadSuccess(IVRCStringDownload result)
         {
             Debug.LogWarning(gameObject.name + " Loading URL SUCCESS");
@@ -53,14 +76,30 @@ namespace MMMaellon
             if (retry_count >= retries)
             {
                 //FUCK
+                LoadFile();
                 return;
             }
-            SendCustomEventDelayedSeconds(nameof(LoadURL), 30);
+            SendCustomEventDelayedSeconds(nameof(LoadURL), 10);
             retry_count++;
         }
         public void Start()
         {
-            LoadURL();
+            if (url.ToString() == "")
+            {
+                LoadFile();
+            }
+            else
+            {
+                LoadURL();
+            }
+        }
+
+        public void LoadFile()
+        {
+            if (text_file)
+            {
+                AsyncParse(text_file.text);
+            }
         }
 
         public void LoadURL()
@@ -96,7 +135,8 @@ namespace MMMaellon
                     bank_names[i] = keys[i].String;
                     Debug.LogWarning("Parsing bank " + bank_names[i]);
                     starts[i] = text_list.Count;
-                    foreach(var token in dict[keys[i]].DataList.ToArray()){
+                    foreach (var token in dict[keys[i]].DataList.ToArray())
+                    {
                         text_list.Add(token.String);
                     }
                     lengths[i] = text_list.Count - starts[i];
@@ -154,6 +194,76 @@ namespace MMMaellon
         public override void OnDeserialization()
         {
             CalcActiveBanks();
+        }
+        public bool limit_player_name_selection_by_distance = true;
+        public float max_distance = 10f;
+        DataList player_list = new DataList();
+        VRCPlayerApi[] players;
+        VRCPlayerApi random_player;
+        public int RandomPlayerId()
+        {
+            players = new VRCPlayerApi[VRCPlayerApi.GetPlayerCount()];
+            VRCPlayerApi.GetPlayers(players);
+            if (!limit_player_name_selection_by_distance)
+            {
+                random_player = players[UnityEngine.Random.Range(0, players.Length)];
+                if (Utilities.IsValid(random_player))
+                {
+                    return random_player.playerId;
+                }
+                else
+                {
+                    //I don't wanna get stuck in a retry loop so just return ourself
+                    return Networking.LocalPlayer.playerId;
+                }
+            }
+            player_list.Clear();
+            foreach (var player in players)
+            {
+                if (!Utilities.IsValid(player) || (Vector3.Distance(transform.position, player.GetPosition()) > max_distance))
+                {
+                    continue;
+                }
+                player_list.Add(player.playerId);
+            }
+            if (player_list.Count == 0)
+            {
+                return players[UnityEngine.Random.Range(0, players.Length)].playerId;
+            }
+            return player_list[UnityEngine.Random.Range(0, player_list.Count)].Int;
+        }
+
+        int random_card;
+        int skipped_cards;
+        int counted_cards;
+        public int RandomCardId()
+        {
+            if (total_active_length <= 0)
+            {
+                return -1001;
+            }
+            random_card = UnityEngine.Random.Range(0, total_active_length);
+            skipped_cards = 0;
+            for (int i = 0; i < lengths.Length; i++)
+            {
+                if (!active[i])
+                {
+                    skipped_cards += lengths[i];
+                    continue;
+                } else {
+                    counted_cards += lengths[i];
+                }
+                if (random_card < counted_cards)
+                {
+                    random_card = skipped_cards + random_card;
+                }
+            }
+            
+            if(random_card < 0 || random_card >= texts.Length){
+                return -1001;
+            }
+
+            return random_card;
         }
     }
 }

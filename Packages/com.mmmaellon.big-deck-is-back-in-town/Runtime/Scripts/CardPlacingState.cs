@@ -18,7 +18,7 @@ namespace MMMaellon
         public override void Interpolate(float interpolation)
         {
             real_interpolation = deal_duration <= 0 ? 1.0f : (Time.timeSinceLevelLoad - start_time) / deal_duration;
-            transform.position = sync.HermiteInterpolatePosition(start_pos, start_vel, sync.pos, Vector3.zero, real_interpolation);
+            transform.position = sync.HermiteInterpolatePosition(start_pos, start_vel, sync.pos, sync.vel, real_interpolation);
             transform.rotation = sync.HermiteInterpolateRotation(start_rot, start_spin, sync.rot, Vector3.zero, real_interpolation);
             if (real_interpolation >= 1.0f)
             {
@@ -82,17 +82,28 @@ namespace MMMaellon
         {
             throw_primed = throw_primed || sync.state == card.stateID + SmartObjectSync.STATE_CUSTOM || (sync.IsHeld() && sync.lastState == card.stateID + SmartObjectSync.STATE_CUSTOM);
         }
+        public bool first_throw_only = true;
         public override void OnDrop()
         {
-            if (!deal_on_throw || !throw_primed)
+            if (!deal_on_throw || (!throw_primed && first_throw_only))
             {
                 return;
             }
             throw_primed = false;
             SendCustomEventDelayedFrames(nameof(OnThrow), 2);
         }
+        float dist;
+        public bool desktop_throw_assist = true;
         public void OnThrow()
         {
+            if (desktop_throw_assist)
+            {
+                if (sync.rigid.velocity == Vector3.zero)
+                {
+                    sync.rigid.velocity = sync.owner.GetTrackingData(VRC.SDKBase.VRCPlayerApi.TrackingDataType.Head).rotation * Vector3.forward;
+                }
+                sync.rigid.velocity = sync.rigid.velocity.normalized * (2 * throw_min_velocity);
+            }
             if (sync.state != SmartObjectSync.STATE_INTERPOLATING || sync.rigid.velocity.magnitude < throw_min_velocity)
             {
                 return;
@@ -105,7 +116,14 @@ namespace MMMaellon
                 {
                     continue;
                 }
-                new_score = Vector3.Dot(sync.rigid.velocity, (current_spot.GetAimPosition(this) - transform.position).normalized) / Mathf.Pow(Vector3.Distance(current_spot.GetAimPosition(this), transform.position), 0.3f);
+                dist = Mathf.Pow(Vector3.Distance(current_spot.GetAimPosition(this), transform.position), 0.3f);
+                if (dist == 0)
+                {
+                    best_score = throw_threshold;
+                    best_spot = current_spot;
+                    break;
+                }
+                new_score = Vector3.Dot(sync.rigid.velocity, (current_spot.GetAimPosition(this) - transform.position).normalized) / dist;
 
                 if (new_score > best_score)
                 {
@@ -113,7 +131,7 @@ namespace MMMaellon
                     best_spot = current_spot;
                 }
             }
-            if (best_spot && best_score > throw_threshold)
+            if (best_spot && best_score >= throw_threshold)
             {
                 best_spot.Place(this);
             }

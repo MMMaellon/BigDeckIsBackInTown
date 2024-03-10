@@ -14,8 +14,9 @@ namespace MMMaellon
         public bool deal_on_interact = true;
         public Deck deck;
         public Transform placement_transform;
+        public Vector3 incoming_vel = Vector3.down;
         CardPlacingState card;
-        public void Start(){
+        public virtual void Start(){
             DisableInteractive = !deal_on_interact;
         }
         public void OnTriggerEnter(Collider other)
@@ -32,7 +33,7 @@ namespace MMMaellon
             Place(card);
         }
 
-        public void Deal(){
+        public virtual void Deal(){
             if (deck.next_card < 0 || deck.next_card >= deck.cards.Length)
             {
                 if(deck.deck_sync && deck.deck_sync.IsHeld() && !deck.deck_sync.IsLocalOwner()){
@@ -62,6 +63,7 @@ namespace MMMaellon
             }
             card.sync.pos = GetPlacementPosition(card);
             card.sync.rot = GetPlacementRotation(card);
+            card.sync.vel = GetPlacementVelocity(card);
             card.EnterState();
         }
         public virtual Vector3 GetPlacementPosition(CardPlacingState card){
@@ -69,6 +71,9 @@ namespace MMMaellon
         }
         public virtual Quaternion GetPlacementRotation(CardPlacingState card){
             return placement_transform.rotation;
+        }
+        public virtual Vector3 GetPlacementVelocity(CardPlacingState card){
+            return incoming_vel;
         }
         public virtual Vector3 GetAimPosition(CardPlacingState card){
             return placement_transform.position;

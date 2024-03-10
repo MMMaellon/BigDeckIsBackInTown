@@ -178,7 +178,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.06480575, y: 0.09082155, z: 0.013312509}
-  m_Center: {x: 0, y: 0, z: 6.9849193e-10}
+  m_Center: {x: 0, y: 0, z: -0.006656255}
 --- !u!114 &2987308521890634204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ Transform:
   m_GameObject: {fileID: 3805336795663847792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0077}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -758,7 +758,7 @@ Transform:
   m_GameObject: {fileID: 5567437284985739172}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1955,9 +1955,6 @@ MonoBehaviour:
   sync: {fileID: 3754958696619049051}
   manager: {fileID: 0}
   card: {fileID: 9172415271310005250}
-  mesh: {fileID: 48343641674457738}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6895368853400378375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2401,9 +2398,6 @@ MonoBehaviour:
   sync: {fileID: 8502063625837336927}
   manager: {fileID: 0}
   card: {fileID: 1699675846844714329}
-  mesh: {fileID: 82756029332512743}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8923660860357681046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2865,9 +2859,6 @@ MonoBehaviour:
   sync: {fileID: 1466592177301273677}
   manager: {fileID: 0}
   card: {fileID: 4797471223397226975}
-  mesh: {fileID: 190284991984614167}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2431031361571093820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3311,9 +3302,6 @@ MonoBehaviour:
   sync: {fileID: 915554594466886654}
   manager: {fileID: 0}
   card: {fileID: 8923102189333731403}
-  mesh: {fileID: 264056520269574926}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1211399359341883469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,9 +3751,6 @@ MonoBehaviour:
   sync: {fileID: 6960414466048195625}
   manager: {fileID: 0}
   card: {fileID: 812167660221792431}
-  mesh: {fileID: 331300368150529092}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6672124039477698845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4221,9 +4206,6 @@ MonoBehaviour:
   sync: {fileID: 4383863520036264776}
   manager: {fileID: 0}
   card: {fileID: 813170090068742267}
-  mesh: {fileID: 405622149842076223}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5119445622255214364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4673,9 +4655,6 @@ MonoBehaviour:
   sync: {fileID: 3394332041595421351}
   manager: {fileID: 0}
   card: {fileID: 3063733895202983641}
-  mesh: {fileID: 737807566961637448}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1762664834803670013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5119,9 +5098,6 @@ MonoBehaviour:
   sync: {fileID: 7321621918931233254}
   manager: {fileID: 0}
   card: {fileID: 5420300585296320628}
-  mesh: {fileID: 834459547925008196}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4442157683476601393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5733,9 +5709,6 @@ MonoBehaviour:
   sync: {fileID: 5528769195176065372}
   manager: {fileID: 0}
   card: {fileID: 5625398798610361376}
-  mesh: {fileID: 991189230235508686}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4966881265712288020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6185,9 +6158,6 @@ MonoBehaviour:
   sync: {fileID: 7437910826393716474}
   manager: {fileID: 0}
   card: {fileID: 9218494162962168245}
-  mesh: {fileID: 1002166728416403217}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6002881313461282385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6643,9 +6613,6 @@ MonoBehaviour:
   sync: {fileID: 4594435392166029400}
   manager: {fileID: 0}
   card: {fileID: 2269232177547471399}
-  mesh: {fileID: 1425139936252359602}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1548561400291954608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7101,9 +7068,6 @@ MonoBehaviour:
   sync: {fileID: 7389309730154281208}
   manager: {fileID: 0}
   card: {fileID: 341124665372749531}
-  mesh: {fileID: 1433824134026351720}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7515369093708059640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7547,9 +7511,6 @@ MonoBehaviour:
   sync: {fileID: 5445834317138718156}
   manager: {fileID: 0}
   card: {fileID: 7974500722279889267}
-  mesh: {fileID: 1604165076557866107}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6661892011118688217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8167,9 +8128,6 @@ MonoBehaviour:
   sync: {fileID: 8735167380157133035}
   manager: {fileID: 0}
   card: {fileID: 2579556250930309046}
-  mesh: {fileID: 2079009129950592414}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8598353715946280815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8613,9 +8571,6 @@ MonoBehaviour:
   sync: {fileID: 8815199179294146555}
   manager: {fileID: 0}
   card: {fileID: 5317698179564391739}
-  mesh: {fileID: 2390535123480852386}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7027931863988901211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9077,9 +9032,6 @@ MonoBehaviour:
   sync: {fileID: 2727024357005118481}
   manager: {fileID: 0}
   card: {fileID: 5311937921473907438}
-  mesh: {fileID: 2535229119769458159}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4670698821014653293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9517,9 +9469,6 @@ MonoBehaviour:
   sync: {fileID: 3392487468447487539}
   manager: {fileID: 0}
   card: {fileID: 5465323574663665664}
-  mesh: {fileID: 2685190953080243187}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &373878000443909334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9975,9 +9924,6 @@ MonoBehaviour:
   sync: {fileID: 3910433674544461182}
   manager: {fileID: 0}
   card: {fileID: 4555577859085696897}
-  mesh: {fileID: 2766853704717338407}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5247265130583550326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10925,9 +10871,6 @@ MonoBehaviour:
   sync: {fileID: 8005725998647909039}
   manager: {fileID: 0}
   card: {fileID: 6582785967293971315}
-  mesh: {fileID: 3485182699862353719}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3693266207914502075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11383,9 +11326,6 @@ MonoBehaviour:
   sync: {fileID: 776752132276285862}
   manager: {fileID: 0}
   card: {fileID: 3557211579921565902}
-  mesh: {fileID: 3740106445525714655}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6756127302600405265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12003,9 +11943,6 @@ MonoBehaviour:
   sync: {fileID: 9133113890231726364}
   manager: {fileID: 0}
   card: {fileID: 6570792349854801108}
-  mesh: {fileID: 3965170447556545784}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3559104948315856744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12449,9 +12386,6 @@ MonoBehaviour:
   sync: {fileID: 2327628862871746442}
   manager: {fileID: 0}
   card: {fileID: 8351868629462883216}
-  mesh: {fileID: 4515595019258191579}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8953010138765550808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12913,9 +12847,6 @@ MonoBehaviour:
   sync: {fileID: 5610865118985759660}
   manager: {fileID: 0}
   card: {fileID: 7597118224392950534}
-  mesh: {fileID: 4521523883219963853}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5598593198247416813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13359,9 +13290,6 @@ MonoBehaviour:
   sync: {fileID: 1206579850878330676}
   manager: {fileID: 0}
   card: {fileID: 5673944105958201862}
-  mesh: {fileID: 4821290410819622200}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1061702174708538664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13811,9 +13739,6 @@ MonoBehaviour:
   sync: {fileID: 8943220253093674224}
   manager: {fileID: 0}
   card: {fileID: 5414121004591645099}
-  mesh: {fileID: 4934013597888020691}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1758566878401383227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14269,9 +14194,6 @@ MonoBehaviour:
   sync: {fileID: 8913757901687981506}
   manager: {fileID: 0}
   card: {fileID: 1545529453004392840}
-  mesh: {fileID: 5019952586767085743}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &691305571280413388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14721,9 +14643,6 @@ MonoBehaviour:
   sync: {fileID: 1142655113475108787}
   manager: {fileID: 0}
   card: {fileID: 5233148431468566266}
-  mesh: {fileID: 5124709766522628823}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7678902860798759531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15167,9 +15086,6 @@ MonoBehaviour:
   sync: {fileID: 5586737028387816328}
   manager: {fileID: 0}
   card: {fileID: 5900381320475872868}
-  mesh: {fileID: 5164767222153942795}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5415378133431758671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15781,9 +15697,6 @@ MonoBehaviour:
   sync: {fileID: 5377090203839574227}
   manager: {fileID: 0}
   card: {fileID: 2487518794347043755}
-  mesh: {fileID: 5479961292648958006}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6182628589365602912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16239,9 +16152,6 @@ MonoBehaviour:
   sync: {fileID: 2816636856548844082}
   manager: {fileID: 0}
   card: {fileID: 5687217467490295492}
-  mesh: {fileID: 5549936625616856081}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8839900237721864068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16691,9 +16601,6 @@ MonoBehaviour:
   sync: {fileID: 7881893690667010762}
   manager: {fileID: 0}
   card: {fileID: 9140702882394199638}
-  mesh: {fileID: 5816129409058034598}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &130135880568300115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17311,9 +17218,6 @@ MonoBehaviour:
   sync: {fileID: 2370966634728114033}
   manager: {fileID: 0}
   card: {fileID: 1771184030958391753}
-  mesh: {fileID: 6124093896734004849}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6151264739853392127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17769,9 +17673,6 @@ MonoBehaviour:
   sync: {fileID: 5132023103519068146}
   manager: {fileID: 0}
   card: {fileID: 6954474994969798854}
-  mesh: {fileID: 6318614288555319419}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5083720679194387355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18215,9 +18116,6 @@ MonoBehaviour:
   sync: {fileID: 156932644685263897}
   manager: {fileID: 0}
   card: {fileID: 4440131754503239248}
-  mesh: {fileID: 6337642709297239190}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8781376677853233407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18667,9 +18565,6 @@ MonoBehaviour:
   sync: {fileID: 7588602729471758749}
   manager: {fileID: 0}
   card: {fileID: 5422258691246952047}
-  mesh: {fileID: 6356745375410079287}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6591002749569215468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19125,9 +19020,6 @@ MonoBehaviour:
   sync: {fileID: 7763850992921490268}
   manager: {fileID: 0}
   card: {fileID: 3049214706490409323}
-  mesh: {fileID: 6386055732212377756}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4617901118460231091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19571,9 +19463,6 @@ MonoBehaviour:
   sync: {fileID: 1696800331393489126}
   manager: {fileID: 0}
   card: {fileID: 3470322670066852643}
-  mesh: {fileID: 6410757454238575216}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &733761629260729909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20185,9 +20074,6 @@ MonoBehaviour:
   sync: {fileID: 8099956040835680155}
   manager: {fileID: 0}
   card: {fileID: 2620786811276202969}
-  mesh: {fileID: 6993702988350080887}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6911221611671171182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20649,9 +20535,6 @@ MonoBehaviour:
   sync: {fileID: 1301049439231296122}
   manager: {fileID: 0}
   card: {fileID: 3743663023160376848}
-  mesh: {fileID: 7233706197676105720}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &550205782202003069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21095,9 +20978,6 @@ MonoBehaviour:
   sync: {fileID: 3355979857739319326}
   manager: {fileID: 0}
   card: {fileID: 6943178384392853497}
-  mesh: {fileID: 7368578127993054398}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2433470331763345963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21547,9 +21427,6 @@ MonoBehaviour:
   sync: {fileID: 2821978426011385098}
   manager: {fileID: 0}
   card: {fileID: 6325510164380231020}
-  mesh: {fileID: 7676882376458917009}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8337197544128765243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21999,9 +21876,6 @@ MonoBehaviour:
   sync: {fileID: 3518252231197703800}
   manager: {fileID: 0}
   card: {fileID: 734814948821960640}
-  mesh: {fileID: 7730768854427360650}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2780445703211082876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22445,9 +22319,6 @@ MonoBehaviour:
   sync: {fileID: 2512279579573489160}
   manager: {fileID: 0}
   card: {fileID: 5917025253800763271}
-  mesh: {fileID: 7778559485973564495}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1004902783598226070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22909,9 +22780,6 @@ MonoBehaviour:
   sync: {fileID: 5301939493368633612}
   manager: {fileID: 0}
   card: {fileID: 1317510406735087191}
-  mesh: {fileID: 7814967368459046829}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8923636608207812974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23349,9 +23217,6 @@ MonoBehaviour:
   sync: {fileID: 7701151596688469655}
   manager: {fileID: 0}
   card: {fileID: 7578310317820957365}
-  mesh: {fileID: 7832667853692180352}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1295042093014419186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23813,9 +23678,6 @@ MonoBehaviour:
   sync: {fileID: 9079242057071310834}
   manager: {fileID: 0}
   card: {fileID: 8429883799363279159}
-  mesh: {fileID: 7929148138593953316}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &700236917114473394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24427,9 +24289,6 @@ MonoBehaviour:
   sync: {fileID: 562088907617797279}
   manager: {fileID: 0}
   card: {fileID: 8971882624430444331}
-  mesh: {fileID: 8046553474433825296}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &9013984677784040202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24879,9 +24738,6 @@ MonoBehaviour:
   sync: {fileID: 8898260780988696627}
   manager: {fileID: 0}
   card: {fileID: 3209715970846562247}
-  mesh: {fileID: 8078571890040044188}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7206258664543495610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25331,9 +25187,6 @@ MonoBehaviour:
   sync: {fileID: 3480233570570500224}
   manager: {fileID: 0}
   card: {fileID: 766779395574623192}
-  mesh: {fileID: 8147219079489413200}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4192719903102706474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26022,9 +25875,6 @@ MonoBehaviour:
   sync: {fileID: 4396638608374487236}
   manager: {fileID: 0}
   card: {fileID: 4514065110667410236}
-  mesh: {fileID: 8860204888789066858}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8435940239999812251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26480,9 +26330,6 @@ MonoBehaviour:
   sync: {fileID: 7889495720442104342}
   manager: {fileID: 0}
   card: {fileID: 381005746119182047}
-  mesh: {fileID: 8919721065340251560}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3334608866014008041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27100,9 +26947,6 @@ MonoBehaviour:
   sync: {fileID: 5690420403474307341}
   manager: {fileID: 0}
   card: {fileID: 3340296152094274112}
-  mesh: {fileID: 9184391369422108307}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8238689843896408653
 MonoBehaviour:
   m_ObjectHideFlags: 0
