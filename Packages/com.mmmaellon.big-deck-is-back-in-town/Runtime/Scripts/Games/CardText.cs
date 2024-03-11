@@ -23,9 +23,14 @@ namespace MMMaellon
             set
             {
                 _text_id = value;
+                if (card.sync.IsLocalOwner())
+                {
+                    RequestSerialization();
+                }
+                Debug.LogWarning("we updated the text " + value);
                 if (value < 0)
                 {
-                    text.text = "<color=red>ERROR PREFAB BROKE</color>";
+                    text.text = "";
                 }
                 else if (value < bank.texts.Length)
                 {
@@ -34,10 +39,6 @@ namespace MMMaellon
                 else
                 {
                     text.text = "<color=red>ERROR PREFAB BROKE</color>";
-                }
-                if (card.sync.IsLocalOwner())
-                {
-                    RequestSerialization();
                 }
             }
         }

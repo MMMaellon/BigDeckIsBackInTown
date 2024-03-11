@@ -13,7 +13,7 @@ namespace MMMaellon
     {
         public CardTextBank bank;
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(submitted_text))]
-        public int _submitted_text;
+        public int _submitted_text = -1001;
         public int submitted_text
         {
             get => _submitted_text;
@@ -36,6 +36,14 @@ namespace MMMaellon
                 {
                     animator.SetTrigger(place_parameter);
                 }
+                foreach (GameSubmissionListener listener in placement_listeners)
+                {
+                    listener.OnTextSubmitted(submitted_text_str, this);
+                }
+                if (Networking.LocalPlayer.IsOwner(gameObject))
+                {
+                    RequestSerialization();
+                }
             }
         }
         VRCPlayerApi submitted_player;
@@ -48,6 +56,18 @@ namespace MMMaellon
             {
                 _submitted_player_id = value;
                 submitted_player = VRCPlayerApi.GetPlayerById(value);
+                if (value < 0)
+                {
+                    submitted_text_str = "";
+                }
+                else if (value < bank.texts.Length)
+                {
+                    submitted_text_str = bank.ReplaceStringVariables(bank.texts[value], Networking.GetOwner(gameObject), submitted_player);
+                }
+                else
+                {
+                    submitted_text_str = "<color=red>ERROR PREFAB BROKE</color>";
+                }
             }
         }
 
@@ -65,8 +85,8 @@ namespace MMMaellon
             {
                 return;
             }
-            submitted_text = card_text.text_id;
             submitted_player_id = card_text.player_id;
+            submitted_text = card_text.text_id;
             RequestSerialization();
             SendCustomEventDelayedSeconds(nameof(RespawnPlaced), 1f);
             foreach (GameSubmissionListener listener in placement_listeners)
@@ -86,25 +106,51 @@ namespace MMMaellon
         public float angle_limit = 10f;
         public override Vector3 GetAimPosition(CardPlacingState card)
         {
-            Debug.LogWarning("ue");
-            return card.transform.position;
+            if (aimed)
+            {
+                return card.transform.position;
+            }
+            return base.GetAimPosition(card);
         }
 
-        public Animator animator;
         public string look_parameter = "look";
         public string place_parameter = "place";
         VRCPlayerApi.TrackingData head_data;
         public float update_delay = 0.25f;
         int last_update_frame;
 
-        public void LateUpdate()
+        [System.NonSerialized]
+        public bool aimed = false;
+        public void LookUpdate()
         {
+            if (!allow_throwing)
+            {
+                return;
+            }
             head_data = Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
             transform.rotation = Quaternion.LookRotation(transform.position - head_data.position);
-            allow_throwing = Vector3.Angle(head_data.rotation * Vector3.forward, placement_transform.position - head_data.position) < angle_limit;
+            aimed = Vector3.Angle(head_data.rotation * Vector3.forward, placement_transform.position - head_data.position) < angle_limit;
             if (animator)
             {
-                animator.SetBool(look_parameter, allow_throwing);
+                animator.SetBool(look_parameter, aimed);
+                animator.SetBool(active_parameter, allow_throwing);
+            }
+            SendCustomEventDelayedFrames(nameof(LookUpdate), 1);
+        }
+        public override bool allow_throwing
+        {
+            get => _allow_throwing;
+            set
+            {
+                _allow_throwing = value;
+                if (animator)
+                {
+                    animator.SetBool(active_parameter, value);
+                }
+                if (value)
+                {
+                    SendCustomEventDelayedFrames(nameof(LookUpdate), 1);
+                }
             }
         }
     }

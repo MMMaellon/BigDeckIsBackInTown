@@ -68,12 +68,17 @@ namespace MMMaellon
             }
         }
         public Card[] cards;
-        readonly DataList cards_in_decks = new DataList();
         [System.NonSerialized]
+        public readonly DataList cards_in_decks = new DataList();
+        [HideInInspector]
         public SmartObjectSync deck_sync;
-        public void Start()
+        bool on_enable_ran = false;
+        public void OnEnable()
         {
-            deck_sync = GetComponent<SmartObjectSync>();
+            if (on_enable_ran)
+            {
+                return;
+            }
             for (int i = 0; i < cards.Length; i++)
             {
                 if (cards[i].sync.state == cards[i].stateID)
@@ -85,9 +90,11 @@ namespace MMMaellon
             {
                 ResetDeck();
             }
+            on_enable_ran = true;
         }
 
         DataToken temp_token;
+        public bool automatically_pick_next_card = true;
         public void PickNextCard()
         {
             if (!Networking.LocalPlayer.IsOwner(gameObject))
@@ -115,7 +122,10 @@ namespace MMMaellon
                 card.EnterState();
                 card.selected = false;
             }
-            PickNextCard();
+            if (automatically_pick_next_card)
+            {
+                PickNextCard();
+            }
         }
 
         Card temp_card;
@@ -136,14 +146,14 @@ namespace MMMaellon
                     cards_in_decks.Add(new DataToken(temp_card));
                     if (deck_sync && deck_sync.IsHeld())
                     {
-                        if (deck_sync.IsOwnerLocal())
+                        if (automatically_pick_next_card &&deck_sync.IsOwnerLocal())
                         {
                             PickNextCard();
                         }
                     }
                     else
                     {
-                        if (sync.IsOwnerLocal())
+                        if (automatically_pick_next_card && sync.IsOwnerLocal())
                         {
                             Networking.SetOwner(Networking.LocalPlayer, gameObject);
                             PickNextCard();
@@ -159,14 +169,14 @@ namespace MMMaellon
                 {
                     if (deck_sync && deck_sync.IsHeld())
                     {
-                        if (deck_sync.IsOwnerLocal())
+                        if (automatically_pick_next_card && deck_sync.IsOwnerLocal())
                         {
                             PickNextCard();
                         }
                     }
                     else
                     {
-                        if (sync.IsOwnerLocal())
+                        if (automatically_pick_next_card && sync.IsOwnerLocal())
                         {
                             Networking.SetOwner(Networking.LocalPlayer, gameObject);
                             PickNextCard();
@@ -185,6 +195,7 @@ namespace MMMaellon
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void OnValidate()
         {
+            deck_sync = GetComponent<SmartObjectSync>();
             for (int i = 0; i < cards.Length; i++)
             {
                 cards[i].id = i;

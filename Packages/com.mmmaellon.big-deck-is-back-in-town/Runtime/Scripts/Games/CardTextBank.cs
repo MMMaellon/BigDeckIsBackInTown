@@ -17,9 +17,9 @@ namespace MMMaellon
     public class CardTextBank : UdonSharpBehaviour
     {
         [NonSerialized]
-        public string[] texts;
+        public string[] texts = new string[0];
         [NonSerialized]
-        public string[] bank_names;
+        public string[] bank_names = new string[0];
         [NonSerialized]
         public int[] starts = { 0 };
         [NonSerialized]
@@ -37,7 +37,8 @@ namespace MMMaellon
         }
         public string RandomNameVariable = "[RANDOM_NAME]";
         public string PlayerNameVariable = "[PLAYER_NAME]";
-        public string ReplaceStringVariables(string input_str, VRCPlayerApi player, VRCPlayerApi random){
+        public string ReplaceStringVariables(string input_str, VRCPlayerApi player, VRCPlayerApi random)
+        {
             if (!Utilities.IsValid(player) || !Utilities.IsValid(random) || PlayerNameVariable.Length == 0)
             {
                 return input_str;
@@ -170,7 +171,10 @@ namespace MMMaellon
             if (Networking.LocalPlayer.IsOwner(gameObject))
             {
                 active = new bool[bank_names.Length];
-                active[0] = true;//the default text bank
+                for (int i = 0; i < active.Length; i++)
+                {
+                    active[i] = true;
+                }
                 RequestSerialization();
             }
             CalcActiveBanks();
@@ -185,7 +189,7 @@ namespace MMMaellon
             total_active_length = 0;
             for (int i = 0; i < lengths.Length; i++)
             {
-                if (active[i])
+                if (i < active.Length && active[i])
                 {
                     total_active_length += lengths[i];
                 }
@@ -228,7 +232,7 @@ namespace MMMaellon
             }
             if (player_list.Count == 0)
             {
-                return players[UnityEngine.Random.Range(0, players.Length)].playerId;
+                return Networking.LocalPlayer.playerId;
             }
             return player_list[UnityEngine.Random.Range(0, player_list.Count)].Int;
         }
@@ -250,7 +254,9 @@ namespace MMMaellon
                 {
                     skipped_cards += lengths[i];
                     continue;
-                } else {
+                }
+                else
+                {
                     counted_cards += lengths[i];
                 }
                 if (random_card < counted_cards)
@@ -258,8 +264,9 @@ namespace MMMaellon
                     random_card = skipped_cards + random_card;
                 }
             }
-            
-            if(random_card < 0 || random_card >= texts.Length){
+
+            if (random_card < 0 || random_card >= texts.Length)
+            {
                 return -1001;
             }
 

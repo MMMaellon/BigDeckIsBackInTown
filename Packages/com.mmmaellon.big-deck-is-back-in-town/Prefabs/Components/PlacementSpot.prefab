@@ -174,6 +174,7 @@ MonoBehaviour:
   deal_on_interact: 0
   deck: {fileID: 0}
   placement_transform: {fileID: 928564063268443354}
+  incoming_vel: {x: 0, y: -1, z: 0}
 --- !u!114 &972566355228064843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,13 +736,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6775414207245343532}
   serializedVersion: 2
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
+  m_LocalRotation: {x: 0.0000005066394, y: -1, z: 0.000000059604638, w: -0.000000029802319}
   m_LocalPosition: {x: 0, y: 0.1, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4419737372584301425}
-  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: -180}
 --- !u!1 &7515359933145250125
 GameObject:
   m_ObjectHideFlags: 0

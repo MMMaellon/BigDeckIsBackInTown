@@ -1993,6 +1993,8 @@ MonoBehaviour:
   - {fileID: 3294531453804414468}
   - {fileID: 681841302757659470}
   - {fileID: 4824521013117501494}
+  deck_sync: {fileID: 1548586778933505196}
+  automatically_pick_next_card: 1
 --- !u!114 &2864526114264062199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4133,6 +4135,7 @@ MonoBehaviour:
   id: 3
   card_physics: 1
   render_component: {fileID: 119965165740907934}
+  child: {fileID: 0}
   collider_component: {fileID: 3498948990575836787}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &3498948990575836787
@@ -4219,6 +4222,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 3486693338987798847}
 --- !u!114 &2407374218697643656
 MonoBehaviour:
@@ -4273,9 +4278,6 @@ MonoBehaviour:
   sync: {fileID: 3073443880741487266}
   manager: {fileID: 0}
   card: {fileID: 3486693338987798847}
-  mesh: {fileID: 119965165740907934}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6636103294379321758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4585,6 +4587,7 @@ MonoBehaviour:
   id: 0
   card_physics: 1
   render_component: {fileID: 391387127624703271}
+  child: {fileID: 0}
   collider_component: {fileID: 1759377231652782075}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1759377231652782075
@@ -4671,6 +4674,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 7507452106063057463}
 --- !u!114 &1826786469341702117
 MonoBehaviour:
@@ -4725,9 +4730,6 @@ MonoBehaviour:
   sync: {fileID: 3660615398910152314}
   manager: {fileID: 0}
   card: {fileID: 7507452106063057463}
-  mesh: {fileID: 391387127624703271}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8537360182209619925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5211,6 +5213,7 @@ MonoBehaviour:
   id: 18
   card_physics: 1
   render_component: {fileID: 715777206338927011}
+  child: {fileID: 0}
   collider_component: {fileID: 1958303314027199462}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1958303314027199462
@@ -5297,6 +5300,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 4854272244455352894}
 --- !u!114 &2016399699121155034
 MonoBehaviour:
@@ -5351,9 +5356,6 @@ MonoBehaviour:
   sync: {fileID: 162364834132154136}
   manager: {fileID: 0}
   card: {fileID: 4854272244455352894}
-  mesh: {fileID: 715777206338927011}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2334007718048049116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5663,6 +5665,7 @@ MonoBehaviour:
   id: 38
   card_physics: 1
   render_component: {fileID: 993179899994087303}
+  child: {fileID: 0}
   collider_component: {fileID: 5784255547233767468}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &5784255547233767468
@@ -5749,6 +5752,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6705903248952370232}
 --- !u!114 &7536889762469275166
 MonoBehaviour:
@@ -5803,9 +5808,6 @@ MonoBehaviour:
   sync: {fileID: 3525750135238687549}
   manager: {fileID: 0}
   card: {fileID: 6705903248952370232}
-  mesh: {fileID: 993179899994087303}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6873321648788956733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6289,6 +6291,7 @@ MonoBehaviour:
   id: 4
   card_physics: 1
   render_component: {fileID: 1285300179064188110}
+  child: {fileID: 0}
   collider_component: {fileID: 2703898954542198079}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2703898954542198079
@@ -6375,6 +6378,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6134216632251888410}
 --- !u!114 &8968820141540073176
 MonoBehaviour:
@@ -6429,9 +6434,6 @@ MonoBehaviour:
   sync: {fileID: 827603219967780863}
   manager: {fileID: 0}
   card: {fileID: 6134216632251888410}
-  mesh: {fileID: 1285300179064188110}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4762219765001639904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6735,6 +6737,7 @@ MonoBehaviour:
   id: 6
   card_physics: 1
   render_component: {fileID: 1332558952517068363}
+  child: {fileID: 0}
   collider_component: {fileID: 8953765679588566572}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &8953765679588566572
@@ -6821,6 +6824,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 1274800440544725437}
 --- !u!114 &60996732940886674
 MonoBehaviour:
@@ -6875,9 +6880,6 @@ MonoBehaviour:
   sync: {fileID: 4693720477590528497}
   manager: {fileID: 0}
   card: {fileID: 1274800440544725437}
-  mesh: {fileID: 1332558952517068363}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5374349302890391475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7181,6 +7183,7 @@ MonoBehaviour:
   id: 17
   card_physics: 1
   render_component: {fileID: 1337223659422679653}
+  child: {fileID: 0}
   collider_component: {fileID: 6425899213614459265}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &6425899213614459265
@@ -7267,6 +7270,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 377267157704602249}
 --- !u!114 &1547702766484521723
 MonoBehaviour:
@@ -7321,9 +7326,6 @@ MonoBehaviour:
   sync: {fileID: 5742104604786959491}
   manager: {fileID: 0}
   card: {fileID: 377267157704602249}
-  mesh: {fileID: 1337223659422679653}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2097977026013558656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7639,6 +7641,7 @@ MonoBehaviour:
   id: 14
   card_physics: 1
   render_component: {fileID: 1415618051161424820}
+  child: {fileID: 0}
   collider_component: {fileID: 2995942338521130803}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2995942338521130803
@@ -7725,6 +7728,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6870239188233730991}
 --- !u!114 &6719540222742842728
 MonoBehaviour:
@@ -7779,9 +7784,6 @@ MonoBehaviour:
   sync: {fileID: 3952594445172920429}
   manager: {fileID: 0}
   card: {fileID: 6870239188233730991}
-  mesh: {fileID: 1415618051161424820}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5514497058499534160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8085,6 +8087,7 @@ MonoBehaviour:
   id: 34
   card_physics: 1
   render_component: {fileID: 1623686016141372765}
+  child: {fileID: 0}
   collider_component: {fileID: 8762963572526330797}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &8762963572526330797
@@ -8171,6 +8174,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2370293952682464053}
 --- !u!114 &1266654903615761956
 MonoBehaviour:
@@ -8225,9 +8230,6 @@ MonoBehaviour:
   sync: {fileID: 5355913554290113258}
   manager: {fileID: 0}
   card: {fileID: 2370293952682464053}
-  mesh: {fileID: 1623686016141372765}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6442136462520154199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8543,6 +8545,7 @@ MonoBehaviour:
   id: 28
   card_physics: 1
   render_component: {fileID: 1765598498222176983}
+  child: {fileID: 0}
   collider_component: {fileID: 3969272972122809593}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &3969272972122809593
@@ -8629,6 +8632,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 840822126376406266}
 --- !u!114 &3430890699177279869
 MonoBehaviour:
@@ -8683,9 +8688,6 @@ MonoBehaviour:
   sync: {fileID: 1730337692861125493}
   manager: {fileID: 0}
   card: {fileID: 840822126376406266}
-  mesh: {fileID: 1765598498222176983}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &92883160022538199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8995,6 +8997,7 @@ MonoBehaviour:
   id: 8
   card_physics: 1
   render_component: {fileID: 1843539293284853223}
+  child: {fileID: 0}
   collider_component: {fileID: 2139272701428839495}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2139272701428839495
@@ -9081,6 +9084,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 169845888919004201}
 --- !u!114 &5667985275531429727
 MonoBehaviour:
@@ -9135,9 +9140,6 @@ MonoBehaviour:
   sync: {fileID: 100705991398558891}
   manager: {fileID: 0}
   card: {fileID: 169845888919004201}
-  mesh: {fileID: 1843539293284853223}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3816819162155288227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9447,6 +9449,7 @@ MonoBehaviour:
   id: 11
   card_physics: 1
   render_component: {fileID: 1874892983045298185}
+  child: {fileID: 0}
   collider_component: {fileID: 8173819859621500088}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &8173819859621500088
@@ -9533,6 +9536,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6524522803925828816}
 --- !u!114 &5509676530750199795
 MonoBehaviour:
@@ -9587,9 +9592,6 @@ MonoBehaviour:
   sync: {fileID: 2808221027699502358}
   manager: {fileID: 0}
   card: {fileID: 6524522803925828816}
-  mesh: {fileID: 1874892983045298185}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4549539704919447377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9899,6 +9901,7 @@ MonoBehaviour:
   id: 10
   card_physics: 1
   render_component: {fileID: 2107637256339747439}
+  child: {fileID: 0}
   collider_component: {fileID: 9130685704917161571}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &9130685704917161571
@@ -9985,6 +9988,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 9064652412432991237}
 --- !u!114 &3725315366681966953
 MonoBehaviour:
@@ -10039,9 +10044,6 @@ MonoBehaviour:
   sync: {fileID: 3339570812969911046}
   manager: {fileID: 0}
   card: {fileID: 9064652412432991237}
-  mesh: {fileID: 2107637256339747439}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5581576891562005279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10351,6 +10353,7 @@ MonoBehaviour:
   id: 30
   card_physics: 1
   render_component: {fileID: 2341568094217762116}
+  child: {fileID: 0}
   collider_component: {fileID: 3867436290832725769}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &3867436290832725769
@@ -10437,6 +10440,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 4304329245632378692}
 --- !u!114 &3232205791081294905
 MonoBehaviour:
@@ -10491,9 +10496,6 @@ MonoBehaviour:
   sync: {fileID: 2593382073154060722}
   manager: {fileID: 0}
   card: {fileID: 4304329245632378692}
-  mesh: {fileID: 2341568094217762116}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &9065216448257130261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10797,6 +10799,7 @@ MonoBehaviour:
   id: 49
   card_physics: 1
   render_component: {fileID: 2350856967955271333}
+  child: {fileID: 0}
   collider_component: {fileID: 3798592634152216414}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &3798592634152216414
@@ -10883,6 +10886,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 3294531453804414468}
 --- !u!114 &5174101885461453361
 MonoBehaviour:
@@ -10937,9 +10942,6 @@ MonoBehaviour:
   sync: {fileID: 5845914059656357385}
   manager: {fileID: 0}
   card: {fileID: 3294531453804414468}
-  mesh: {fileID: 2350856967955271333}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7428354823317134114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11249,6 +11251,7 @@ MonoBehaviour:
   id: 47
   card_physics: 1
   render_component: {fileID: 2610503359760234546}
+  child: {fileID: 0}
   collider_component: {fileID: 1840472069388288705}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1840472069388288705
@@ -11335,6 +11338,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6542966059744580491}
 --- !u!114 &1717209352195964871
 MonoBehaviour:
@@ -11389,9 +11394,6 @@ MonoBehaviour:
   sync: {fileID: 4817196020747892612}
   manager: {fileID: 0}
   card: {fileID: 6542966059744580491}
-  mesh: {fileID: 2610503359760234546}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1200517776560789572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11707,6 +11709,7 @@ MonoBehaviour:
   id: 32
   card_physics: 1
   render_component: {fileID: 2760489097258376565}
+  child: {fileID: 0}
   collider_component: {fileID: 920533859953849374}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &920533859953849374
@@ -11793,6 +11796,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 8632009407598437854}
 --- !u!114 &3797815945325083595
 MonoBehaviour:
@@ -11847,9 +11852,6 @@ MonoBehaviour:
   sync: {fileID: 5329318012234475162}
   manager: {fileID: 0}
   card: {fileID: 8632009407598437854}
-  mesh: {fileID: 2760489097258376565}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1687680843596576231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12159,6 +12161,7 @@ MonoBehaviour:
   id: 21
   card_physics: 1
   render_component: {fileID: 2812641814678077347}
+  child: {fileID: 0}
   collider_component: {fileID: 7042530019761014275}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &7042530019761014275
@@ -12245,6 +12248,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 7335111311622101724}
 --- !u!114 &6572712916937706418
 MonoBehaviour:
@@ -12299,9 +12304,6 @@ MonoBehaviour:
   sync: {fileID: 420938980930060590}
   manager: {fileID: 0}
   card: {fileID: 7335111311622101724}
-  mesh: {fileID: 2812641814678077347}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2022997551562672426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12611,6 +12613,7 @@ MonoBehaviour:
   id: 13
   card_physics: 1
   render_component: {fileID: 2882543450657944895}
+  child: {fileID: 0}
   collider_component: {fileID: 722739518576518192}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &722739518576518192
@@ -12697,6 +12700,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 7349737907642467229}
 --- !u!114 &2236666188129708769
 MonoBehaviour:
@@ -12751,9 +12756,6 @@ MonoBehaviour:
   sync: {fileID: 6036792134998295790}
   manager: {fileID: 0}
   card: {fileID: 7349737907642467229}
-  mesh: {fileID: 2882543450657944895}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &841082599459234282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13063,6 +13065,7 @@ MonoBehaviour:
   id: 1
   card_physics: 1
   render_component: {fileID: 2917728495649935298}
+  child: {fileID: 0}
   collider_component: {fileID: 6174347610247972521}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &6174347610247972521
@@ -13149,6 +13152,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 4193021653513453705}
 --- !u!114 &3348835257208680104
 MonoBehaviour:
@@ -13203,9 +13208,6 @@ MonoBehaviour:
   sync: {fileID: 4700850194682692043}
   manager: {fileID: 0}
   card: {fileID: 4193021653513453705}
-  mesh: {fileID: 2917728495649935298}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2476073654384085455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13521,6 +13523,7 @@ MonoBehaviour:
   id: 5
   card_physics: 1
   render_component: {fileID: 3033630769601139572}
+  child: {fileID: 0}
   collider_component: {fileID: 4319479619259798828}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &4319479619259798828
@@ -13607,6 +13610,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 1938557982180607312}
 --- !u!114 &2551983639835987160
 MonoBehaviour:
@@ -13661,9 +13666,6 @@ MonoBehaviour:
   sync: {fileID: 4142135854035476103}
   manager: {fileID: 0}
   card: {fileID: 1938557982180607312}
-  mesh: {fileID: 3033630769601139572}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1626703589102684206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13967,6 +13969,7 @@ MonoBehaviour:
   id: 15
   card_physics: 1
   render_component: {fileID: 3123665962202215525}
+  child: {fileID: 0}
   collider_component: {fileID: 2578474466256959567}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2578474466256959567
@@ -14053,6 +14056,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 3564074320118483150}
 --- !u!114 &1449512891610333436
 MonoBehaviour:
@@ -14107,9 +14112,6 @@ MonoBehaviour:
   sync: {fileID: 4185092602159491518}
   manager: {fileID: 0}
   card: {fileID: 3564074320118483150}
-  mesh: {fileID: 3123665962202215525}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &408668596603603860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14419,6 +14421,7 @@ MonoBehaviour:
   id: 26
   card_physics: 1
   render_component: {fileID: 3263045885871061237}
+  child: {fileID: 0}
   collider_component: {fileID: 508274643207091515}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &508274643207091515
@@ -14505,6 +14508,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 638100605338671112}
 --- !u!114 &2189573574048166932
 MonoBehaviour:
@@ -14559,9 +14564,6 @@ MonoBehaviour:
   sync: {fileID: 849958497346495172}
   manager: {fileID: 0}
   card: {fileID: 638100605338671112}
-  mesh: {fileID: 3263045885871061237}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3483315250085946048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14877,6 +14879,7 @@ MonoBehaviour:
   id: 45
   card_physics: 1
   render_component: {fileID: 3413871868523308080}
+  child: {fileID: 0}
   collider_component: {fileID: 5817115859401220034}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &5817115859401220034
@@ -14963,6 +14966,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 4071994595526594488}
 --- !u!114 &2172735841900363617
 MonoBehaviour:
@@ -15017,9 +15022,6 @@ MonoBehaviour:
   sync: {fileID: 6355930414282358455}
   manager: {fileID: 0}
   card: {fileID: 4071994595526594488}
-  mesh: {fileID: 3413871868523308080}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &9081753643552893959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15491,6 +15493,7 @@ MonoBehaviour:
   id: 44
   card_physics: 1
   render_component: {fileID: 3498021517354294844}
+  child: {fileID: 0}
   collider_component: {fileID: 4661459665795353049}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &4661459665795353049
@@ -15577,6 +15580,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2712229088841385366}
 --- !u!114 &2755444397064487759
 MonoBehaviour:
@@ -15631,9 +15636,6 @@ MonoBehaviour:
   sync: {fileID: 7142888088274299141}
   manager: {fileID: 0}
   card: {fileID: 2712229088841385366}
-  mesh: {fileID: 3498021517354294844}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8932021168125504142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15949,6 +15951,7 @@ MonoBehaviour:
   id: 35
   card_physics: 1
   render_component: {fileID: 3528066079729125604}
+  child: {fileID: 0}
   collider_component: {fileID: 1870503108859051505}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1870503108859051505
@@ -16035,6 +16038,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2404438017901021063}
 --- !u!114 &6336189460739469807
 MonoBehaviour:
@@ -16089,9 +16094,6 @@ MonoBehaviour:
   sync: {fileID: 3005583799784404145}
   manager: {fileID: 0}
   card: {fileID: 2404438017901021063}
-  mesh: {fileID: 3528066079729125604}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4995592361692063860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16557,6 +16559,7 @@ MonoBehaviour:
   id: 16
   card_physics: 1
   render_component: {fileID: 3710378850437900807}
+  child: {fileID: 0}
   collider_component: {fileID: 6666935228080333690}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &6666935228080333690
@@ -16643,6 +16646,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 5047212450752353435}
 --- !u!114 &1413679978108052377
 MonoBehaviour:
@@ -16697,9 +16702,6 @@ MonoBehaviour:
   sync: {fileID: 3914963735424163865}
   manager: {fileID: 0}
   card: {fileID: 5047212450752353435}
-  mesh: {fileID: 3710378850437900807}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1358627681802723209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17177,6 +17179,7 @@ MonoBehaviour:
   id: 22
   card_physics: 1
   render_component: {fileID: 4165484557215377139}
+  child: {fileID: 0}
   collider_component: {fileID: 2113547059653529529}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2113547059653529529
@@ -17263,6 +17266,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2445262931096981776}
 --- !u!114 &2840933185819186810
 MonoBehaviour:
@@ -17317,9 +17322,6 @@ MonoBehaviour:
   sync: {fileID: 4856258598771371279}
   manager: {fileID: 0}
   card: {fileID: 2445262931096981776}
-  mesh: {fileID: 4165484557215377139}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8839930488371544599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17803,6 +17805,7 @@ MonoBehaviour:
   id: 9
   card_physics: 1
   render_component: {fileID: 4838093068332008673}
+  child: {fileID: 0}
   collider_component: {fileID: 473162991502761508}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &473162991502761508
@@ -17889,6 +17892,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2646116767088944440}
 --- !u!114 &470951796005141364
 MonoBehaviour:
@@ -17943,9 +17948,6 @@ MonoBehaviour:
   sync: {fileID: 3397278021364902019}
   manager: {fileID: 0}
   card: {fileID: 2646116767088944440}
-  mesh: {fileID: 4838093068332008673}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6879325612428152288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18261,6 +18263,7 @@ MonoBehaviour:
   id: 51
   card_physics: 1
   render_component: {fileID: 4988650038526671931}
+  child: {fileID: 0}
   collider_component: {fileID: 5595444861945503443}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &5595444861945503443
@@ -18347,6 +18350,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 4824521013117501494}
 --- !u!114 &2098295121401128492
 MonoBehaviour:
@@ -18401,9 +18406,6 @@ MonoBehaviour:
   sync: {fileID: 2727779582797740413}
   manager: {fileID: 0}
   card: {fileID: 4824521013117501494}
-  mesh: {fileID: 4988650038526671931}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3669479859658183517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18707,6 +18709,7 @@ MonoBehaviour:
   id: 37
   card_physics: 1
   render_component: {fileID: 5033113801823354169}
+  child: {fileID: 0}
   collider_component: {fileID: 3936771831103989078}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &3936771831103989078
@@ -18793,6 +18796,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 5667132861018365653}
 --- !u!114 &2539561851816124173
 MonoBehaviour:
@@ -18847,9 +18852,6 @@ MonoBehaviour:
   sync: {fileID: 4777255530428139166}
   manager: {fileID: 0}
   card: {fileID: 5667132861018365653}
-  mesh: {fileID: 5033113801823354169}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6288404195407101817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19165,6 +19167,7 @@ MonoBehaviour:
   id: 43
   card_physics: 1
   render_component: {fileID: 5282732512992229564}
+  child: {fileID: 0}
   collider_component: {fileID: 2954511550680571634}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2954511550680571634
@@ -19251,6 +19254,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2625953365224915796}
 --- !u!114 &733338849590239430
 MonoBehaviour:
@@ -19305,9 +19310,6 @@ MonoBehaviour:
   sync: {fileID: 3239926086113760606}
   manager: {fileID: 0}
   card: {fileID: 2625953365224915796}
-  mesh: {fileID: 5282732512992229564}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6815543207053364441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19617,6 +19619,7 @@ MonoBehaviour:
   id: 48
   card_physics: 1
   render_component: {fileID: 5488534083330351663}
+  child: {fileID: 0}
   collider_component: {fileID: 4179697997054346207}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &4179697997054346207
@@ -19703,6 +19706,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6242370170315645650}
 --- !u!114 &8835776314362767614
 MonoBehaviour:
@@ -19757,9 +19762,6 @@ MonoBehaviour:
   sync: {fileID: 3734862755888859679}
   manager: {fileID: 0}
   card: {fileID: 6242370170315645650}
-  mesh: {fileID: 5488534083330351663}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6381188893840542352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20063,6 +20065,7 @@ MonoBehaviour:
   id: 31
   card_physics: 1
   render_component: {fileID: 5628382883268515695}
+  child: {fileID: 0}
   collider_component: {fileID: 2575983097507666250}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2575983097507666250
@@ -20149,6 +20152,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 45644811170478899}
 --- !u!114 &8331407264930026077
 MonoBehaviour:
@@ -20203,9 +20208,6 @@ MonoBehaviour:
   sync: {fileID: 6218562718606710352}
   manager: {fileID: 0}
   card: {fileID: 45644811170478899}
-  mesh: {fileID: 5628382883268515695}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1819363965957207430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20515,6 +20517,7 @@ MonoBehaviour:
   id: 19
   card_physics: 1
   render_component: {fileID: 5638780765734308516}
+  child: {fileID: 0}
   collider_component: {fileID: 7355556425765930360}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &7355556425765930360
@@ -20601,6 +20604,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 5010851698779791614}
 --- !u!114 &4730919563194172462
 MonoBehaviour:
@@ -20655,9 +20660,6 @@ MonoBehaviour:
   sync: {fileID: 2857337884575783027}
   manager: {fileID: 0}
   card: {fileID: 5010851698779791614}
-  mesh: {fileID: 5638780765734308516}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &8192375754771766133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20967,6 +20969,7 @@ MonoBehaviour:
   id: 2
   card_physics: 1
   render_component: {fileID: 5791653006317881519}
+  child: {fileID: 0}
   collider_component: {fileID: 325802774295985546}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &325802774295985546
@@ -21053,6 +21056,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2247903647621698387}
 --- !u!114 &1133480580163223517
 MonoBehaviour:
@@ -21107,9 +21112,6 @@ MonoBehaviour:
   sync: {fileID: 8619994259546280619}
   manager: {fileID: 0}
   card: {fileID: 2247903647621698387}
-  mesh: {fileID: 5791653006317881519}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7232147813484390251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21581,6 +21583,7 @@ MonoBehaviour:
   id: 42
   card_physics: 1
   render_component: {fileID: 6027072351062119905}
+  child: {fileID: 0}
   collider_component: {fileID: 3891995734967319881}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &3891995734967319881
@@ -21667,6 +21670,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6837789294944563654}
 --- !u!114 &2383410945807368483
 MonoBehaviour:
@@ -21721,9 +21726,6 @@ MonoBehaviour:
   sync: {fileID: 1936579217188572895}
   manager: {fileID: 0}
   card: {fileID: 6837789294944563654}
-  mesh: {fileID: 6027072351062119905}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1524798290099853717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22296,6 +22298,7 @@ MonoBehaviour:
   id: 41
   card_physics: 1
   render_component: {fileID: 6411216248162944121}
+  child: {fileID: 0}
   collider_component: {fileID: 4724581064658569862}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &4724581064658569862
@@ -22382,6 +22385,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2337753926945802256}
 --- !u!114 &7517751178170468386
 MonoBehaviour:
@@ -22436,9 +22441,6 @@ MonoBehaviour:
   sync: {fileID: 3625158147542879898}
   manager: {fileID: 0}
   card: {fileID: 2337753926945802256}
-  mesh: {fileID: 6411216248162944121}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &7528944858185296222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22993,6 +22995,7 @@ MonoBehaviour:
   id: 25
   card_physics: 1
   render_component: {fileID: 7196642021652781168}
+  child: {fileID: 0}
   collider_component: {fileID: 6765721298944979919}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &6765721298944979919
@@ -23079,6 +23082,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 48377896256084005}
 --- !u!114 &8727134895562036240
 MonoBehaviour:
@@ -23133,9 +23138,6 @@ MonoBehaviour:
   sync: {fileID: 6800045495166549610}
   manager: {fileID: 0}
   card: {fileID: 48377896256084005}
-  mesh: {fileID: 7196642021652781168}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5648285567433556762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23439,6 +23441,7 @@ MonoBehaviour:
   id: 12
   card_physics: 1
   render_component: {fileID: 7282774464187824917}
+  child: {fileID: 0}
   collider_component: {fileID: 1710171339813119508}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1710171339813119508
@@ -23525,6 +23528,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 7749492579561766264}
 --- !u!114 &5929092199302021134
 MonoBehaviour:
@@ -23579,9 +23584,6 @@ MonoBehaviour:
   sync: {fileID: 2533737394543888196}
   manager: {fileID: 0}
   card: {fileID: 7749492579561766264}
-  mesh: {fileID: 7282774464187824917}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3862169660503887850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23891,6 +23893,7 @@ MonoBehaviour:
   id: 20
   card_physics: 1
   render_component: {fileID: 7298373761142308727}
+  child: {fileID: 0}
   collider_component: {fileID: 6249320591622349469}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &6249320591622349469
@@ -23977,6 +23980,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 1747033465326603332}
 --- !u!114 &7246615771503077545
 MonoBehaviour:
@@ -24031,9 +24036,6 @@ MonoBehaviour:
   sync: {fileID: 3393513222592657157}
   manager: {fileID: 0}
   card: {fileID: 1747033465326603332}
-  mesh: {fileID: 7298373761142308727}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3889862962085944888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24349,6 +24351,7 @@ MonoBehaviour:
   id: 36
   card_physics: 1
   render_component: {fileID: 7443515334015192747}
+  child: {fileID: 0}
   collider_component: {fileID: 5499472953043465127}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &5499472953043465127
@@ -24435,6 +24438,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 1974440576724565888}
 --- !u!114 &2522730505907867757
 MonoBehaviour:
@@ -24489,9 +24494,6 @@ MonoBehaviour:
   sync: {fileID: 119830102746457253}
   manager: {fileID: 0}
   card: {fileID: 1974440576724565888}
-  mesh: {fileID: 7443515334015192747}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5084655430914182978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24807,6 +24809,7 @@ MonoBehaviour:
   id: 24
   card_physics: 1
   render_component: {fileID: 7591127300557819121}
+  child: {fileID: 0}
   collider_component: {fileID: 2404294962101454663}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &2404294962101454663
@@ -24893,6 +24896,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 8211839097043451063}
 --- !u!114 &7540215750293876271
 MonoBehaviour:
@@ -24947,9 +24952,6 @@ MonoBehaviour:
   sync: {fileID: 6077460228585232784}
   manager: {fileID: 0}
   card: {fileID: 8211839097043451063}
-  mesh: {fileID: 7591127300557819121}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &3158089157193672866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25259,6 +25261,7 @@ MonoBehaviour:
   id: 50
   card_physics: 1
   render_component: {fileID: 7611381978302492236}
+  child: {fileID: 0}
   collider_component: {fileID: 7627650816196586200}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &7627650816196586200
@@ -25345,6 +25348,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 681841302757659470}
 --- !u!114 &1745321914376663360
 MonoBehaviour:
@@ -25399,9 +25404,6 @@ MonoBehaviour:
   sync: {fileID: 3625471649876233436}
   manager: {fileID: 0}
   card: {fileID: 681841302757659470}
-  mesh: {fileID: 7611381978302492236}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6478251689271322115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25705,6 +25707,7 @@ MonoBehaviour:
   id: 46
   card_physics: 1
   render_component: {fileID: 7747483755803158151}
+  child: {fileID: 0}
   collider_component: {fileID: 489082580579452157}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &489082580579452157
@@ -25791,6 +25794,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2265695259434025376}
 --- !u!114 &6042889087706460927
 MonoBehaviour:
@@ -25845,9 +25850,6 @@ MonoBehaviour:
   sync: {fileID: 8732684311603585841}
   manager: {fileID: 0}
   card: {fileID: 2265695259434025376}
-  mesh: {fileID: 7747483755803158151}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5058373205114243892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26157,6 +26159,7 @@ MonoBehaviour:
   id: 40
   card_physics: 1
   render_component: {fileID: 7755819819822528324}
+  child: {fileID: 0}
   collider_component: {fileID: 7316050294276774578}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &7316050294276774578
@@ -26243,6 +26246,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 1454144040270288536}
 --- !u!114 &3866763784900554263
 MonoBehaviour:
@@ -26297,9 +26302,6 @@ MonoBehaviour:
   sync: {fileID: 5756586065478088469}
   manager: {fileID: 0}
   card: {fileID: 1454144040270288536}
-  mesh: {fileID: 7755819819822528324}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5218049495398521109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26609,6 +26611,7 @@ MonoBehaviour:
   id: 39
   card_physics: 1
   render_component: {fileID: 7885915188541103279}
+  child: {fileID: 0}
   collider_component: {fileID: 8776206998693951021}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &8776206998693951021
@@ -26695,6 +26698,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 6946264857312928745}
 --- !u!114 &7688818545223447323
 MonoBehaviour:
@@ -26749,9 +26754,6 @@ MonoBehaviour:
   sync: {fileID: 357277118921256281}
   manager: {fileID: 0}
   card: {fileID: 6946264857312928745}
-  mesh: {fileID: 7885915188541103279}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &4298523787551032667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27229,6 +27231,7 @@ MonoBehaviour:
   id: 29
   card_physics: 1
   render_component: {fileID: 8198451684814572816}
+  child: {fileID: 0}
   collider_component: {fileID: 1115831008328428162}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1115831008328428162
@@ -27315,6 +27318,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 5332035449646646422}
 --- !u!114 &7360805582145783274
 MonoBehaviour:
@@ -27369,9 +27374,6 @@ MonoBehaviour:
   sync: {fileID: 6972539719846700614}
   manager: {fileID: 0}
   card: {fileID: 5332035449646646422}
-  mesh: {fileID: 8198451684814572816}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &9137592136161534787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27681,6 +27683,7 @@ MonoBehaviour:
   id: 23
   card_physics: 1
   render_component: {fileID: 8461296849646141270}
+  child: {fileID: 0}
   collider_component: {fileID: 6005136574373781426}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &6005136574373781426
@@ -27767,6 +27770,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 7117375909557557830}
 --- !u!114 &8494471802284517628
 MonoBehaviour:
@@ -27821,9 +27826,6 @@ MonoBehaviour:
   sync: {fileID: 8723428321674971944}
   manager: {fileID: 0}
   card: {fileID: 7117375909557557830}
-  mesh: {fileID: 8461296849646141270}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &1565802621234903338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28463,6 +28465,7 @@ MonoBehaviour:
   id: 7
   card_physics: 1
   render_component: {fileID: 8732325393558745367}
+  child: {fileID: 0}
   collider_component: {fileID: 1596366408953161236}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &1596366408953161236
@@ -28549,6 +28552,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2729478788292410631}
 --- !u!114 &5103636073222651406
 MonoBehaviour:
@@ -28603,9 +28608,6 @@ MonoBehaviour:
   sync: {fileID: 1914671625782708910}
   manager: {fileID: 0}
   card: {fileID: 2729478788292410631}
-  mesh: {fileID: 8732325393558745367}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &5045139502163727145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28927,6 +28929,7 @@ MonoBehaviour:
   id: 27
   card_physics: 1
   render_component: {fileID: 9086353873950773703}
+  child: {fileID: 0}
   collider_component: {fileID: 4040689548431553192}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &4040689548431553192
@@ -29013,6 +29016,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 2372801878095556485}
 --- !u!114 &6073788316136454153
 MonoBehaviour:
@@ -29067,9 +29072,6 @@ MonoBehaviour:
   sync: {fileID: 7700547638004683776}
   manager: {fileID: 0}
   card: {fileID: 2372801878095556485}
-  mesh: {fileID: 9086353873950773703}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2825249933670268700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29367,6 +29369,7 @@ MonoBehaviour:
   id: 33
   card_physics: 1
   render_component: {fileID: 9132895652893319226}
+  child: {fileID: 0}
   collider_component: {fileID: 5449562973911558791}
   deck: {fileID: 9025544398469207529}
 --- !u!65 &5449562973911558791
@@ -29453,6 +29456,8 @@ MonoBehaviour:
   throw_threshold: 2
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
+  first_throw_only: 1
+  desktop_throw_assist: 1
   card: {fileID: 5439066141126803781}
 --- !u!114 &240108815935470384
 MonoBehaviour:
@@ -29507,9 +29512,6 @@ MonoBehaviour:
   sync: {fileID: 6875687983306291681}
   manager: {fileID: 0}
   card: {fileID: 5439066141126803781}
-  mesh: {fileID: 9132895652893319226}
-  highlight_color_variable_name: _EmissionColor
-  highlight_color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &620662966065656916
 MonoBehaviour:
   m_ObjectHideFlags: 0

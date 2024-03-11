@@ -284,11 +284,14 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 3787312815686551010}
   id: 0
-  allow_throwing: 1
+  _allow_throwing: 1
   deal_on_enter_trigger: 0
   deal_on_interact: 0
   deck: {fileID: 2400030045743784234}
   placement_transform: {fileID: 5986779296619444376}
+  incoming_vel: {x: 0, y: -1, z: 0}
+  animator: {fileID: 0}
+  active_parameter: allow_throwing
   face_dealer: 1
 --- !u!114 &3787312815686551010
 MonoBehaviour:
@@ -955,6 +958,8 @@ MonoBehaviour:
   - {fileID: 749891707174937367}
   - {fileID: 543584637243661989}
   - {fileID: 5208288806109585770}
+  deck_sync: {fileID: 0}
+  automatically_pick_next_card: 1
 --- !u!114 &4386639519625842081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,6 +1916,7 @@ MonoBehaviour:
   id: 16
   card_physics: 1
   render_component: {fileID: 254177726384418255}
+  child: {fileID: 0}
   collider_component: {fileID: 1963195793535934053}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1963195793535934053
@@ -1998,6 +2004,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4552704144315874170}
 --- !u!114 &3647259570014947548
 MonoBehaviour:
@@ -2355,6 +2362,7 @@ MonoBehaviour:
   id: 26
   card_physics: 1
   render_component: {fileID: 282943324542914213}
+  child: {fileID: 0}
   collider_component: {fileID: 6479090876525032003}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &6479090876525032003
@@ -2442,6 +2450,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 7520289724614299110}
 --- !u!114 &3765053007432832361
 MonoBehaviour:
@@ -2811,6 +2820,7 @@ MonoBehaviour:
   id: 41
   card_physics: 1
   render_component: {fileID: 306035343187810917}
+  child: {fileID: 0}
   collider_component: {fileID: 1639952551287185734}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1639952551287185734
@@ -2898,6 +2908,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4831760828601033054}
 --- !u!114 &6817201020173017381
 MonoBehaviour:
@@ -3267,6 +3278,7 @@ MonoBehaviour:
   id: 23
   card_physics: 1
   render_component: {fileID: 310791480133269283}
+  child: {fileID: 0}
   collider_component: {fileID: 3519077363348228706}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3519077363348228706
@@ -3354,6 +3366,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 2557529096389158898}
 --- !u!114 &1531343892746293559
 MonoBehaviour:
@@ -3717,6 +3730,7 @@ MonoBehaviour:
   id: 12
   card_physics: 1
   render_component: {fileID: 397351668599382687}
+  child: {fileID: 0}
   collider_component: {fileID: 4243633469471126566}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &4243633469471126566
@@ -3804,6 +3818,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8020570706405626743}
 --- !u!114 &1790122818137861260
 MonoBehaviour:
@@ -4161,6 +4176,7 @@ MonoBehaviour:
   id: 22
   card_physics: 1
   render_component: {fileID: 624976135612008387}
+  child: {fileID: 0}
   collider_component: {fileID: 3103750257649545497}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3103750257649545497
@@ -4248,6 +4264,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8835418071380240999}
 --- !u!114 &6110634970784818171
 MonoBehaviour:
@@ -4617,6 +4634,7 @@ MonoBehaviour:
   id: 9
   card_physics: 1
   render_component: {fileID: 865518357674503047}
+  child: {fileID: 0}
   collider_component: {fileID: 7454966160443464055}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &7454966160443464055
@@ -4704,6 +4722,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1609600409633239407}
 --- !u!114 &6934008323247343239
 MonoBehaviour:
@@ -5055,6 +5074,7 @@ MonoBehaviour:
   id: 11
   card_physics: 1
   render_component: {fileID: 941753269912878389}
+  child: {fileID: 0}
   collider_component: {fileID: 8444408606529906964}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8444408606529906964
@@ -5142,6 +5162,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 7837146559601248705}
 --- !u!114 &8944195501841224311
 MonoBehaviour:
@@ -5517,6 +5538,7 @@ MonoBehaviour:
   id: 6
   card_physics: 1
   render_component: {fileID: 978370327661221919}
+  child: {fileID: 0}
   collider_component: {fileID: 3817521355939014445}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3817521355939014445
@@ -5604,6 +5626,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3295234840618649254}
 --- !u!114 &2558455903615280016
 MonoBehaviour:
@@ -5961,6 +5984,7 @@ MonoBehaviour:
   id: 15
   card_physics: 1
   render_component: {fileID: 1019998406677722243}
+  child: {fileID: 0}
   collider_component: {fileID: 3798735131937370047}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3798735131937370047
@@ -6048,6 +6072,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8046132880420964054}
 --- !u!114 &1468162092006007253
 MonoBehaviour:
@@ -6405,6 +6430,7 @@ MonoBehaviour:
   id: 21
   card_physics: 1
   render_component: {fileID: 1039441894354042033}
+  child: {fileID: 0}
   collider_component: {fileID: 2926919232282524648}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2926919232282524648
@@ -6492,6 +6518,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 6958680102315425742}
 --- !u!114 &3114895792853159154
 MonoBehaviour:
@@ -6855,6 +6882,7 @@ MonoBehaviour:
   id: 19
   card_physics: 1
   render_component: {fileID: 1282724805169901271}
+  child: {fileID: 0}
   collider_component: {fileID: 7012680582174939969}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &7012680582174939969
@@ -6942,6 +6970,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4570613485628290206}
 --- !u!114 &6960086495732557198
 MonoBehaviour:
@@ -7311,6 +7340,7 @@ MonoBehaviour:
   id: 17
   card_physics: 1
   render_component: {fileID: 1321934289201013639}
+  child: {fileID: 0}
   collider_component: {fileID: 1020908602785330794}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1020908602785330794
@@ -7398,6 +7428,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3339656101255708360}
 --- !u!114 &8936228639060227747
 MonoBehaviour:
@@ -7761,6 +7792,7 @@ MonoBehaviour:
   id: 43
   card_physics: 1
   render_component: {fileID: 1412236846669675090}
+  child: {fileID: 0}
   collider_component: {fileID: 4904578385598386634}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &4904578385598386634
@@ -7848,6 +7880,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1542528905493217472}
 --- !u!114 &8258479638631439034
 MonoBehaviour:
@@ -8211,6 +8244,7 @@ MonoBehaviour:
   id: 0
   card_physics: 1
   render_component: {fileID: 1812914593794578706}
+  child: {fileID: 0}
   collider_component: {fileID: 8025914784813422570}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8025914784813422570
@@ -8298,6 +8332,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8627404420930838262}
 --- !u!114 &2274790818123355796
 MonoBehaviour:
@@ -8661,6 +8696,7 @@ MonoBehaviour:
   id: 20
   card_physics: 1
   render_component: {fileID: 2106305840012149076}
+  child: {fileID: 0}
   collider_component: {fileID: 2196052870504448558}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2196052870504448558
@@ -8748,6 +8784,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3378357679847006247}
 --- !u!114 &702190487243973806
 MonoBehaviour:
@@ -9111,6 +9148,7 @@ MonoBehaviour:
   id: 45
   card_physics: 1
   render_component: {fileID: 3083320461006752934}
+  child: {fileID: 0}
   collider_component: {fileID: 1415669285616200023}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1415669285616200023
@@ -9198,6 +9236,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3850702156033802089}
 --- !u!114 &8505188871245714512
 MonoBehaviour:
@@ -9555,6 +9594,7 @@ MonoBehaviour:
   id: 7
   card_physics: 1
   render_component: {fileID: 3119165745823679679}
+  child: {fileID: 0}
   collider_component: {fileID: 453643724729920271}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &453643724729920271
@@ -9642,6 +9682,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4450730792386840707}
 --- !u!114 &995135223199873331
 MonoBehaviour:
@@ -10005,6 +10046,7 @@ MonoBehaviour:
   id: 1
   card_physics: 1
   render_component: {fileID: 3417472839649958210}
+  child: {fileID: 0}
   collider_component: {fileID: 1837807699649057237}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1837807699649057237
@@ -10092,6 +10134,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8767233387014394587}
 --- !u!114 &6681528539835804092
 MonoBehaviour:
@@ -10467,6 +10510,7 @@ MonoBehaviour:
   id: 33
   card_physics: 1
   render_component: {fileID: 3499212717717541476}
+  child: {fileID: 0}
   collider_component: {fileID: 281410362665036957}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &281410362665036957
@@ -10554,6 +10598,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 2534639591464317695}
 --- !u!114 &53228083735225780
 MonoBehaviour:
@@ -10911,6 +10956,7 @@ MonoBehaviour:
   id: 51
   card_physics: 1
   render_component: {fileID: 3510722330352403025}
+  child: {fileID: 0}
   collider_component: {fileID: 2937398995856509152}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2937398995856509152
@@ -10998,6 +11044,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 5208288806109585770}
 --- !u!114 &5549578666570501464
 MonoBehaviour:
@@ -11355,6 +11402,7 @@ MonoBehaviour:
   id: 10
   card_physics: 1
   render_component: {fileID: 3605427818326482278}
+  child: {fileID: 0}
   collider_component: {fileID: 422814088555620975}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &422814088555620975
@@ -11442,6 +11490,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 7440089966443683841}
 --- !u!114 &4388698544667297134
 MonoBehaviour:
@@ -11811,6 +11860,7 @@ MonoBehaviour:
   id: 2
   card_physics: 1
   render_component: {fileID: 3680824017066996048}
+  child: {fileID: 0}
   collider_component: {fileID: 3401930855912199590}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3401930855912199590
@@ -11898,6 +11948,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 7430637142702069462}
 --- !u!114 &6924990049507014906
 MonoBehaviour:
@@ -12261,6 +12312,7 @@ MonoBehaviour:
   id: 24
   card_physics: 1
   render_component: {fileID: 3893765575834400812}
+  child: {fileID: 0}
   collider_component: {fileID: 4665673869453750204}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &4665673869453750204
@@ -12348,6 +12400,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1583997737533771021}
 --- !u!114 &7126679791271540600
 MonoBehaviour:
@@ -12711,6 +12764,7 @@ MonoBehaviour:
   id: 42
   card_physics: 1
   render_component: {fileID: 3958952597313227464}
+  child: {fileID: 0}
   collider_component: {fileID: 9054564931223356559}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &9054564931223356559
@@ -12798,6 +12852,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 6114128531984824157}
 --- !u!114 &2305178655853808700
 MonoBehaviour:
@@ -13161,6 +13216,7 @@ MonoBehaviour:
   id: 50
   card_physics: 1
   render_component: {fileID: 4068526517778327737}
+  child: {fileID: 0}
   collider_component: {fileID: 2999668790068971492}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2999668790068971492
@@ -13248,6 +13304,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 543584637243661989}
 --- !u!114 &3324014456844979225
 MonoBehaviour:
@@ -13617,6 +13674,7 @@ MonoBehaviour:
   id: 4
   card_physics: 1
   render_component: {fileID: 4295765456495985254}
+  child: {fileID: 0}
   collider_component: {fileID: 1634126606238703123}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1634126606238703123
@@ -13704,6 +13762,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 304047888910138061}
 --- !u!114 &6689543760466717509
 MonoBehaviour:
@@ -14067,6 +14126,7 @@ MonoBehaviour:
   id: 44
   card_physics: 1
   render_component: {fileID: 4479162017005351488}
+  child: {fileID: 0}
   collider_component: {fileID: 8579377122218250822}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8579377122218250822
@@ -14154,6 +14214,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1164616175176757747}
 --- !u!114 &6133674204690794219
 MonoBehaviour:
@@ -14517,6 +14578,7 @@ MonoBehaviour:
   id: 38
   card_physics: 1
   render_component: {fileID: 4583575795897167962}
+  child: {fileID: 0}
   collider_component: {fileID: 1730034383839921719}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1730034383839921719
@@ -14604,6 +14666,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 6552663075451885950}
 --- !u!114 &9191174293338393842
 MonoBehaviour:
@@ -14961,6 +15024,7 @@ MonoBehaviour:
   id: 13
   card_physics: 1
   render_component: {fileID: 4813028896490384550}
+  child: {fileID: 0}
   collider_component: {fileID: 7170925351399781906}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &7170925351399781906
@@ -15048,6 +15112,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 6337643862083910634}
 --- !u!114 &7414842365728381736
 MonoBehaviour:
@@ -15411,6 +15476,7 @@ MonoBehaviour:
   id: 49
   card_physics: 1
   render_component: {fileID: 4901573670434894479}
+  child: {fileID: 0}
   collider_component: {fileID: 7034103033003511834}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &7034103033003511834
@@ -15498,6 +15564,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 749891707174937367}
 --- !u!114 &2522820338897717021
 MonoBehaviour:
@@ -15861,6 +15928,7 @@ MonoBehaviour:
   id: 25
   card_physics: 1
   render_component: {fileID: 5156347468497250262}
+  child: {fileID: 0}
   collider_component: {fileID: 5659983504543806585}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &5659983504543806585
@@ -15948,6 +16016,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4252400302101452601}
 --- !u!114 &4944557566539341992
 MonoBehaviour:
@@ -16311,6 +16380,7 @@ MonoBehaviour:
   id: 8
   card_physics: 1
   render_component: {fileID: 5779706843136453025}
+  child: {fileID: 0}
   collider_component: {fileID: 9055048019173031404}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &9055048019173031404
@@ -16398,6 +16468,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 6509198417754302026}
 --- !u!114 &2715242571059217780
 MonoBehaviour:
@@ -16761,6 +16832,7 @@ MonoBehaviour:
   id: 47
   card_physics: 1
   render_component: {fileID: 6136778897994400899}
+  child: {fileID: 0}
   collider_component: {fileID: 1083433779259320279}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1083433779259320279
@@ -16848,6 +16920,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8690958890366972421}
 --- !u!114 &4093209760719484153
 MonoBehaviour:
@@ -17211,6 +17284,7 @@ MonoBehaviour:
   id: 48
   card_physics: 1
   render_component: {fileID: 6268593544424284617}
+  child: {fileID: 0}
   collider_component: {fileID: 8918129490838421946}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8918129490838421946
@@ -17298,6 +17372,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 164878801619378212}
 --- !u!114 &5178661832217625859
 MonoBehaviour:
@@ -17655,6 +17730,7 @@ MonoBehaviour:
   id: 3
   card_physics: 1
   render_component: {fileID: 6296560910877174006}
+  child: {fileID: 0}
   collider_component: {fileID: 3405233002116471284}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3405233002116471284
@@ -17742,6 +17818,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 873541536629959158}
 --- !u!114 &3242951887951471835
 MonoBehaviour:
@@ -18117,6 +18194,7 @@ MonoBehaviour:
   id: 18
   card_physics: 1
   render_component: {fileID: 6307790947124404865}
+  child: {fileID: 0}
   collider_component: {fileID: 2179550500763746698}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2179550500763746698
@@ -18204,6 +18282,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1069753350837717503}
 --- !u!114 &5511550526342939718
 MonoBehaviour:
@@ -18555,6 +18634,7 @@ MonoBehaviour:
   id: 34
   card_physics: 1
   render_component: {fileID: 6352120698143039720}
+  child: {fileID: 0}
   collider_component: {fileID: 3701251754885124054}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &3701251754885124054
@@ -18642,6 +18722,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3807107946127703176}
 --- !u!114 &7194130920634097139
 MonoBehaviour:
@@ -19005,6 +19086,7 @@ MonoBehaviour:
   id: 29
   card_physics: 1
   render_component: {fileID: 6945819952959043152}
+  child: {fileID: 0}
   collider_component: {fileID: 4824320513842011901}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &4824320513842011901
@@ -19092,6 +19174,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 9157417912064935194}
 --- !u!114 &1271902583413232144
 MonoBehaviour:
@@ -19467,6 +19550,7 @@ MonoBehaviour:
   id: 5
   card_physics: 1
   render_component: {fileID: 6974548022835630230}
+  child: {fileID: 0}
   collider_component: {fileID: 1605539922087209288}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1605539922087209288
@@ -19554,6 +19638,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1289198550491183330}
 --- !u!114 &6507758703555123453
 MonoBehaviour:
@@ -19917,6 +20002,7 @@ MonoBehaviour:
   id: 27
   card_physics: 1
   render_component: {fileID: 7049533310365052689}
+  child: {fileID: 0}
   collider_component: {fileID: 8280251760330669073}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8280251760330669073
@@ -20004,6 +20090,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3124887601127201824}
 --- !u!114 &395296402714998709
 MonoBehaviour:
@@ -20355,6 +20442,7 @@ MonoBehaviour:
   id: 39
   card_physics: 1
   render_component: {fileID: 7520894452168833087}
+  child: {fileID: 0}
   collider_component: {fileID: 6223197534628968259}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &6223197534628968259
@@ -20442,6 +20530,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 5350678725233313462}
 --- !u!114 &7751809646926389109
 MonoBehaviour:
@@ -20817,6 +20906,7 @@ MonoBehaviour:
   id: 30
   card_physics: 1
   render_component: {fileID: 7838462766621229023}
+  child: {fileID: 0}
   collider_component: {fileID: 8796514336014246537}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8796514336014246537
@@ -20904,6 +20994,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4532195018361112128}
 --- !u!114 &3175369905406082219
 MonoBehaviour:
@@ -21261,6 +21352,7 @@ MonoBehaviour:
   id: 32
   card_physics: 1
   render_component: {fileID: 8033821032132631558}
+  child: {fileID: 0}
   collider_component: {fileID: 115363825174843405}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &115363825174843405
@@ -21348,6 +21440,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4312694100927873281}
 --- !u!114 &3199839822315633004
 MonoBehaviour:
@@ -21705,6 +21798,7 @@ MonoBehaviour:
   id: 37
   card_physics: 1
   render_component: {fileID: 8086895215105394732}
+  child: {fileID: 0}
   collider_component: {fileID: 2708689000854693253}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2708689000854693253
@@ -21792,6 +21886,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 6651556042188896074}
 --- !u!114 &5562469606976832976
 MonoBehaviour:
@@ -22167,6 +22262,7 @@ MonoBehaviour:
   id: 46
   card_physics: 1
   render_component: {fileID: 8110362714922287888}
+  child: {fileID: 0}
   collider_component: {fileID: 2455332728645960929}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2455332728645960929
@@ -22254,6 +22350,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3084148063122861060}
 --- !u!114 &5401332690252068480
 MonoBehaviour:
@@ -22611,6 +22708,7 @@ MonoBehaviour:
   id: 31
   card_physics: 1
   render_component: {fileID: 8143920351215718199}
+  child: {fileID: 0}
   collider_component: {fileID: 1726695382097193392}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1726695382097193392
@@ -22698,6 +22796,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 8693126282109003118}
 --- !u!114 &779382051776419031
 MonoBehaviour:
@@ -23061,6 +23160,7 @@ MonoBehaviour:
   id: 36
   card_physics: 1
   render_component: {fileID: 8298589748696375901}
+  child: {fileID: 0}
   collider_component: {fileID: 7423894587875451179}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &7423894587875451179
@@ -23148,6 +23248,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 4432114202291552452}
 --- !u!114 &8868861950293476680
 MonoBehaviour:
@@ -23517,6 +23618,7 @@ MonoBehaviour:
   id: 28
   card_physics: 1
   render_component: {fileID: 8541205356135381646}
+  child: {fileID: 0}
   collider_component: {fileID: 1757377909791952919}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1757377909791952919
@@ -23604,6 +23706,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 1819111551864545628}
 --- !u!114 &1525215802394306428
 MonoBehaviour:
@@ -23955,6 +24058,7 @@ MonoBehaviour:
   id: 40
   card_physics: 1
   render_component: {fileID: 8670597494741822611}
+  child: {fileID: 0}
   collider_component: {fileID: 1864706363681059306}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &1864706363681059306
@@ -24042,6 +24146,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 146349878442652229}
 --- !u!114 &2560445853675423783
 MonoBehaviour:
@@ -24411,6 +24516,7 @@ MonoBehaviour:
   id: 35
   card_physics: 1
   render_component: {fileID: 8809641054462290587}
+  child: {fileID: 0}
   collider_component: {fileID: 2072214479504899755}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &2072214479504899755
@@ -24498,6 +24604,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 7940780729392293199}
 --- !u!114 &8715310749932615635
 MonoBehaviour:
@@ -24944,6 +25051,7 @@ MonoBehaviour:
   id: 14
   card_physics: 1
   render_component: {fileID: 8948176560412031156}
+  child: {fileID: 0}
   collider_component: {fileID: 8577712942603052347}
   deck: {fileID: 2400030045743784234}
 --- !u!65 &8577712942603052347
@@ -25031,6 +25139,7 @@ MonoBehaviour:
   throw_min_velocity: 1
   throw_power: {x: 0, y: 5, z: 0}
   first_throw_only: 0
+  desktop_throw_assist: 1
   card: {fileID: 3340034633378899926}
 --- !u!114 &1236400044519287105
 MonoBehaviour:

@@ -9,14 +9,15 @@ namespace MMMaellon
     public class CardPlacementSpot : SmartObjectSyncListener
     {
         public int id = -1001;
-        public bool allow_throwing = true;
+        public bool _allow_throwing = true;
         public bool deal_on_enter_trigger = false;
         public bool deal_on_interact = true;
         public Deck deck;
         public Transform placement_transform;
         public Vector3 incoming_vel = Vector3.down;
         CardPlacingState card;
-        public virtual void Start(){
+        public virtual void Start()
+        {
             DisableInteractive = !deal_on_interact;
         }
         public void OnTriggerEnter(Collider other)
@@ -33,10 +34,12 @@ namespace MMMaellon
             Place(card);
         }
 
-        public virtual void Deal(){
+        public virtual void Deal()
+        {
             if (deck.next_card < 0 || deck.next_card >= deck.cards.Length)
             {
-                if(deck.deck_sync && deck.deck_sync.IsHeld() && !deck.deck_sync.IsLocalOwner()){
+                if (deck.deck_sync && deck.deck_sync.IsHeld() && !deck.deck_sync.IsLocalOwner())
+                {
                     //avoid stealing ownership if someone is holding the deck
                     return;
                 }
@@ -53,10 +56,29 @@ namespace MMMaellon
                 Place(card);
             }
         }
-        public virtual bool AllowsThrowing(){
+
+        public Animator animator;
+        public string active_parameter = "allow_throwing";
+        public virtual bool allow_throwing
+        {
+            get => _allow_throwing;
+            set
+            {
+                _allow_throwing = value;
+                if (animator)
+                {
+                    animator.SetBool(active_parameter, value);
+                }
+            }
+        }
+
+
+        public virtual bool AllowsThrowing()
+        {
             return allow_throwing;
         }
-        public virtual void Place(CardPlacingState card){
+        public virtual void Place(CardPlacingState card)
+        {
             if (!card.sync.IsLocalOwner())
             {
                 Networking.SetOwner(Networking.LocalPlayer, card.gameObject);
@@ -66,19 +88,24 @@ namespace MMMaellon
             card.sync.vel = GetPlacementVelocity(card);
             card.EnterState();
         }
-        public virtual Vector3 GetPlacementPosition(CardPlacingState card){
+        public virtual Vector3 GetPlacementPosition(CardPlacingState card)
+        {
             return placement_transform.position;
         }
-        public virtual Quaternion GetPlacementRotation(CardPlacingState card){
+        public virtual Quaternion GetPlacementRotation(CardPlacingState card)
+        {
             return placement_transform.rotation;
         }
-        public virtual Vector3 GetPlacementVelocity(CardPlacingState card){
+        public virtual Vector3 GetPlacementVelocity(CardPlacingState card)
+        {
             return incoming_vel;
         }
-        public virtual Vector3 GetAimPosition(CardPlacingState card){
+        public virtual Vector3 GetAimPosition(CardPlacingState card)
+        {
             return placement_transform.position;
         }
-        public virtual Quaternion GetAimRotation(CardPlacingState card){
+        public virtual Quaternion GetAimRotation(CardPlacingState card)
+        {
             return placement_transform.rotation;
         }
         public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)

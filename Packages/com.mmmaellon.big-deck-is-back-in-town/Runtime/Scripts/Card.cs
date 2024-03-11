@@ -42,6 +42,10 @@ namespace MMMaellon
         }
         public Deck deck;
 
+        public void OnEnable(){
+            selected = selected;
+        }
+
         public override void OnDrop()
         {
             SendCustomEventDelayedFrames(nameof(AfterDrop), 2);
