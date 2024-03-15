@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: CardResetTrigger
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 8420d2616188a3040aa175b3844dc563,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 00f8a0c05ef0b514293793311e908281,
     type: 2}
   udonAssembly: 
   assemblyError: 

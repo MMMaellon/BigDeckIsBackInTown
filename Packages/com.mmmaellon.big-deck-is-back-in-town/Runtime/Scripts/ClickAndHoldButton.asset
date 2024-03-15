@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: ClickAndHoldButton
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 11035fde0ae9fc14ea905b45fd6b9106,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 58c36e6b77b7d6b44abd1298b72cfd72,
     type: 2}
   udonAssembly: 
   assemblyError: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: CardHolderManager
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: f48184c5eec33de4fb0c86db7fc7080a,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 18615ad9f5a78964b8a075f346125176,
     type: 2}
   udonAssembly: 
   assemblyError: 
