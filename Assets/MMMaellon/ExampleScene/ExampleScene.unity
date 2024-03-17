@@ -4818,8 +4818,14 @@ MonoBehaviour:
   deck: {fileID: 2884152490936697347}
   placement_transform: {fileID: 2005653249}
   incoming_vel: {x: 0, y: -1, z: 0}
+  placed_cards:
+    _values: []
   animator: {fileID: 0}
   active_parameter: allow_throwing
+  row_length: 4
+  horizontal_spacing: 0.08
+  vertical_spacing: 0.15
+  deal_delay: 0.2
   spacing: 0.08
   limit: 5
 --- !u!1 &416369441 stripped
@@ -10076,8 +10082,14 @@ MonoBehaviour:
   deck: {fileID: 1086930125}
   placement_transform: {fileID: 808870829}
   incoming_vel: {x: 0, y: -10, z: 0}
+  placed_cards:
+    _values: []
   animator: {fileID: 808870830}
   active_parameter: allow_throwing
+  row_length: 4
+  horizontal_spacing: 0.08
+  vertical_spacing: 0.15
+  deal_delay: 0.2
   bank: {fileID: 389584877}
   submitted_text_str: 
   placement_listeners: []
@@ -13887,6 +13899,8 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 1086930126}
   deck_model: {fileID: 226000843}
   empty_deck_model: {fileID: 0}
+  card_material: {fileID: 0}
+  hidden_card_material: {fileID: 0}
   cards_in_deck_parent: {fileID: 243375409}
   cards_outside_deck_parent: {fileID: 243375409}
   placement_spots:
@@ -15979,8 +15993,14 @@ MonoBehaviour:
   deck: {fileID: 2884152490936697347}
   placement_transform: {fileID: 215206564}
   incoming_vel: {x: 0, y: -1, z: 0}
+  placed_cards:
+    _values: []
   animator: {fileID: 0}
   active_parameter: allow_throwing
+  row_length: 4
+  horizontal_spacing: 0.08
+  vertical_spacing: 0.15
+  deal_delay: 0.2
   spacing: 0.08
   limit: 5
 --- !u!1 &1209856605 stripped
@@ -18574,15 +18594,17 @@ MonoBehaviour:
   deck: {fileID: 1086930125}
   placement_transform: {fileID: 1056976636}
   incoming_vel: {x: 0, y: -50, z: 25}
+  placed_cards:
+    _values: []
   animator: {fileID: 0}
   active_parameter: allow_throwing
-  spot_id: 6
-  nameplate: {fileID: 0}
-  listener: {fileID: 0}
   row_length: 4
   horizontal_spacing: 0.08
   vertical_spacing: 0.15
   deal_delay: 0.25
+  spot_id: 6
+  nameplate: {fileID: 0}
+  listener: {fileID: 0}
 --- !u!1 &1361971542
 GameObject:
   m_ObjectHideFlags: 0
@@ -20152,8 +20174,14 @@ MonoBehaviour:
   deck: {fileID: 2884152490936697347}
   placement_transform: {fileID: 1485659233}
   incoming_vel: {x: 0, y: -1, z: 0}
+  placed_cards:
+    _values: []
   animator: {fileID: 0}
   active_parameter: allow_throwing
+  row_length: 4
+  horizontal_spacing: 0.08
+  vertical_spacing: 0.15
+  deal_delay: 0.2
   spacing: 0.08
   limit: 5
 --- !u!1 &1447101352
@@ -27391,8 +27419,14 @@ MonoBehaviour:
   deck: {fileID: 2884152490936697347}
   placement_transform: {fileID: 915577748}
   incoming_vel: {x: 0, y: -1, z: 0}
+  placed_cards:
+    _values: []
   animator: {fileID: 0}
   active_parameter: allow_throwing
+  row_length: 4
+  horizontal_spacing: 0.08
+  vertical_spacing: 0.15
+  deal_delay: 0.2
   spacing: 0.08
   limit: 5
 --- !u!1 &1640070126 stripped
@@ -34244,12 +34278,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6790162808206471189}
+  _hidden: 0
   id: 4
   card_physics: 1
   render_component: {fileID: 4940994238011663173}
   child: {fileID: 0}
   collider_component: {fileID: 8124933956372576981}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &37957199261660871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34940,12 +34976,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7391348463239601653}
+  _hidden: 0
   id: 48
   card_physics: 1
   render_component: {fileID: 1831994231476301222}
   child: {fileID: 0}
   collider_component: {fileID: 8018369456789460021}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!65 &287586410167154039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35985,12 +36023,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7325745491818245335}
+  _hidden: 0
   id: 38
   card_physics: 1
   render_component: {fileID: 6381537433456381966}
   child: {fileID: 0}
   collider_component: {fileID: 360974483632326598}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &611974882168388483
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -36170,12 +36210,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7178124362403792775}
+  _hidden: 0
   id: 14
   card_physics: 1
   render_component: {fileID: 5107914003974818879}
   child: {fileID: 0}
   collider_component: {fileID: 8994818789313605849}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &733212000258469387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36540,12 +36582,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5739733472755112245}
+  _hidden: 0
   id: 42
   card_physics: 1
   render_component: {fileID: 496464656858143340}
   child: {fileID: 0}
   collider_component: {fileID: 7153009402803317411}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!1 &840009313115465788
 GameObject:
   m_ObjectHideFlags: 0
@@ -37254,12 +37298,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1701696439719780462}
+  _hidden: 0
   id: 47
   card_physics: 1
   render_component: {fileID: 8177942494467258297}
   child: {fileID: 0}
   collider_component: {fileID: 5534103980335682859}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!1 &1123536252759966864
 GameObject:
   m_ObjectHideFlags: 0
@@ -37302,12 +37348,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8340512037731744508}
+  _hidden: 0
   id: 11
   card_physics: 1
   render_component: {fileID: 5711488584158779268}
   child: {fileID: 0}
   collider_component: {fileID: 2605473655669703506}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &1171284938965576829
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37669,12 +37717,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8277880056122363801}
+  _hidden: 0
   id: 19
   card_physics: 1
   render_component: {fileID: 1947600802156905775}
   child: {fileID: 0}
   collider_component: {fileID: 3698460515195933330}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!224 &1246946780594526688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37954,12 +38004,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7139053550087141363}
+  _hidden: 0
   id: 16
   card_physics: 1
   render_component: {fileID: 7366292777346999694}
   child: {fileID: 0}
   collider_component: {fileID: 703137561833714832}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &1404554606040212181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38384,12 +38436,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6271095714334851314}
+  _hidden: 0
   id: 18
   card_physics: 1
   render_component: {fileID: 6676953911709218346}
   child: {fileID: 0}
   collider_component: {fileID: 5650601199508827148}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &1595216343633050341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38800,12 +38854,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8114563708646715031}
+  _hidden: 0
   id: 51
   card_physics: 1
   render_component: {fileID: 1187968850800210866}
   child: {fileID: 0}
   collider_component: {fileID: 1792642469429168441}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!222 &1708895093445545184
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39499,12 +39555,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1660567394577387892}
+  _hidden: 0
   id: 37
   card_physics: 1
   render_component: {fileID: 1197548419421958836}
   child: {fileID: 0}
   collider_component: {fileID: 7198305505660809916}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &2012835481315905717
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -39804,12 +39862,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3856438394541486508}
+  _hidden: 0
   id: 29
   card_physics: 1
   render_component: {fileID: 2630522170033390235}
   child: {fileID: 0}
   collider_component: {fileID: 6501939765671705960}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &2070591590311321546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39953,12 +40013,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 733212000258469387}
+  _hidden: 0
   id: 33
   card_physics: 1
   render_component: {fileID: 3168613918093897649}
   child: {fileID: 0}
   collider_component: {fileID: 2226749647149317485}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!65 &2226749647149317485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44704,6 +44766,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5806525241835896318, guid: d7d6e744b66f815439dc47af494cfb55,
         type: 3}
+      propertyPath: printDebugMessages
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806525241835896318, guid: d7d6e744b66f815439dc47af494cfb55,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 5806525241835896318, guid: d7d6e744b66f815439dc47af494cfb55,
@@ -45676,12 +45743,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2067776580930941296}
+  _hidden: 0
   id: 32
   card_physics: 1
   render_component: {fileID: 8289024175635337984}
   child: {fileID: 0}
   collider_component: {fileID: 6449674788499989492}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!224 &2499480655390568892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46107,12 +46176,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 76777005276860026}
+  _hidden: 0
   id: 24
   card_physics: 1
   render_component: {fileID: 4332084232407401340}
   child: {fileID: 0}
   collider_component: {fileID: 8366131340055187629}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!1 &2672635799292141803
 GameObject:
   m_ObjectHideFlags: 0
@@ -46428,6 +46499,8 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 8252682445658984221}
   deck_model: {fileID: 908752048489022026}
   empty_deck_model: {fileID: 45847810699982908}
+  card_material: {fileID: 0}
+  hidden_card_material: {fileID: 0}
   cards_in_deck_parent: {fileID: 2317409871611376397}
   cards_outside_deck_parent: {fileID: 2317409871611376397}
   placement_spots:
@@ -46517,12 +46590,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8871867320591750380}
+  _hidden: 0
   id: 10
   card_physics: 1
   render_component: {fileID: 5222039550468062694}
   child: {fileID: 0}
   collider_component: {fileID: 3166325082305986953}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &2944275007697872622
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -48127,12 +48202,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5805355847506892484}
+  _hidden: 0
   id: 21
   card_physics: 1
   render_component: {fileID: 8236872008105324586}
   child: {fileID: 0}
   collider_component: {fileID: 3817832138593554921}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &3510624117815612535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48158,12 +48235,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 468730401794495236}
+  _hidden: 0
   id: 13
   card_physics: 1
   render_component: {fileID: 9027294314608884406}
   child: {fileID: 0}
   collider_component: {fileID: 6863506053069468634}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!65 &3512923554386759000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48778,12 +48857,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5887031557742148275}
+  _hidden: 0
   id: 39
   card_physics: 1
   render_component: {fileID: 4050947949120426790}
   child: {fileID: 0}
   collider_component: {fileID: 3210191748720632263}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &3839230651338657191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49162,12 +49243,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3190917366369606850}
+  _hidden: 0
   id: 23
   card_physics: 1
   render_component: {fileID: 2317995915085361373}
   child: {fileID: 0}
   collider_component: {fileID: 437194696462190680}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &4014955473238963246
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -50111,12 +50194,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7460955950532024720}
+  _hidden: 0
   id: 0
   card_physics: 1
   render_component: {fileID: 5776360355639399086}
   child: {fileID: 0}
   collider_component: {fileID: 5561151563650820113}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &4429126789465510737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50453,12 +50538,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8533785948355858606}
+  _hidden: 0
   id: 12
   card_physics: 1
   render_component: {fileID: 3483008115295745184}
   child: {fileID: 0}
   collider_component: {fileID: 4826735522939171326}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!224 &4528898048598205085
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51163,12 +51250,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1919726555741413631}
+  _hidden: 0
   id: 40
   card_physics: 1
   render_component: {fileID: 4532178889333979343}
   child: {fileID: 0}
   collider_component: {fileID: 3512923554386759000}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!4 &4747840427161418310
 Transform:
   m_ObjectHideFlags: 0
@@ -51851,12 +51940,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1469523956612707867}
+  _hidden: 0
   id: 6
   card_physics: 1
   render_component: {fileID: 5132290385438697922}
   child: {fileID: 0}
   collider_component: {fileID: 2955935671772312006}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!224 &4982522095988442905
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53179,12 +53270,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3204038156883277019}
+  _hidden: 0
   id: 46
   card_physics: 1
   render_component: {fileID: 4522505501320390926}
   child: {fileID: 0}
   collider_component: {fileID: 6020802130214130455}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &5350817995597146526
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -53262,12 +53355,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2515228218239780161}
+  _hidden: 0
   id: 2
   card_physics: 1
   render_component: {fileID: 371450341164877606}
   child: {fileID: 0}
   collider_component: {fileID: 5891489253211155040}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &5368914509305283500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54167,12 +54262,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8817929239889764591}
+  _hidden: 0
   id: 20
   card_physics: 1
   render_component: {fileID: 3462905150825902334}
   child: {fileID: 0}
   collider_component: {fileID: 287586410167154039}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &5584213605037975210
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -54385,12 +54482,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6119834925199323983}
+  _hidden: 0
   id: 36
   card_physics: 1
   render_component: {fileID: 3605993952736706850}
   child: {fileID: 0}
   collider_component: {fileID: 1807544494813815885}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &5644343054386214405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54779,12 +54878,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7799230957048858989}
+  _hidden: 0
   id: 5
   card_physics: 1
   render_component: {fileID: 9177811281258175743}
   child: {fileID: 0}
   collider_component: {fileID: 7977672037127946950}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &5739733472755112245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55174,12 +55275,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1943215348281455465}
+  _hidden: 0
   id: 17
   card_physics: 1
   render_component: {fileID: 5172798078403546608}
   child: {fileID: 0}
   collider_component: {fileID: 894770393815105131}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &5805355847506892484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56194,12 +56297,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 219401494302769594}
+  _hidden: 0
   id: 31
   card_physics: 1
   render_component: {fileID: 1971369159114217702}
   child: {fileID: 0}
   collider_component: {fileID: 8572609990492933792}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!222 &6190479679868130991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -56233,12 +56338,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 799706687366015360}
+  _hidden: 0
   id: 25
   card_physics: 1
   render_component: {fileID: 3933936525434247163}
   child: {fileID: 0}
   collider_component: {fileID: 622365412490339365}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &6202217640913857754
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -56393,12 +56500,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6062542427435146049}
+  _hidden: 0
   id: 8
   card_physics: 1
   render_component: {fileID: 5535535953445513838}
   child: {fileID: 0}
   collider_component: {fileID: 5257816875215758253}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &6277125390117041093
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -57100,12 +57209,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7428686376466275126}
+  _hidden: 0
   id: 50
   card_physics: 1
   render_component: {fileID: 4388390816242311623}
   child: {fileID: 0}
   collider_component: {fileID: 4367754580705721650}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &6644450117452323618
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -57447,12 +57558,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6812843869625431342}
+  _hidden: 0
   id: 26
   card_physics: 1
   render_component: {fileID: 8651159070056052608}
   child: {fileID: 0}
   collider_component: {fileID: 5929689019563860689}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &6749618604873445765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57789,12 +57902,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5567813983523947679}
+  _hidden: 0
   id: 28
   card_physics: 1
   render_component: {fileID: 5604474501477496158}
   child: {fileID: 0}
   collider_component: {fileID: 7084739576322945811}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &6841122159098268783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60430,12 +60545,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8021986443616714324}
+  _hidden: 0
   id: 15
   card_physics: 1
   render_component: {fileID: 9087912220573613040}
   child: {fileID: 0}
   collider_component: {fileID: 8543092625810927525}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &7222869783198853781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60619,12 +60736,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 9214555378449175880}
+  _hidden: 0
   id: 3
   card_physics: 1
   render_component: {fileID: 6119703640159179285}
   child: {fileID: 0}
   collider_component: {fileID: 7334532242123450777}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &7300487825496482815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62975,6 +63094,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3625471649876233436, guid: 0ce038b4ba8be294999833c12c038dd7,
         type: 3}
+    - target: {fileID: 3660615398910152314, guid: 0ce038b4ba8be294999833c12c038dd7,
+        type: 3}
+      propertyPath: printDebugMessages
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3660615398910152314, guid: 0ce038b4ba8be294999833c12c038dd7,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -67673,7 +67797,7 @@ PrefabInstance:
     - target: {fileID: 5586737028387816328, guid: 9da90ea981473fc4482b644af9200f5a,
         type: 3}
       propertyPath: printDebugMessages
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5586737028387816328, guid: 9da90ea981473fc4482b644af9200f5a,
         type: 3}
@@ -69820,12 +69944,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 969242238036453725}
+  _hidden: 0
   id: 45
   card_physics: 1
   render_component: {fileID: 8802074123925056443}
   child: {fileID: 0}
   collider_component: {fileID: 431555747725674536}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &7922282951798922510
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -69942,12 +70068,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8555210803985765976}
+  _hidden: 0
   id: 30
   card_physics: 1
   render_component: {fileID: 8446877554111871695}
   child: {fileID: 0}
   collider_component: {fileID: 6984055492491927779}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!54 &7997838641658276644
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70091,12 +70219,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1475909641521223201}
+  _hidden: 0
   id: 1
   card_physics: 1
   render_component: {fileID: 9023638314628792393}
   child: {fileID: 0}
   collider_component: {fileID: 65317413806002499}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!4 &8034191358158931685
 Transform:
   m_ObjectHideFlags: 0
@@ -70432,12 +70562,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5752779064039267652}
+  _hidden: 0
   id: 7
   card_physics: 1
   render_component: {fileID: 3200034080695729822}
   child: {fileID: 0}
   collider_component: {fileID: 4855112866666508798}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!65 &8124933956372576981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70484,12 +70616,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3920136602531430127}
+  _hidden: 0
   id: 44
   card_physics: 1
   render_component: {fileID: 7335455244826005943}
   child: {fileID: 0}
   collider_component: {fileID: 1582849762885508659}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &8149907230048211065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70608,12 +70742,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8768853975723410100}
+  _hidden: 0
   id: 43
   card_physics: 1
   render_component: {fileID: 2024285139692746551}
   child: {fileID: 0}
   collider_component: {fileID: 8955184921300404504}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!224 &8160137494257831365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70933,12 +71069,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8818668174039023465}
+  _hidden: 0
   id: 9
   card_physics: 1
   render_component: {fileID: 1613381187815312236}
   child: {fileID: 0}
   collider_component: {fileID: 6041225530046613966}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &8226590020158226832
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -71784,12 +71922,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 9003336867621397339}
+  _hidden: 0
   id: 35
   card_physics: 1
   render_component: {fileID: 7327788493251151727}
   child: {fileID: 0}
   collider_component: {fileID: 5526727141000981019}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!65 &8366131340055187629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72041,12 +72181,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1595216343633050341}
+  _hidden: 0
   id: 22
   card_physics: 1
   render_component: {fileID: 7820918042640034170}
   child: {fileID: 0}
   collider_component: {fileID: 5193616278600374355}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &8406228229587093244
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -72202,12 +72344,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7424354992359283056}
+  _hidden: 0
   id: 41
   card_physics: 1
   render_component: {fileID: 990381331676728308}
   child: {fileID: 0}
   collider_component: {fileID: 1501573158632938860}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!1001 &8446877554111871694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72571,12 +72715,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2239338668038319360}
+  _hidden: 0
   id: 34
   card_physics: 1
   render_component: {fileID: 4886335722917864152}
   child: {fileID: 0}
   collider_component: {fileID: 3232442516402840647}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &8476694162441503969
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -72655,12 +72801,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 4583093082319160298}
+  _hidden: 0
   id: 27
   card_physics: 1
   render_component: {fileID: 3125088108172189262}
   child: {fileID: 0}
   collider_component: {fileID: 7878154861126378818}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &8478693821424793713
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -73631,12 +73779,14 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 317334972964172259}
+  _hidden: 0
   id: 49
   card_physics: 1
   render_component: {fileID: 8491632015102951728}
   child: {fileID: 0}
   collider_component: {fileID: 7057407216489328820}
   deck: {fileID: 2884152490936697347}
+  placingState: {fileID: 0}
 --- !u!114 &8718752556895703536
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -75731,8 +75881,14 @@ MonoBehaviour:
   deck: {fileID: 2884152490936697347}
   placement_transform: {fileID: 6830779589912641870}
   incoming_vel: {x: 0, y: -1, z: 0}
+  placed_cards:
+    _values: []
   animator: {fileID: 0}
   active_parameter: allow_throwing
+  row_length: 4
+  horizontal_spacing: 0.08
+  vertical_spacing: 0.15
+  deal_delay: 0.2
   spacing: 0.08
   limit: 5
 --- !u!114 &9030685412892563177

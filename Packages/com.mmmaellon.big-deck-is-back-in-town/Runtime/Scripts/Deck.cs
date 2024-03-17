@@ -15,6 +15,8 @@ namespace MMMaellon
     {
         public GameObject deck_model;
         public GameObject empty_deck_model;
+        public Material card_material;
+        public Material hidden_card_material;
         public Transform cards_in_deck_parent;
         public Transform cards_outside_deck_parent;
         public CardPlacementSpot[] placement_spots;
@@ -26,11 +28,11 @@ namespace MMMaellon
             get => _next_card;
             set
             {
-                if (_next_card >= 0 && _next_card < cards.Length && automatically_pick_next_card)
+                if (_next_card >= 0 && _next_card < cards.Length)
                 {
-                    if (Networking.LocalPlayer.IsOwner(cards[_next_card].gameObject))
+                    if (cards[_next_card].IsActiveState())
                     {
-                        cards[_next_card].selected = false;
+                        cards[_next_card].OnEnterState();
                     }
                 }
                 _next_card = value;
@@ -39,10 +41,10 @@ namespace MMMaellon
                     if (Networking.LocalPlayer.IsOwner(gameObject) && !cards[_next_card].IsActiveState())
                     {
                         cards[_next_card].EnterState();
-                        if (automatically_pick_next_card)
-                        {
-                            cards[_next_card].selected = true;
-                        }
+                    }
+                    else
+                    {
+                        cards[_next_card].OnEnterState();
                     }
                     if (deck_model)
                     {
@@ -100,6 +102,7 @@ namespace MMMaellon
         public bool automatically_pick_next_card = true;
         public void PickNextCard()
         {
+            pick_next_card_requested = false;
             if (!Networking.LocalPlayer.IsOwner(gameObject))
             {
                 Networking.SetOwner(Networking.LocalPlayer, gameObject);
@@ -126,19 +129,14 @@ namespace MMMaellon
                 {
                     card.EnterState();
                 }
-                card.selected = false;
-            }
-            if (automatically_pick_next_card)
-            {
-                PickNextCard();
             }
         }
 
         Card temp_card;
+        bool pick_next_card_requested = false;
         public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
         {
 
-            // Debug.LogWarning($"efesfe OnChangeState from {sync.name}");
             temp_card = sync.GetComponent<Card>();
             if (temp_card == null)
             {
@@ -150,19 +148,23 @@ namespace MMMaellon
                 if (!cards_in_decks.Contains(new DataToken(temp_card)))
                 {
                     cards_in_decks.Add(new DataToken(temp_card));
-                    if (deck_sync && deck_sync.IsHeld())
+                    if (automatically_pick_next_card && !pick_next_card_requested)
                     {
-                        if (automatically_pick_next_card && deck_sync.IsOwnerLocal())
+                        if (deck_sync && deck_sync.IsHeld())
                         {
-                            PickNextCard();
+                            if (deck_sync.IsOwnerLocal())
+                            {
+                                pick_next_card_requested = true;
+                                SendCustomEventDelayedFrames(nameof(PickNextCard), 1);
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (automatically_pick_next_card && sync.IsOwnerLocal())
+                        else
                         {
-                            Networking.SetOwner(Networking.LocalPlayer, gameObject);
-                            PickNextCard();
+                            if (sync.IsOwnerLocal())
+                            {
+                                pick_next_card_requested = true;
+                                SendCustomEventDelayedFrames(nameof(PickNextCard), 1);
+                            }
                         }
                     }
                 }
@@ -191,7 +193,6 @@ namespace MMMaellon
                 }
             }
         }
-
 
         public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {

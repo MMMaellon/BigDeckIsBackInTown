@@ -19,7 +19,7 @@ namespace MMMaellon
         {
             real_interpolation = deal_duration <= 0 ? 1.0f : Mathf.Min(1.0f, (Time.timeSinceLevelLoad - start_time) / deal_duration);
             transform.position = HermiteInterpolatePosition(start_pos, start_vel, sync.pos, sync.vel, real_interpolation);
-            transform.rotation = HermiteInterpolateRotation(start_rot, start_spin, sync.rot, Vector3.zero, real_interpolation);
+            transform.rotation = HermiteInterpolateRotation(start_rot, sync.rot, real_interpolation);
             if (real_interpolation >= 1.0f)
             {
                 sync.rigid.detectCollisions = true;
@@ -33,7 +33,7 @@ namespace MMMaellon
             posControl2 = endPos - endVel * deal_duration * (1.0f - interpolation) / 3f;
             return Vector3.Lerp(Vector3.Lerp(posControl1, endPos, interpolation), Vector3.Lerp(startPos, posControl2, interpolation), interpolation);
         }
-        public Quaternion HermiteInterpolateRotation(Quaternion startRot, Vector3 startSpin, Quaternion endRot, Vector3 endSpin, float interpolation)
+        public Quaternion HermiteInterpolateRotation(Quaternion startRot, Quaternion endRot, float interpolation)
         {
             return Quaternion.Slerp(startRot, endRot, interpolation);
         }

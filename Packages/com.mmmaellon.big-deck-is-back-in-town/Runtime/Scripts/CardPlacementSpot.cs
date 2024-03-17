@@ -1,6 +1,7 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
+using VRC.SDK3.Data;
 using VRC.SDKBase;
 
 namespace MMMaellon
@@ -15,7 +16,8 @@ namespace MMMaellon
         public Deck deck;
         public Transform placement_transform;
         public Vector3 incoming_vel = Vector3.down;
-        CardPlacingState card;
+        CardPlacingState temp_card;
+        public DataList placed_cards;
         public virtual void Start()
         {
             DisableInteractive = !deal_on_interact;
@@ -26,12 +28,12 @@ namespace MMMaellon
             {
                 return;
             }
-            card = other.GetComponent<CardPlacingState>();
-            if (!card || card.card.deck != deck || !card.sync.IsHeld() || card.sync.interpolation < 0.99f)
+            temp_card = other.GetComponent<CardPlacingState>();
+            if (!temp_card || temp_card.card.deck != deck || !temp_card.sync.IsHeld() || temp_card.sync.interpolation < 0.99f)
             {
                 return;
             }
-            Place(card);
+            Place(temp_card);
         }
 
         public virtual void Deal()
@@ -50,10 +52,10 @@ namespace MMMaellon
                 return;
             }
 
-            card = deck.cards[deck.next_card].GetComponent<CardPlacingState>();
-            if (card)
+            temp_card = deck.cards[deck.next_card].GetComponent<CardPlacingState>();
+            if (temp_card)
             {
-                Place(card);
+                Place(temp_card);
             }
         }
 
@@ -72,7 +74,6 @@ namespace MMMaellon
             }
         }
 
-
         public virtual bool AllowsThrowing()
         {
             return allow_throwing;
@@ -87,10 +88,17 @@ namespace MMMaellon
             card.sync.rot = GetPlacementRotation(card);
             card.sync.vel = GetPlacementVelocity(card);
             card.EnterState();
+
         }
         public virtual Vector3 GetPlacementPosition(CardPlacingState card)
         {
-            return placement_transform.position;
+            if (cards_to_deal <= 0)
+            {
+                return placement_transform.position;
+            }
+            cards_to_deal--;
+            offset = new Vector3(((cards_to_deal) % row_length) * -horizontal_spacing, Mathf.CeilToInt(cards_to_deal / row_length) * vertical_spacing, 0);
+            return placement_transform.position + placement_transform.rotation * (offset + end_offset);
         }
         public virtual Quaternion GetPlacementRotation(CardPlacingState card)
         {
@@ -116,6 +124,106 @@ namespace MMMaellon
         public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
             //for extending if you make custom spots
+        }
+        public int row_length = 4;
+        public float horizontal_spacing = 0.08f;
+        public float vertical_spacing = 0.15f;
+        [System.NonSerialized]
+        public int cards_to_deal = -1001;
+        //when negative, we just deal a single card
+        //when positive, we deal multiple cards, but offset them based off the settings above
+        [System.NonSerialized]
+        public int _capacity;
+        public int capacity
+        {
+            get => _capacity;
+            set
+            {
+                _capacity = value;
+                rows = Mathf.CeilToInt(value / (float)row_length);
+                if (value < row_length)
+                {
+                    end_offset = Vector3.right * (value / 2f) * horizontal_spacing;
+                }
+                else
+                {
+                    end_offset = new Vector3((row_length - 1) / 2f * horizontal_spacing, (rows - 1) / -2f * vertical_spacing, 0);
+                }
+            }
+        }
+        Vector3 end_offset;
+        Vector3 offset;
+        int rows = 0;
+        public virtual void DealMultiple(int count)
+        {
+            capacity = count;
+            cards_to_deal = count;
+            DealLoop();
+        }
+
+        public float deal_delay = 0.2f;
+        public virtual void DealLoop()
+        {
+            if (!deck.automatically_pick_next_card)
+            {
+                deck.PickNextCard();
+            }
+            temp_card = deck.cards[deck.next_card].GetComponent<CardPlacingState>();
+            if (temp_card)
+            {
+                Place(temp_card);
+            }
+            if (cards_to_deal > 0)
+            {
+                SendCustomEventDelayedSeconds(nameof(DealLoop), deal_delay);
+            }
+        }
+        CardText text_card;
+        public virtual void DealSpecificCard(int text_id)
+        {
+            if (deck.cards_in_decks.Count > 0)
+            {
+                text_card = ((Card)deck.cards_in_decks[0].Reference).GetComponent<CardText>();
+                Place(text_card.GetComponent<CardPlacingState>());
+                text_card.text_id = text_id;
+            }
+        }
+
+        public void Deal2()
+        {
+            DealMultiple(2);
+        }
+        public void Deal3()
+        {
+            DealMultiple(3);
+        }
+        public void Deal4()
+        {
+            DealMultiple(4);
+        }
+        public void Deal5()
+        {
+            DealMultiple(5);
+        }
+        public void Deal6()
+        {
+            DealMultiple(6);
+        }
+        public void Deal7()
+        {
+            DealMultiple(7);
+        }
+        public void Deal8()
+        {
+            DealMultiple(8);
+        }
+        public void Deal9()
+        {
+            DealMultiple(9);
+        }
+        public void Deal10()
+        {
+            DealMultiple(10);
         }
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()

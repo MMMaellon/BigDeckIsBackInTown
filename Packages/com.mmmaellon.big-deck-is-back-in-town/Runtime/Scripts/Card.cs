@@ -7,44 +7,44 @@ using VRC.Udon;
 
 namespace MMMaellon
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(SmartObjectSync))]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(SmartObjectSync)), RequireComponent(typeof(CardPlacingState))]
     public class Card : SmartObjectSyncState
     {
+        [UdonSynced, FieldChangeCallback(nameof(hidden))]
+        public bool _hidden = false;
+        public bool hidden
+        {
+            get => _hidden;
+            set
+            {
+                _hidden = value;
+                if (value)
+                {
+                    if (deck.hidden_card_material)
+                    {
+                        render_component.sharedMaterial = deck.hidden_card_material;
+                    }
+                }
+                else
+                {
+                    if (deck.card_material)
+                    {
+                        render_component.sharedMaterial = deck.card_material;
+                    }
+                }
+                if (child)
+                {
+                    child.SetActive(!value && !IsActiveState());
+                }
+            }
+        }
         public int id;
         public bool card_physics = true;
         public Renderer render_component;
         public GameObject child;
         public Collider collider_component;
-        [NonSerialized, UdonSynced, FieldChangeCallback(nameof(selected))]
-        public bool _selected = false;
-        public bool selected
-        {
-            get => _selected;
-            set
-            {
-                _selected = value;
-
-                if (IsActiveState())
-                {
-                    collider_component.enabled = _selected;
-                    render_component.enabled = _selected;
-                    if (child)
-                    {
-                        child.SetActive(_selected);
-                    }
-                }
-
-                if (sync.IsOwnerLocal())
-                {
-                    RequestSerialization();
-                }
-            }
-        }
         public Deck deck;
-
-        public void OnEnable(){
-            selected = selected;
-        }
+        public CardPlacingState placingState;
 
         public override void OnDrop()
         {
@@ -60,12 +60,12 @@ namespace MMMaellon
 
         public override void OnEnterState()
         {
-            collider_component.enabled = _selected;
+            collider_component.enabled = deck.next_card == id;
             collider_component.isTrigger = true;
-            render_component.enabled = _selected;
+            render_component.enabled = false;
             if (child)
             {
-                child.SetActive(_selected);
+                child.SetActive(false);
             }
             transform.position = deck.cards_in_deck_parent.position;
             transform.rotation = deck.cards_in_deck_parent.rotation;
@@ -81,12 +81,8 @@ namespace MMMaellon
             collider_component.enabled = true;
             collider_component.isTrigger = false;
             render_component.enabled = true;
-            if (child)
-            {
-                child.SetActive(true);
-            }
+            hidden = hidden;
             sync.rigid.isKinematic = !card_physics;
-            _selected = false;
             if (deck.reparent_cards)
             {
                 transform.SetParent(deck.cards_outside_deck_parent, true);
@@ -117,6 +113,7 @@ namespace MMMaellon
         {
             render_component = GetComponent<Renderer>();
             collider_component = GetComponent<Collider>();
+            placingState = GetComponent<CardPlacingState>();
             base.Reset();
         }
 #endif
