@@ -19,7 +19,7 @@ namespace MMMaellon
             game.local_player.choice = choice_id;
         }
 
-        public override void OnPlayerTriggerEnter(VRCPlayerApi player)
+        public override void OnPlayerTriggerStay(VRCPlayerApi player)
         {
             if (!Utilities.IsValid(player) || !player.isLocal)
             {

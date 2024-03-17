@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: CardPlacementSpot
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 34075007192b64248a604e0dfaac7f6c,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 01153eded4ff04741b761cf1d5c10220,
     type: 2}
   udonAssembly: 
   assemblyError: 

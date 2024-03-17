@@ -27,7 +27,6 @@ namespace MMMaellon
                 {
                     RequestSerialization();
                 }
-                Debug.LogWarning("we updated the text " + value);
                 if (value < 0)
                 {
                     text.text = "";

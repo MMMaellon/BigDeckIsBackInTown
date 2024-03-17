@@ -17,13 +17,25 @@ namespace MMMaellon
         float real_interpolation;
         public override void Interpolate(float interpolation)
         {
-            real_interpolation = deal_duration <= 0 ? 1.0f : (Time.timeSinceLevelLoad - start_time) / deal_duration;
-            transform.position = sync.HermiteInterpolatePosition(start_pos, start_vel, sync.pos, sync.vel, real_interpolation);
-            transform.rotation = sync.HermiteInterpolateRotation(start_rot, start_spin, sync.rot, Vector3.zero, real_interpolation);
+            real_interpolation = deal_duration <= 0 ? 1.0f : Mathf.Min(1.0f, (Time.timeSinceLevelLoad - start_time) / deal_duration);
+            transform.position = HermiteInterpolatePosition(start_pos, start_vel, sync.pos, sync.vel, real_interpolation);
+            transform.rotation = HermiteInterpolateRotation(start_rot, start_spin, sync.rot, Vector3.zero, real_interpolation);
             if (real_interpolation >= 1.0f)
             {
                 sync.rigid.detectCollisions = true;
             }
+        }
+        Vector3 posControl1;
+        Vector3 posControl2;
+        public Vector3 HermiteInterpolatePosition(Vector3 startPos, Vector3 startVel, Vector3 endPos, Vector3 endVel, float interpolation)
+        {//Shout out to Kit Kat for suggesting the improved hermite interpolation
+            posControl1 = startPos + startVel * deal_duration * interpolation / 3f;
+            posControl2 = endPos - endVel * deal_duration * (1.0f - interpolation) / 3f;
+            return Vector3.Lerp(Vector3.Lerp(posControl1, endPos, interpolation), Vector3.Lerp(startPos, posControl2, interpolation), interpolation);
+        }
+        public Quaternion HermiteInterpolateRotation(Quaternion startRot, Vector3 startSpin, Quaternion endRot, Vector3 endSpin, float interpolation)
+        {
+            return Quaternion.Slerp(startRot, endRot, interpolation);
         }
 
         bool last_kinematic;
@@ -42,7 +54,13 @@ namespace MMMaellon
 
         public override bool OnInterpolationEnd()
         {
-            return real_interpolation < 1.0f;
+            if (real_interpolation >= 1.0f)
+            {
+                transform.position = sync.pos;
+                transform.rotation = sync.rot;
+                return false;
+            }
+            return true;
         }
 
         Vector3 start_pos;

@@ -26,7 +26,7 @@ namespace MMMaellon
             get => _next_card;
             set
             {
-                if (_next_card >= 0 && _next_card < cards.Length)
+                if (_next_card >= 0 && _next_card < cards.Length && automatically_pick_next_card)
                 {
                     if (Networking.LocalPlayer.IsOwner(cards[_next_card].gameObject))
                     {
@@ -36,10 +36,13 @@ namespace MMMaellon
                 _next_card = value;
                 if (_next_card >= 0 && _next_card < cards.Length)
                 {
-                    if (Networking.LocalPlayer.IsOwner(gameObject))
+                    if (Networking.LocalPlayer.IsOwner(gameObject) && !cards[_next_card].IsActiveState())
                     {
                         cards[_next_card].EnterState();
-                        cards[_next_card].selected = true;
+                        if (automatically_pick_next_card)
+                        {
+                            cards[_next_card].selected = true;
+                        }
                     }
                     if (deck_model)
                     {
@@ -119,7 +122,10 @@ namespace MMMaellon
             //put all cards back in the deck and select a new card
             foreach (var card in cards)
             {
-                card.EnterState();
+                if (!card.IsActiveState())
+                {
+                    card.EnterState();
+                }
                 card.selected = false;
             }
             if (automatically_pick_next_card)
@@ -146,7 +152,7 @@ namespace MMMaellon
                     cards_in_decks.Add(new DataToken(temp_card));
                     if (deck_sync && deck_sync.IsHeld())
                     {
-                        if (automatically_pick_next_card &&deck_sync.IsOwnerLocal())
+                        if (automatically_pick_next_card && deck_sync.IsOwnerLocal())
                         {
                             PickNextCard();
                         }

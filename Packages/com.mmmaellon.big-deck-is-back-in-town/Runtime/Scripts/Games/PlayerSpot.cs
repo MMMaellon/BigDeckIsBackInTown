@@ -129,13 +129,18 @@ namespace MMMaellon
         }
 
         public float deal_delay = 0.2f;
+        CardPlacingState temp_card;
         public void DealLoop()
         {
             if (!deck.automatically_pick_next_card)
             {
                 deck.PickNextCard();
             }
-            Deal();
+            temp_card = deck.cards[deck.next_card].GetComponent<CardPlacingState>();
+            if (temp_card)
+            {
+                Place(temp_card);
+            }
             if (cards_to_deal > 0)
             {
                 SendCustomEventDelayedSeconds(nameof(DealLoop), deal_delay);

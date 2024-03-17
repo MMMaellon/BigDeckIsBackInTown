@@ -27,13 +27,18 @@ namespace MMMaellon
                 else if (Networking.LocalPlayer.playerId == value)
                 {
                     Networking.SetOwner(Networking.LocalPlayer, gameObject);
-                } else if (value < 0 && Networking.LocalPlayer.IsOwner(game.gameObject)){
+                }
+                else if (value < 0 && Networking.LocalPlayer.IsOwner(game.gameObject))
+                {
                     Networking.SetOwner(Networking.LocalPlayer, gameObject);
                     //return to game master
                 }
-                if(value < 0){
+                if (value < 0)
+                {
                     game.OnLeaveGame(this);
-                } else {
+                }
+                else
+                {
                     game.OnJoinGame(this);
                 }
             }
@@ -46,49 +51,78 @@ namespace MMMaellon
             set
             {
                 _health = value;
+                if (player_id >= 0)
+                {
+                    if (value > 0)
+                    {
+                        Networking.GetOwner(gameObject).CombatSetup();
+                        Networking.GetOwner(gameObject).CombatSetRespawn(true, 5, null);
+                        Networking.GetOwner(gameObject).CombatSetMaxHitpoints(100);
+                        Networking.GetOwner(gameObject).CombatSetDamageGraphic(null);
+                        Networking.GetOwner(gameObject).CombatSetCurrentHitpoints(100);
+                    }
+                    else if (value == 0)
+                    {
+                        Networking.GetOwner(gameObject).CombatSetMaxHitpoints(100);
+                        Networking.GetOwner(gameObject).CombatSetCurrentHitpoints(0);
+                    }
+                    else
+                    {
+                        Networking.GetOwner(gameObject).CombatSetMaxHitpoints(100);
+                        Networking.GetOwner(gameObject).CombatSetCurrentHitpoints(100);
+                    }
+                }
                 if (Networking.LocalPlayer.IsOwner(gameObject))
                 {
                     RequestSerialization();
-                    if(Networking.LocalPlayer.playerId == _player_id){
-
-                    }
                 }
 
             }
         }
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(choice))]
         public short _choice = -1001;
+
         public short choice
         {
             get => _choice;
             set
             {
+                if (_choice == value)
+                {
+                    return;
+                }
                 _choice = value;
                 if (Networking.LocalPlayer.IsOwner(gameObject))
                 {
                     RequestSerialization();
-                    if(Networking.LocalPlayer.playerId == _player_id){
-
-                    }
+                    game.OnMadeChoice(value);
                 }
             }
         }
 
-        public override void OnOwnershipTransferred(VRCPlayerApi player){
-            if(!Utilities.IsValid(player) || !player.isLocal){
+        public override void OnOwnershipTransferred(VRCPlayerApi player)
+        {
+            if (!Utilities.IsValid(player) || !player.isLocal)
+            {
                 return;
             }
-            if(player_id == player.playerId){
+            if (player_id == player.playerId)
+            {
                 //Correct
-            } else if(player.IsOwner(game.gameObject)){
+            }
+            else if (player.IsOwner(game.gameObject))
+            {
                 //game master is about to do something
-            } else {
+            }
+            else
+            {
                 //uh oh
                 player_id = -1001;
             }
         }
 
-        public void ResetPlayer(){
+        public void ResetPlayer()
+        {
             health = 5;
             choice = 0;
         }

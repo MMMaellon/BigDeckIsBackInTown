@@ -32,7 +32,7 @@ namespace MMMaellon
                 {
                     submitted_text_str = "<color=red>ERROR PREFAB BROKE</color>";
                 }
-                if (animator)
+                if (value >= 0 && animator)
                 {
                     animator.SetTrigger(place_parameter);
                 }
@@ -73,6 +73,7 @@ namespace MMMaellon
 
         public string submitted_text_str;
         public GameSubmissionListener[] placement_listeners;
+        [System.NonSerialized]
         public CardText card_text;
         DataList cards_to_respawn = new DataList();
         public override void Place(CardPlacingState card)
@@ -101,6 +102,7 @@ namespace MMMaellon
             {
                 ((SmartObjectSync)sync_token.Reference).Respawn();
             }
+            cards_to_respawn.Clear();
         }
 
         public float angle_limit = 10f;
@@ -152,6 +154,9 @@ namespace MMMaellon
                     SendCustomEventDelayedFrames(nameof(LookUpdate), 1);
                 }
             }
+        }
+        public void OnEnable(){
+            allow_throwing = allow_throwing;
         }
     }
 }

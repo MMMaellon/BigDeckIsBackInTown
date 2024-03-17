@@ -65,23 +65,9 @@ namespace MMMaellon
                         if (!cards_dealt && last_state_change + deal_cards_delay < Time.timeSinceLevelLoad)
                         {
                             cards_dealt = true;
-                            if (local_spot && local_spot.spot_id == turn)
+                            if (Networking.LocalPlayer.IsOwner(answer_prompt.deck.gameObject))
                             {
-                                if (!Networking.LocalPlayer.IsOwner(gameObject))
-                                {
-                                    Networking.SetOwner(Networking.LocalPlayer, gameObject);
-                                }
-                                //put all cards back in the deck and select a new card
-                                foreach (var card in answer_prompt.deck.cards)
-                                {
-                                    if (card.IsActiveState())
-                                    {
-                                        continue;
-                                    }
-                                    card.EnterState();
-                                    card.selected = false;
-                                }
-                                local_spot.DealMultiple(8);
+                                DealCards();
                             }
                         }
                         break;
@@ -176,7 +162,7 @@ namespace MMMaellon
                         }
                     case STATE_GETTING_ANSWERS:
                         {
-                            if (Networking.LocalPlayer.IsOwner(gameObject) && left_prompt.submitted_text < 0 || right_prompt.submitted_text < 0)
+                            if (Networking.LocalPlayer.IsOwner(gameObject) && (left_prompt.submitted_text < 0 || right_prompt.submitted_text < 0))
                             {
                                 if (left_prompt.submitted_text < 0 && right_prompt.submitted_text < 0)
                                 {
@@ -223,6 +209,7 @@ namespace MMMaellon
         bool found_turn;
         VRCPlayerApi turn_player;
         VRCPlayerApi temp_player;
+        PlayerSpot turn_spot;
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(turn))]
         public int _turn = -1001;//id of the player who is choosing the prompts
         public int turn
@@ -230,13 +217,15 @@ namespace MMMaellon
             get => _turn;
             set
             {
+                last_state_change = Time.timeSinceLevelLoad;
                 _turn = value;
                 found_turn = false;
                 for (int i = 0; i < player_spots.Length; i++)
                 {
                     if (value == i)
                     {
-                        turn_player = Networking.GetOwner(player_spots[i].gameObject);
+                        turn_spot = player_spots[i];
+                        turn_player = Networking.GetOwner(turn_spot.gameObject);
                         animator.SetBool("your_turn", turn_player.isLocal);
                         left_prompt.allow_throwing = turn_player.isLocal;
                         right_prompt.allow_throwing = turn_player.isLocal;
@@ -263,6 +252,15 @@ namespace MMMaellon
             }
         }
 
+        public void DealCards()
+        {
+            if (turn_spot)
+            {
+                answer_prompt.deck.ResetDeck();
+                turn_spot.DealMultiple(8);
+            }
+        }
+
         public float cleanup_cards_delay = 0.1f;
 
         public const int STATE_STOPPED = -1001;
@@ -270,16 +268,22 @@ namespace MMMaellon
         public const int STATE_GETTING_ANSWERS = 1;
         public const int STATE_SHOW_RESULTS = 2;
 
+        int new_text;
         public override void OnSubmit(CardPlacingState card, GameSubmissionSpot spot)
         {
-            spot.allow_throwing = false;
             if (spot == left_prompt || spot == right_prompt)
             {
+                spot.allow_throwing = false;
                 StartTextLoop();
             }
             else if (local_spot)
             {
-                local_spot.selection = card.GetComponent<CardText>().text_id;
+                new_text = card.GetComponent<CardText>().text_id;
+                if (new_text == left_prompt.submitted_text || new_text == right_prompt.submitted_text)
+                {
+                    local_spot.selection = new_text;
+                    spot.allow_throwing = false;
+                }
             }
         }
 
@@ -375,6 +379,11 @@ namespace MMMaellon
                 //person left the game while it was their turn
                 spot.Deactivate();
                 NextTurn();
+                answer_prompt.deck.ResetDeck();
+                if (turn_spot)
+                {
+                    turn_spot.Deal8();
+                }
             }
         }
 
@@ -382,7 +391,6 @@ namespace MMMaellon
         bool found_next = false;
         public void NextTurn()
         {
-            Networking.SetOwner(Networking.LocalPlayer, gameObject);
             if (turn < 0)
             {
                 _turn = 0;
@@ -405,20 +413,6 @@ namespace MMMaellon
             else
             {
                 game_state = STATE_STOPPED;
-            }
-        }
-        public override void OnOwnershipTransferred(VRCPlayerApi player)
-        {
-            if (Utilities.IsValid(player) && player.isLocal)
-            {
-                if (game_state == STATE_SELECTING_PROMPTS)
-                {
-                    //check if we're left in a weird state because the owner just left
-                    if (turn >= 0)
-                    {
-                        NextTurn();
-                    }
-                }
             }
         }
         public void StartGame()
