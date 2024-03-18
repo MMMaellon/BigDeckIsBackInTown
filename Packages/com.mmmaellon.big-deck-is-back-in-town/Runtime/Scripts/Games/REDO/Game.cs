@@ -6,7 +6,7 @@ using VRC.SDKBase;
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Animator))]
-    public class Game : UdonSharpBehaviour
+    public class Game : CardThrowingHandler
     {
         [HideInInspector]
         public Animator animator;
@@ -190,6 +190,11 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             return players[joined_player_ids[(turn_joined_index + skip) % joined_player_ids.Count].Int];
         }
+         public virtual void OnThrowCard(int target_index, CardThrowing card)
+        {
+
+        }
+
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()
@@ -197,9 +202,25 @@ namespace MMMaellon.BigDeckIsBackInTown
             animator = GetComponent<Animator>();
         }
 
-        public void OnValidate()
+        public override void OnValidate()
         {
-            players = GetComponentsInChildren<Player>();
+            base.OnValidate();
+            if (players.Length > 0)
+            {
+                System.Collections.Generic.List<Player> only_valid = new();
+                for (int i = 0; i < players.Length; i++)
+                {
+                    if (players[i])
+                    {
+                        only_valid.Add(players[i]);
+                    }
+                }
+                players = only_valid.ToArray();
+            }
+            else
+            {
+                players = GetComponentsInChildren<Player>();
+            }
             for (int i = 0; i < players.Length; i++)
             {
                 players[i].id = i;

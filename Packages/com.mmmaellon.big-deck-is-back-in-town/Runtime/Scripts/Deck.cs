@@ -7,12 +7,14 @@ using VRC.Udon.Common;
 using VRC.Udon.Common.Enums;
 using UnityEngine.UI;
 using VRC.SDK3.Components;
+using MMMaellon.BigDeckIsBackInTown;
 
 namespace MMMaellon
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), DefaultExecutionOrder(69)]
     public class Deck : SmartObjectSyncListener
     {
+        public CardThrowingHandler throwing_handler;
         public GameObject deck_model;
         public GameObject empty_deck_model;
         public Material card_material;
@@ -107,13 +109,32 @@ namespace MMMaellon
             {
                 Networking.SetOwner(Networking.LocalPlayer, gameObject);
             }
+            next_card = RandomCardId(false);
+        }
+
+        public int RandomCardId(bool include_drawn_cards)
+        {
+
             if (!cards_in_decks.TryGetValue(Random.Range(0, cards_in_decks.Count), out temp_token))
             {
-                Debug.LogError("Could not get next Card. Cards left in deck: " + cards_in_decks.Count);
-                next_card = -1001;
-                return;
+                Debug.LogError("Could not get random Card id. Cards left in deck: " + cards_in_decks.Count);
+                if (include_drawn_cards)
+                {
+                    return Random.Range(0, cards.Length);
+                }
+                return -1001;
             }
-            next_card = ((Card)temp_token.Reference).id;
+            return ((Card)temp_token.Reference).id;
+        }
+
+        public Card RandomCard(bool include_drawn_cards)
+        {
+            int random_id = RandomCardId(include_drawn_cards);
+            if (random_id < 0 || random_id >= cards.Length)
+            {
+                return null;
+            }
+            return cards[random_id];
         }
 
         public void ResetDeck()
