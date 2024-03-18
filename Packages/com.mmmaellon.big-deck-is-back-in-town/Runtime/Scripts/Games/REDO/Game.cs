@@ -190,7 +190,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             return players[joined_player_ids[(turn_joined_index + skip) % joined_player_ids.Count].Int];
         }
-         public virtual void OnThrowCard(int target_index, CardThrowing card)
+
+        public override void OnThrowCard(int target_index, CardThrowing card)
         {
 
         }
