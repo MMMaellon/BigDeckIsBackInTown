@@ -82,6 +82,10 @@ namespace MMMaellon
             collider_component.isTrigger = false;
             render_component.enabled = true;
             hidden = hidden;
+            if (child)
+            {
+                child.SetActive(!hidden);
+            }
             sync.rigid.isKinematic = !card_physics;
             if (deck.reparent_cards)
             {
