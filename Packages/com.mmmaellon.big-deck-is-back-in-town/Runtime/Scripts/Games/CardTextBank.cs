@@ -1,17 +1,14 @@
 ﻿
 using System;
-using System.Runtime.Serialization;
 using Iwashi.UdonTask;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Data;
 using VRC.SDK3.StringLoading;
 using VRC.SDKBase;
-using VRC.Udon;
 using VRC.Udon.Common.Interfaces;
-using VRC.Udon.Serialization.OdinSerializer.Utilities;
 
-namespace MMMaellon
+namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class CardTextBank : UdonSharpBehaviour

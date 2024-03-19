@@ -1,13 +1,10 @@
 ﻿
-using System;
 using TMPro;
 using UdonSharp;
 using UnityEngine;
-using VRC.SDK3.Data;
 using VRC.SDKBase;
-using VRC.Udon;
 
-namespace MMMaellon
+namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Card))]
     public class CardText : SmartObjectSyncListener

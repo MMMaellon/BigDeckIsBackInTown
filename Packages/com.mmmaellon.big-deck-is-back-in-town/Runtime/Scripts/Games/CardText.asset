@@ -21,7 +21,7 @@ MonoBehaviour:
   compiledVersion: 2
   behaviourSyncMode: 4
   hasInteractEvent: 0
-  scriptID: 8118013988932833022
+  scriptID: -6154794031955215537
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -62,7 +62,7 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: MMMaellon.Card, com.mmmaellon.big-deck-is-back-in-town
+      Data: MMMaellon.BigDeckIsBackInTown.Card, com.mmmaellon.big-deck-is-back-in-town
     - Name: 
       Entry: 8
       Data: 
@@ -122,7 +122,7 @@ MonoBehaviour:
       Data: 7|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: MMMaellon.CardTextBank, com.mmmaellon.big-deck-is-back-in-town
+      Data: MMMaellon.BigDeckIsBackInTown.CardTextBank, com.mmmaellon.big-deck-is-back-in-town
     - Name: 
       Entry: 8
       Data: 

@@ -18,8 +18,6 @@ GameObject:
   - component: {fileID: 2407192618734799043}
   - component: {fileID: 5820243486080825800}
   - component: {fileID: 8623958441050951140}
-  - component: {fileID: 5903684384834274535}
-  - component: {fileID: 4908679517265476233}
   - component: {fileID: 1931384978767670576}
   - component: {fileID: 3922632610877055960}
   m_Layer: 14
@@ -165,8 +163,6 @@ MonoBehaviour:
   rigid: {fileID: 6489991604274846447}
   states:
   - {fileID: 2407192618734799043}
-  - {fileID: 5903684384834274535}
-  - {fileID: 0}
   listeners:
   - {fileID: 1931384978767670576}
   SetupRan: 1
@@ -247,10 +243,12 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5034739157691679066}
+  invisible_to_others: 0
   id: 0
   card_physics: 1
   render_component: {fileID: 1092199113881789977}
   child: {fileID: 7802959529164951437}
+  throwing: {fileID: 0}
   collider_component: {fileID: 5820243486080825800}
   deck: {fileID: 0}
 --- !u!65 &5820243486080825800
@@ -306,66 +304,6 @@ MonoBehaviour:
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 0.5
---- !u!114 &5903684384834274535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804978642592894657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d0408d718b72b41ab632f82729dc8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 4908679517265476233}
-  SetupRan: 1
-  stateID: 1
-  sync: {fileID: 5034739157691679066}
-  deal_duration: 0.25
-  deal_power: {x: 0, y: 10, z: 0}
-  deal_on_throw: 1
-  throw_threshold: 2
-  throw_min_velocity: 1
-  throw_power: {x: 0, y: 5, z: 0}
-  first_throw_only: 0
-  desktop_throw_assist: 1
-  card: {fileID: 2407192618734799043}
---- !u!114 &4908679517265476233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804978642592894657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactTextPlacement: {fileID: 0}
-  interactText: Use
-  interactTextGO: {fileID: 0}
-  proximity: 2
-  SynchronizePosition: 0
-  AllowCollisionOwnershipTransfer: 0
-  Reliable: 0
-  _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: ce3ebffe86d0f5f4fa2c82510ed23513,
-    type: 2}
-  programSource: {fileID: 11400000, guid: 5e3328c73b055e74da81339745250122, type: 2}
-  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
-  publicVariablesUnityEngineObjects: []
-  publicVariablesSerializationDataFormat: 0
 --- !u!114 &1931384978767670576
 MonoBehaviour:
   m_ObjectHideFlags: 0
