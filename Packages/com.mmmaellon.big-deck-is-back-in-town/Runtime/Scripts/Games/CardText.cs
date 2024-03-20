@@ -6,86 +6,113 @@ using VRC.SDKBase;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Card))]
-    public class CardText : SmartObjectSyncListener
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
+    public class CardText : Card
     {
-        public Card card;
-        public CardTextBank bank;
         public TextMeshPro text;
-        [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(text_id))]
-        public int _text_id = -1001;
-        public int text_id
+        [System.NonSerialized]
+        public CardTextBank bank = null; //becomes not null once the bank finishes parsing
+        [System.NonSerialized]
+        public int text_id = -1001;
+        [System.NonSerialized]
+        public int random_id = -1001;
+        [System.NonSerialized]
+        public int owner_id = -1001;
+
+        public override void OnEnterState()
         {
-            get => _text_id;
-            set
+            base.OnEnterState();
+            if (sync.IsOwnerLocal())
             {
-                _text_id = value;
-                if (card.sync.IsLocalOwner())
-                {
-                    RequestSerialization();
-                }
-                if (value < 0)
-                {
-                    text.text = "";
-                }
-                else if (value < bank.texts.Length)
-                {
-                    text.text = bank.ReplaceStringVariables(bank.texts[value], card.sync.owner, random_player);
-                }
-                else
-                {
-                    text.text = "<color=red>ERROR PREFAB BROKE</color>";
-                }
+                PickCardText();
             }
         }
-        public string RandomNameVariable = "[RANDOM_NAME]";
-        public string PlayerNameVariable = "[PLAYER_NAME]";
-        [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(player_id))]
-        public int _player_id = -1001;
-        public int player_id
+        public void PickCardText()
         {
-            get => _player_id;
-            set
+            if (!bank)
             {
-                _player_id = value;
-                random_player = VRCPlayerApi.GetPlayerById(value);
-                text.text = bank.ReplaceStringVariables(text.text, card.sync.owner, random_player);
-                if (card.sync.IsLocalOwner())
-                {
-                    RequestSerialization();
-                }
+                text_id = -69;
+                Debug.LogError("got here too early. deferring");
+                return;
             }
-        }
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
-        {
-
-        }
-        public void Start()
-        {
-            card.sync.AddListener(this);
+            text_id = bank.RandomCardId();
+            random_id = bank.RandomPlayerId();
+            owner_id = sync.owner.playerId;
+            RequestSerialization();
+            SetText();
         }
 
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
-        {
-            if (oldState == card.stateID + SmartObjectSync.STATE_CUSTOM)
-            {
-                if (card.sync.IsLocalOwner())
-                {
-                    text_id = bank.RandomCardId();
-                    player_id = bank.RandomPlayerId();
-                }
-            }
-        }
-
+        int _text_id;
+        int _random_id;
+        int _owner_id;
+        float last_sent_time = -1001f;
+        string text_str;
         VRCPlayerApi random_player;
+        VRCPlayerApi owner_player;
+        public override void OnDeserialization(VRC.Udon.Common.DeserializationResult result)
+        {
+            if (result.sendTime < last_sent_time)
+            {
+                text_id = _text_id;
+                random_id = _random_id;
+                owner_id = _owner_id;
+                return;
+            }
+            last_sent_time = result.sendTime;
+            _text_id = text_id;
+            _random_id = random_id;
+            _owner_id = owner_id;
 
-#if COMPILER_UDONSHARP && UNITY_EDITOR
-        public void Reset(){
-            card = GetComponent<Card>();
-            card.sync.AddListener(this);
+            SetText();
         }
-        public void OnValidate(){
-            card.sync.AddListener(this);
+
+        public void SetText()
+        {
+            if (!bank)
+            {
+                return;
+            }
+            if (text_id < 0 || text_id >= bank.texts.Length)
+            {
+                text.text = bank.loading_text;
+                return;
+            }
+            bank.last_text_selection_times.SetValue(text_id, Time.timeSinceLevelLoad);
+            bank.last_player_selection_times.SetValue(random_id, Time.timeSinceLevelLoad);
+            text_str = bank.texts[text_id];
+            random_player = VRCPlayerApi.GetPlayerById(random_id);
+            owner_player = VRCPlayerApi.GetPlayerById(owner_id);
+            text.text = bank.ReplaceStringVariables(text_str, owner_player, random_player);
+        }
+
+        public void OnBankParseComplete()
+        {
+            if (sync.IsLocalOwner())
+            {
+                if (text_id == -69)
+                {
+                    PickCardText();
+                    RequestSerialization();
+                }
+            }
+            else
+            {
+                SetText();
+            }
+        }
+
+#if !COMPILER_UDONSHARP && UNITY_EDITOR
+        public override void OnValidate()
+        {
+            base.OnValidate();
+            if (!text)
+            {
+                text = GetComponentInChildren<TextMeshPro>();
+            }
+            if (text && !child)
+            {
+                child = text.gameObject;
+            }
         }
 #endif
     }

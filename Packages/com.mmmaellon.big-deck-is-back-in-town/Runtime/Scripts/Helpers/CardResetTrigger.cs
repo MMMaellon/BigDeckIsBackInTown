@@ -8,6 +8,7 @@ namespace MMMaellon.BigDeckIsBackInTown
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Deck))]
     public class CardResetTrigger : SmartObjectSyncListener
     {
+        public Deck deck;
         Card card;
         public bool only_while_pickup_use_down = false;
 
@@ -33,6 +34,10 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             card = other.GetComponent<Card>();
             if (!card || !card.sync.IsOwnerLocal())
+            {
+                return;
+            }
+            if (deck && deck != card.deck)
             {
                 return;
             }
@@ -69,5 +74,12 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             pickup_use_down = false;
         }
+#if !COMPILER_UDONSHARP && UNITY_EDITOR
+        public void Reset()
+        {
+            deck = GetComponent<Deck>();
+        }
+#endif
+
     }
 }

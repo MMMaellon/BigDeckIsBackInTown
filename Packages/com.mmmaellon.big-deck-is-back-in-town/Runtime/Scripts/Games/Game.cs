@@ -10,7 +10,7 @@ using System.Linq;
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Animator))]
-    public class Game : CardThrowingHandler
+    public abstract class Game : UdonSharpBehaviour
     {
         [HideInInspector]
         public Animator animator;
@@ -79,14 +79,12 @@ namespace MMMaellon.BigDeckIsBackInTown
                 }
             }
         }
-        public virtual void OnChangeState(short old_state, short new_state)
-        {
 
-        }
-        public virtual void OnChangeTurn(short old_turn, short new_turn, Player old_turn_player, Player new_turn_player)
-        {
+        public abstract void OnChangeState(short old_state, short new_state);
 
-        }
+        public abstract void OnChangeTurn(short old_turn, short new_turn, Player old_turn_player, Player new_turn_player);
+
+        public abstract void OnThrowCard(CardThrowingHandler handler, int target_index, CardThrowing card);
 
         public Player[] players;
         DataToken[] temp_joined_players;
@@ -165,8 +163,10 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
 
         public DataList joined_player_ids = new DataList();
-
-        public virtual Player RandomPlayer(int reshuffles)
+        public bool randomize_players;
+        [Header("Will \"reshuffle\" this many times when picking a player. Should probably be around 3.")]
+        public int reshuffles;
+        public virtual Player RandomPlayer()
         {
             if (joined_player_ids.Count <= 0)
             {
@@ -195,11 +195,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             return players[joined_player_ids[(turn_joined_index + skip) % joined_player_ids.Count].Int];
         }
 
-        public override void OnThrowCard(int target_index, CardThrowing card)
-        {
-
-        }
-
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()
@@ -207,9 +202,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             animator = GetComponent<Animator>();
         }
 
-        public override void OnValidate()
+        public void OnValidate()
         {
-            base.OnValidate();
             if (players.Length > 0)
             {
                 System.Collections.Generic.HashSet<Player> only_valid = new();

@@ -8,11 +8,20 @@ using VRC.SDK3.StringLoading;
 using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
 
+#if !COMPILER_UDONSHARP && UNITY_EDITOR
+using System.Collections.Generic;
+using System.Linq;
+#endif
+
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class CardTextBank : UdonSharpBehaviour
     {
+        public CardText[] cards;
+        [Header("Will \"reshuffle\" this many times when picking a card. Should probably be around 3.")]
+        public int reshuffles = 3;
+        public string loading_text = "Loading...";
         [NonSerialized]
         public string[] texts = new string[0];
         [NonSerialized]
@@ -22,27 +31,44 @@ namespace MMMaellon.BigDeckIsBackInTown
         [NonSerialized]
         public int[] lengths = { 0 };
         [NonSerialized, UdonSynced]
-        public bool[] _active = { true };
+        public bool[] _active = { };
         public bool[] active
         {
             get => _active;
             set
             {
+
                 _active = value;
                 CalcActiveBanks();
+                if (!parse_callback_called)
+                {
+                    if (parse_callback_primed)
+                    {
+                        ParseCallback();
+                    }
+                    else
+                    {
+                        parse_callback_primed = true;
+                    }
+                }
             }
         }
-        public string RandomNameVariable = "[RANDOM_NAME]";
-        public string PlayerNameVariable = "[PLAYER_NAME]";
+        bool parse_callback_called = false;
+        bool parse_callback_primed = false;
+        public string random_variable = "[RANDOM_NAME]";
+        public string player_variable = "[PLAYER_NAME]";
+        public string name_opening_tag = "<b>";
+        public string name_closing_tag = "</b>";
         public string ReplaceStringVariables(string input_str, VRCPlayerApi player, VRCPlayerApi random)
         {
-            if (!Utilities.IsValid(player) || !Utilities.IsValid(random) || PlayerNameVariable.Length == 0)
+            if (random_variable.Length != 0 && Utilities.IsValid(random))
             {
-                return input_str;
+                input_str = input_str.Replace(random_variable, name_opening_tag + random.displayName + name_closing_tag);
             }
-
-            input_str = input_str.Replace(PlayerNameVariable, player.displayName);
-            input_str = input_str.Replace(RandomNameVariable, random.displayName);
+            if (player_variable.Length != 0 && Utilities.IsValid(player))
+            {
+                input_str = input_str.Replace(player_variable, name_opening_tag + player.displayName + name_closing_tag);
+            }
             return input_str;
         }
 
@@ -157,6 +183,11 @@ namespace MMMaellon.BigDeckIsBackInTown
             return container;
         }
 
+        public bool IsParsing()
+        {
+            return parse_callback_primed || (!parsed && retry_count < retries);
+        }
+
         bool parsed = false;
         public void OnParseComplete(UdonTaskContainer output)
         {
@@ -164,6 +195,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             bank_names = output.GetVariable<string[]>(1);
             starts = output.GetVariable<int[]>(2);
             lengths = output.GetVariable<int[]>(3);
+
             parsed = true;
             if (Networking.LocalPlayer.IsOwner(gameObject))
             {
@@ -176,7 +208,29 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             CalcActiveBanks();
             Debug.LogWarning("Completed parse in: " + (Time.timeSinceLevelLoad - start_time));
+            if (!parse_callback_called)
+            {
+                if (parse_callback_primed)
+                {
+                    ParseCallback();
+                }
+                else
+                {
+                    parse_callback_primed = true;
+                }
+            }
         }
+        public void ParseCallback()
+        {
+            parse_callback_primed = false;
+            parse_callback_called = true;
+            foreach (CardText card in cards)
+            {
+                card.bank = this;
+                card.OnBankParseComplete();
+            }
+        }
+
         public void CalcActiveBanks()
         {
             if (!parsed)
@@ -192,10 +246,21 @@ namespace MMMaellon.BigDeckIsBackInTown
                 }
             }
         }
+
         public override void OnDeserialization()
         {
             CalcActiveBanks();
         }
+
+        [System.NonSerialized]
+        public DataDictionary last_text_selection_times = new DataDictionary();
+        [System.NonSerialized]
+        public DataDictionary last_player_selection_times = new DataDictionary();
+        int next_random_text_id;
+        int next_random_player_id;
+        int most_random_text_id;
+        int most_random_player_id;
+
         public bool limit_player_name_selection_by_distance = true;
         public float max_distance = 10f;
         DataList player_list = new DataList();
@@ -229,9 +294,34 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             if (player_list.Count == 0)
             {
+                last_player_selection_times[Networking.LocalPlayer.playerId] = Time.timeSinceLevelLoad;
                 return Networking.LocalPlayer.playerId;
             }
-            return player_list[UnityEngine.Random.Range(0, player_list.Count)].Int;
+
+            //select a bunch and choose the one that wasn't selected recently
+            most_random_player_id = UnityEngine.Random.Range(0, player_list.Count);
+            if (reshuffles > 0)
+            {
+                for (int i = 0; i < reshuffles; i++)
+                {
+                    next_random_player_id = UnityEngine.Random.Range(0, player_list.Count);
+                    if (!last_player_selection_times.ContainsKey(most_random_player_id))
+                    {
+                        break;
+                    }
+                    if (!last_player_selection_times.ContainsKey(next_random_player_id))
+                    {
+                        most_random_player_id = next_random_player_id;
+                        break;
+                    }
+                    if (last_player_selection_times[next_random_player_id].Float < last_player_selection_times[most_random_player_id].Float)
+                    {
+                        most_random_player_id = next_random_player_id;
+                    }
+                }
+            }
+
+            return player_list[most_random_player_id].Int;
         }
 
         int random_card;
@@ -243,7 +333,32 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return -1001;
             }
-            random_card = UnityEngine.Random.Range(0, total_active_length);
+
+            //select a bunch and choose the one that wasn't selected recently
+            most_random_text_id = UnityEngine.Random.Range(0, total_active_length);
+            if (reshuffles > 0)
+            {
+                for (int i = 0; i < reshuffles; i++)
+                {
+                    next_random_text_id = UnityEngine.Random.Range(0, player_list.Count);
+                    if (!last_text_selection_times.ContainsKey(most_random_text_id))
+                    {
+                        break;
+                    }
+                    if (!last_text_selection_times.ContainsKey(next_random_text_id))
+                    {
+                        most_random_text_id = next_random_text_id;
+                        break;
+                    }
+                    if (last_text_selection_times[next_random_text_id].Float < last_text_selection_times[most_random_text_id].Float)
+                    {
+                        most_random_text_id = next_random_text_id;
+                    }
+                }
+            }
+
+            random_card = most_random_text_id;
+
             skipped_cards = 0;
             for (int i = 0; i < lengths.Length; i++)
             {
@@ -269,5 +384,29 @@ namespace MMMaellon.BigDeckIsBackInTown
 
             return random_card;
         }
+
+#if !COMPILER_UDONSHARP && UNITY_EDITOR
+        public void OnValidate()
+        {
+
+            if (cards.Length > 0)
+            {
+                HashSet<CardText> valid_cards = new HashSet<CardText>();
+
+                for (int i = 0; i < cards.Length; i++)
+                {
+                    if (cards[i])
+                    {
+                        valid_cards.Add(cards[i]);
+                    }
+                }
+                cards = valid_cards.ToArray<CardText>();
+            }
+            else
+            {
+                cards = GetComponentsInChildren<CardText>();
+            }
+        }
+#endif
     }
 }

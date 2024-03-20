@@ -137,7 +137,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             collider_component = GetComponent<Collider>();
             base.Reset();
         }
-        public void OnValidate()
+        public virtual void OnValidate()
         {
             throwing = GetComponent<CardThrowing>();
         }

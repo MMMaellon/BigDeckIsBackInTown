@@ -13,6 +13,7 @@ namespace MMMaellon.BigDeckIsBackInTown
     public class CardThrowingHandler : UdonSharpBehaviour
     {
         public Deck deck;
+        public Game game;
         public CardThrowTarget[] targets;
         public float desktop_throw_boost = 5f;
         public bool allow_throwing = true;
@@ -58,7 +59,10 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public virtual void OnThrowCard(int target_index, CardThrowing card)
         {
-
+            if (game)
+            {
+                game.OnThrowCard(this, target_index, card);
+            }
         }
 
         [System.NonSerialized]
