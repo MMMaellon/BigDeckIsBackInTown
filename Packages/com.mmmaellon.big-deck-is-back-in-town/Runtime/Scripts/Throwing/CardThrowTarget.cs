@@ -20,7 +20,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         [Header("Aiming properties")]
         public float velocity_threshold = 3f;
         public float power_multiplier = 1.0f;
-        public float power_threshold = 3f;
+        public float power_threshold = 5f;
         public string active_parameter = "allow_throwing";
         public bool _allow_throwing = true;
         [Header("Delay between cards when multiple cards are dealt.")]

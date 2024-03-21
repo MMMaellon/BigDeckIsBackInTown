@@ -158,7 +158,7 @@ MonoBehaviour:
   reduceJitterDuringSleep: 1
   preventStealWhileAttachedToPlayer: 1
   respawnIntoStartingState: 1
-  startingState: {fileID: 0}
+  startingState: {fileID: 1931384978767670576}
   pickup: {fileID: 8623958441050951140}
   rigid: {fileID: 6489991604274846447}
   states:

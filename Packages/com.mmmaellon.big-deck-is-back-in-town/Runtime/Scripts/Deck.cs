@@ -121,6 +121,10 @@ namespace MMMaellon.BigDeckIsBackInTown
         public void PickNextCard()
         {
             pick_next_card_requested = false;
+            if (!draw_cards_with_grab)
+            {
+                return;
+            }
             if (!Networking.LocalPlayer.IsOwner(gameObject))
             {
                 Networking.SetOwner(Networking.LocalPlayer, gameObject);

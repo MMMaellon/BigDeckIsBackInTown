@@ -159,9 +159,11 @@ namespace MMMaellon.BigDeckIsBackInTown
                     bank_names[i] = keys[i].String;
                     Debug.LogWarning("Parsing bank " + bank_names[i]);
                     starts[i] = text_list.Count;
-                    foreach (var token in dict[keys[i]].DataList.ToArray())
-                    {
-                        text_list.Add(token.String);
+                    if(dict[keys[i]].TokenType == TokenType.DataList){
+                        foreach (var token in dict[keys[i]].DataList.ToArray())
+                        {
+                            text_list.Add(token.String);
+                        }
                     }
                     lengths[i] = text_list.Count - starts[i];
                 }

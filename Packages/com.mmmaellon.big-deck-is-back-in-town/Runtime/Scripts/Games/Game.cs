@@ -15,6 +15,8 @@ namespace MMMaellon.BigDeckIsBackInTown
         [HideInInspector]
         public Animator animator;
 
+        [System.NonSerialized]
+        public float last_state_change = -1001f;
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(state))]
         public short _state = -1001;
         public short state
@@ -22,6 +24,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             get => _state;
             set
             {
+                last_state_change = Time.timeSinceLevelLoad;
                 if (!Utilities.IsValid(local_player))
                 {
                     _state = value;
@@ -38,6 +41,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
 
 
+        [System.NonSerialized]
         public short turn_joined_index = -1001;
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(turn))]
         public short _turn = -1001;
@@ -71,7 +75,10 @@ namespace MMMaellon.BigDeckIsBackInTown
                         }
                     }
                 }
-                turn_player.last_turn = Time.timeSinceLevelLoad;
+                if (turn_player)
+                {
+                    turn_player.last_turn = Time.timeSinceLevelLoad;
+                }
                 animator.SetInteger("turn", value);
                 if (local_player.IsOwner(gameObject))
                 {
@@ -85,6 +92,14 @@ namespace MMMaellon.BigDeckIsBackInTown
         public abstract void OnChangeTurn(short old_turn, short new_turn, Player old_turn_player, Player new_turn_player);
 
         public abstract void OnThrowCard(CardThrowingHandler handler, int target_index, CardThrowing card);
+
+        public abstract void OnSelectCard(Player player, int card_id);
+
+        public abstract void OnScoreChange(Player player, int old_score, int new_score);
+
+        public abstract void OnJoinGame(Player player);
+
+        public abstract void OnLeftGame(Player player);
 
         public Player[] players;
         DataToken[] temp_joined_players;
@@ -117,7 +132,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 Networking.SetOwner(local_player, player.gameObject);
                 player.player_id = -1001;
-                player.ResetPlayer();
             }
             VRCPlayerApi[] vrc_players = new VRCPlayerApi[VRCPlayerApi.GetPlayerCount()];
             VRCPlayerApi.GetPlayers(vrc_players);
@@ -126,10 +140,48 @@ namespace MMMaellon.BigDeckIsBackInTown
                 if (Utilities.IsValid(vrc_players[i]))
                 {
                     //twos complement
-                    players[i].player_id = -1 - vrc_players[i].playerId;
+                    players[i].player_id = (short)(-1 - vrc_players[i].playerId);
                 }
             }
         }
+
+        public virtual void JoinGame()
+        {
+            if (local_player_obj)
+            {
+                return;
+            }
+            foreach (Player player in players)
+            {
+                if (player.id == -1 - local_player.playerId)
+                {
+                    Networking.SetOwner(local_player, player.gameObject);
+                    player.player_id = (short)local_player.playerId;
+                    return;
+                }
+            }
+            Debug.LogError("We couldn't find a reserved player object");
+            foreach (Player player in players)
+            {
+                if (player.id < 0)
+                {
+                    Networking.SetOwner(local_player, player.gameObject);
+                    player.player_id = (short)local_player.playerId;
+                    return;
+                }
+            }
+        }
+
+        public virtual void LeaveGame()
+        {
+            if (!local_player_obj)
+            {
+                return;
+            }
+            Networking.SetOwner(Networking.LocalPlayer, local_player_obj.gameObject);
+            local_player_obj.player_id = -1001;
+        }
+
         public override void OnPlayerJoined(VRCPlayerApi player)
         {
             if (local_player.isInstanceOwner)
@@ -139,7 +191,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                     if (p.player_id == -1001)
                     {
                         Networking.SetOwner(local_player, p.gameObject);
-                        p.player_id = -1 - player.playerId;
+                        p.player_id = (short)(-1 - player.playerId);
                         break;
                     }
                 }
@@ -162,10 +214,12 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
 
+        [System.NonSerialized]
         public DataList joined_player_ids = new DataList();
         public bool randomize_players;
-        [Header("Will \"reshuffle\" this many times when picking a player. Should probably be around 3.")]
+        [Tooltip("Will \"reshuffle\" this many times when picking a player. Should probably be around 3.")]
         public int reshuffles;
+
         public virtual Player RandomPlayer()
         {
             if (joined_player_ids.Count <= 0)
@@ -174,25 +228,39 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             Player random = players[joined_player_ids[Random.Range(0, joined_player_ids.Count)].Int];
             Player other_random;
-            while (reshuffles > 0)
+            if (reshuffles > 0)
             {
-                other_random = players[joined_player_ids[Random.Range(0, joined_player_ids.Count)].Int];
-                if (other_random.last_turn < random.last_turn)
+                for (int i = 0; i < reshuffles; i++)
                 {
-                    random = other_random;
+                    other_random = players[joined_player_ids[Random.Range(0, joined_player_ids.Count)].Int];
+                    if (other_random.last_turn < random.last_turn)
+                    {
+                        random = other_random;
+                    }
                 }
-                reshuffles--;
             }
             return random;
         }
 
-        public virtual Player NextPlayer(int skip)
+        public virtual short NextPlayerId(int skip)
         {
             if (joined_player_ids.Count <= 0)
             {
+                return -1001;
+            }
+            return (short)joined_player_ids[(turn_joined_index + skip) % joined_player_ids.Count].Int;
+        }
+
+        short temp_next_id;
+        public virtual Player NextPlayer(int skip)
+        {
+            temp_next_id = NextPlayerId(skip);
+            if (temp_next_id < 0 || temp_next_id >= players.Length)
+            {
                 return null;
             }
-            return players[joined_player_ids[(turn_joined_index + skip) % joined_player_ids.Count].Int];
+
+            return players[temp_next_id];
         }
 
 
@@ -222,7 +290,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             for (int i = 0; i < players.Length; i++)
             {
-                players[i].id = i;
+                players[i].id = (short)i;
                 players[i].game = this;
             }
         }
