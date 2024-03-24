@@ -12,11 +12,11 @@ namespace MMMaellon.BigDeckIsBackInTown
         public TextMeshPro text;
         [System.NonSerialized]
         public CardTextBank bank = null; //becomes not null once the bank finishes parsing
-        [System.NonSerialized]
+        [System.NonSerialized, UdonSynced]
         public int text_id = -1001;
-        [System.NonSerialized]
+        [System.NonSerialized, UdonSynced]
         public int random_id = -1001;
-        [System.NonSerialized]
+        [System.NonSerialized, UdonSynced]
         public int owner_id = -1001;
 
         public override void OnEnterState()
@@ -29,10 +29,10 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
         public void PickCardText()
         {
+            Debug.LogWarning("pick card text");
             if (!bank)
             {
                 text_id = -69;
-                Debug.LogError("got here too early. deferring");
                 return;
             }
             text_id = bank.RandomCardId();
@@ -74,6 +74,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             if (text_id < 0 || text_id >= bank.texts.Length)
             {
+                Debug.LogWarning("Invalid... " + text_id);
+                Debug.LogWarning("this is bank.texts size... " + bank.texts.Length);
                 text.text = bank.loading_text;
                 return;
             }
@@ -87,18 +89,20 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public void OnBankParseComplete()
         {
-            if (sync.IsLocalOwner())
+            if (sync.IsOwnerLocal())
             {
-                if (text_id == -69)
-                {
-                    PickCardText();
-                    RequestSerialization();
-                }
+                PickCardText();
+                RequestSerialization();
             }
             else
             {
                 SetText();
             }
+        }
+
+        public override void OnPickup()
+        {
+            Debug.LogWarning("adsfasdfasdfafd asdfsdfasdfasdfadfadfadfasdfa sdfasdfadf " + text_id);
         }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR

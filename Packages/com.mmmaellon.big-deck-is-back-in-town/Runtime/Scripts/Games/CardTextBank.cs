@@ -30,31 +30,22 @@ namespace MMMaellon.BigDeckIsBackInTown
         public int[] starts = { 0 };
         [NonSerialized]
         public int[] lengths = { 0 };
-        [NonSerialized, UdonSynced]
+        [NonSerialized, UdonSynced, FieldChangeCallback(nameof(active))]
         public bool[] _active = { };
         public bool[] active
         {
             get => _active;
             set
             {
-
                 _active = value;
                 CalcActiveBanks();
                 if (!parse_callback_called)
                 {
-                    if (parse_callback_primed)
-                    {
-                        ParseCallback();
-                    }
-                    else
-                    {
-                        parse_callback_primed = true;
-                    }
+                    ParseCallback();
                 }
             }
         }
         bool parse_callback_called = false;
-        bool parse_callback_primed = false;
         public string random_variable = "[RANDOM_NAME]";
         public string player_variable = "[PLAYER_NAME]";
         public string name_opening_tag = "<b>";
@@ -91,6 +82,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         public override void OnStringLoadSuccess(IVRCStringDownload result)
         {
             Debug.LogWarning(gameObject.name + " Loading URL SUCCESS");
+            Debug.LogWarning("We're about to try to parse some JSON from " + url.ToString());
             AsyncParse(result.Result);
         }
 
@@ -134,9 +126,10 @@ namespace MMMaellon.BigDeckIsBackInTown
         float start_time;
         public void AsyncParse(string raw)
         {
-            Debug.LogWarning("We're about to try to parse some JSON from " + url.ToString());
             start_time = Time.timeSinceLevelLoad;
             UdonTask.New((IUdonEventReceiver)this, nameof(ParseJSON), nameof(OnParseComplete), "input", "output", raw);
+            // ParseSync(raw);
+
         }
 
         public UdonTaskContainer ParseJSON(UdonTaskContainer input)
@@ -157,9 +150,9 @@ namespace MMMaellon.BigDeckIsBackInTown
                 for (int i = 0; i < keys.Count; i++)
                 {
                     bank_names[i] = keys[i].String;
-                    Debug.LogWarning("Parsing bank " + bank_names[i]);
                     starts[i] = text_list.Count;
-                    if(dict[keys[i]].TokenType == TokenType.DataList){
+                    if (dict[keys[i]].TokenType == TokenType.DataList)
+                    {
                         foreach (var token in dict[keys[i]].DataList.ToArray())
                         {
                             text_list.Add(token.String);
@@ -185,9 +178,46 @@ namespace MMMaellon.BigDeckIsBackInTown
             return container;
         }
 
+        public void ParseSync(string json)
+        {
+            DataDictionary dict;
+            DataList text_list = new DataList();
+            if (VRCJson.TryDeserializeFromJson(json, out DataToken result))
+            {
+                dict = result.DataDictionary;
+                var keys = dict.GetKeys();
+                bank_names = new string[keys.Count];
+                starts = new int[keys.Count];
+                lengths = new int[keys.Count];
+                for (int i = 0; i < keys.Count; i++)
+                {
+                    bank_names[i] = keys[i].String;
+                    starts[i] = text_list.Count;
+                    if (dict[keys[i]].TokenType == TokenType.DataList)
+                    {
+                        foreach (var token in dict[keys[i]].DataList.ToArray())
+                        {
+                            text_list.Add(token.String);
+                        }
+                    }
+                    lengths[i] = text_list.Count - starts[i];
+                }
+                texts = new string[text_list.Count];
+                for (int i = 0; i < texts.Length; i++)
+                {
+                    texts[i] = text_list[i].String;
+                }
+                OnParseCompleteSync();
+            }
+            else
+            {
+                Debug.LogError("Invalid JSON: " + result.ToString());
+            }
+        }
+
         public bool IsParsing()
         {
-            return parse_callback_primed || (!parsed && retry_count < retries);
+            return !parsed && retry_count < retries;
         }
 
         bool parsed = false;
@@ -197,9 +227,13 @@ namespace MMMaellon.BigDeckIsBackInTown
             bank_names = output.GetVariable<string[]>(1);
             starts = output.GetVariable<int[]>(2);
             lengths = output.GetVariable<int[]>(3);
+            OnParseCompleteSync();
+        }
 
+        public void OnParseCompleteSync()
+        {
             parsed = true;
-            if (Networking.LocalPlayer.IsOwner(gameObject))
+            if (active == null || active.Length == 0)
             {
                 active = new bool[bank_names.Length];
                 for (int i = 0; i < active.Length; i++)
@@ -210,21 +244,11 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             CalcActiveBanks();
             Debug.LogWarning("Completed parse in: " + (Time.timeSinceLevelLoad - start_time));
-            if (!parse_callback_called)
-            {
-                if (parse_callback_primed)
-                {
-                    ParseCallback();
-                }
-                else
-                {
-                    parse_callback_primed = true;
-                }
-            }
+            ParseCallback();
         }
         public void ParseCallback()
         {
-            parse_callback_primed = false;
+            Debug.LogWarning("PARSE CALLBACK -----------------------------");
             parse_callback_called = true;
             foreach (CardText card in cards)
             {

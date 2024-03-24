@@ -55,7 +55,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 //forces some calculations, we want to skip this if we can
                 capacity_cache = capacity;
             }
-            offset = new Vector3(index % row_length * -horizontal_spacing, Mathf.CeilToInt(index / row_length) * vertical_spacing, 0);
+            offset = new Vector3(index % row_length * -horizontal_spacing, Mathf.CeilToInt(index / row_length) * -vertical_spacing, 0);
             return target_center.position + target_center.rotation * (offset + start_offset);
         }
 

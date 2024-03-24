@@ -128,6 +128,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public void ResetPlayers()
         {
+                Debug.LogWarning("ResetPlayers");
             foreach (Player player in players)
             {
                 Networking.SetOwner(local_player, player.gameObject);
@@ -147,6 +148,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public virtual void JoinGame()
         {
+            Debug.LogWarning("JoinGame");
             if (local_player_obj)
             {
                 return;
@@ -155,6 +157,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 if (player.id == -1 - local_player.playerId)
                 {
+                    Debug.LogWarning("found our player");
                     Networking.SetOwner(local_player, player.gameObject);
                     player.player_id = (short)local_player.playerId;
                     return;

@@ -77,24 +77,21 @@ namespace MMMaellon.BigDeckIsBackInTown
                     OnJoin();
                     game.OnJoinGame(this);
                 }
+                Debug.LogWarning("setting player id " + value);
                 if (!Utilities.IsValid(local_player))
                 {
                     return;
                 }
-                if (local_player.playerId == -1 - value && !local_player.IsOwner(gameObject))
+                if (local_player.playerId == value && !local_player.IsOwner(gameObject))
                 {
                     //world owner is asking us to take ownership of this object
                     Networking.SetOwner(local_player, gameObject);
-                    game.local_player_obj = this;
                 }
+                Debug.LogWarning("value is " + value);
 
                 if (value >= 0)
                 {
                     vrc_player = VRCPlayerApi.GetPlayerById(value);
-                    if (throw_target && Utilities.IsValid(vrc_player) && vrc_player.isLocal)
-                    {
-                        Networking.SetOwner(local_player, throw_target.gameObject);
-                    }
                     if (nameplate && Utilities.IsValid(vrc_player))
                     {
                         nameplate.text = vrc_player.displayName;
@@ -107,10 +104,18 @@ namespace MMMaellon.BigDeckIsBackInTown
                     {
                         game.joined_player_ids.Add(id);
                     }
+                    if (Utilities.IsValid(vrc_player) && vrc_player.isLocal)
+                    {
+                        game.local_player_obj = this;
+                        if (throw_target)
+                        {
+                            Networking.SetOwner(local_player, throw_target.gameObject);
+                        }
+                    }
                 }
                 else
                 {
-                    vrc_player = VRCPlayerApi.GetPlayerById(-1 - value);
+                    vrc_player = null;
                     if (nameplate)
                     {
                         nameplate.text = "";
@@ -119,11 +124,13 @@ namespace MMMaellon.BigDeckIsBackInTown
                     {
                         animator.SetBool("joined", false);
                     }
+
+                    game.joined_player_ids.RemoveAll(id);
                     if (game.local_player_obj == this)
                     {
+                        Debug.LogWarning("local player obj is being set to null from " + gameObject.name);
                         game.local_player_obj = null;
                     }
-                    game.joined_player_ids.RemoveAll(id);
                 }
 
                 if (local_player.IsOwner(gameObject))
@@ -147,6 +154,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         }
 
+
         public virtual void OnJoin()
         {
 
@@ -159,13 +167,17 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public void Join()
         {
+            if (game.local_player_obj)
+            {
+                game.local_player_obj.Leave();
+            }
             Networking.SetOwner(local_player, gameObject);
             player_id = (short)local_player.playerId;
         }
 
         public void LeaveIfOwner()
         {
-            if (local_player.IsOwner(gameObject))
+            if (IsLocal())
             {
                 Leave();
             }

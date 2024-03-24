@@ -2,15 +2,15 @@
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
+using VRC.Udon;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class CardResetTrigger : SmartObjectSyncListener
+    public class CardThrowTrigger : SmartObjectSyncListener
     {
-        public Deck deck;
-        Card card;
-        public bool only_while_pickup_use_down = false;
+        public CardThrowTarget target;
+        public bool respect_allow_throwing_setting = true;
+        CardThrowing card;
 
         public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
@@ -22,28 +22,36 @@ namespace MMMaellon.BigDeckIsBackInTown
             sync.RemoveListener(this);
             if (!sync.IsHeld() && sync.state < SmartObjectSync.STATE_CUSTOM)
             {
-                sync.Respawn();
+                card = sync.GetComponent<CardThrowing>();
+                if (card && (!respect_allow_throwing_setting || target.allow_throwing))
+                {
+                    target.DealCard(card);
+                }
             }
         }
 
         public void OnTriggerEnter(Collider other)
         {
-            if (!Utilities.IsValid(other) || (only_while_pickup_use_down && !pickup_use_down))
+            if (!Utilities.IsValid(other))
             {
                 return;
             }
-            card = other.GetComponent<Card>();
+            Debug.LogWarning("trigger");
+            card = other.GetComponent<CardThrowing>();
             if (!card || !card.sync.IsOwnerLocal())
             {
                 return;
             }
-            if (deck && deck != card.deck)
+            if (target.deck && target.deck != card.card.deck)
             {
                 return;
             }
             if (!card.sync.IsHeld() && card.sync.state < SmartObjectSync.STATE_CUSTOM)
             {
-                card.sync.Respawn();
+                if (!respect_allow_throwing_setting || target.allow_throwing)
+                {
+                    target.DealCard(card);
+                }
                 return;
             }
             card.sync.AddListener(this);
@@ -63,23 +71,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             sync.RemoveListener(this);
         }
 
-        bool pickup_use_down;
-        public override void OnPickupUseDown()
-        {
-            pickup_use_down = true;
-        }
-
-
-        public override void OnPickupUseUp()
-        {
-            pickup_use_down = false;
-        }
-#if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public void Reset()
-        {
-            deck = GetComponent<Deck>();
-        }
-#endif
 
     }
 }

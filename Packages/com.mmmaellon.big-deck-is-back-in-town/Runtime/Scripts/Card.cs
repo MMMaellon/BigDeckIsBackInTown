@@ -127,7 +127,6 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {
-            Debug.LogWarning("OnOwnershipTransferred");
             SetVisibility(IsActiveState());
         }
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
