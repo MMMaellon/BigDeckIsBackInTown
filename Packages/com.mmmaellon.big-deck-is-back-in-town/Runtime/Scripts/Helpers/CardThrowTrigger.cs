@@ -36,7 +36,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
-            Debug.LogWarning("trigger");
             card = other.GetComponent<CardThrowing>();
             if (!card || !card.sync.IsOwnerLocal())
             {

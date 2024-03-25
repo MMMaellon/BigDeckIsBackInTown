@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4164739619948954651}
   - component: {fileID: 7666801676931805969}
   - component: {fileID: 7814780833015779594}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4642425803264052013}
   - component: {fileID: 7294268669676868364}
   - component: {fileID: 8156148398440429801}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResetMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4671986787530364602}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,10 +559,10 @@ GameObject:
   - component: {fileID: 6951009555285902530}
   - component: {fileID: 6874028875946190142}
   - component: {fileID: 8736709092706452176}
-  - component: {fileID: 902552662206718822}
   - component: {fileID: 4963300442566197818}
   - component: {fileID: 619929511193972221}
-  m_Layer: 0
+  - component: {fileID: 1474180859907713386}
+  m_Layer: 13
   m_Name: ResetButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,27 +635,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
   m_PresetInfoIsWorld: 1
---- !u!65 &902552662206718822
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2749041883669375511}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 92, y: 57, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4963300442566197818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +664,27 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1474180859907713386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749041883669375511}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 92, y: 57, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3574717936923069933
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7187825693536812049}
   - component: {fileID: 6647922735046062017}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 4402866878240659356}
   - component: {fileID: 723439510819840799}
   - component: {fileID: 2166459787408857371}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +900,7 @@ GameObject:
   - component: {fileID: 8557985366091133378}
   - component: {fileID: 3412468668040205420}
   - component: {fileID: 4264721218294413212}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}

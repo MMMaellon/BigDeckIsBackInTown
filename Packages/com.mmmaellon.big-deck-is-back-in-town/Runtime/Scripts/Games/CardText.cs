@@ -29,7 +29,6 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
         public void PickCardText()
         {
-            Debug.LogWarning("pick card text");
             if (!bank)
             {
                 text_id = -69;
@@ -74,8 +73,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             if (text_id < 0 || text_id >= bank.texts.Length)
             {
-                Debug.LogWarning("Invalid... " + text_id);
-                Debug.LogWarning("this is bank.texts size... " + bank.texts.Length);
                 text.text = bank.loading_text;
                 return;
             }
@@ -98,11 +95,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 SetText();
             }
-        }
-
-        public override void OnPickup()
-        {
-            Debug.LogWarning("adsfasdfasdfafd asdfsdfasdfasdfadfadfadfasdfa sdfasdfadf " + text_id);
         }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR

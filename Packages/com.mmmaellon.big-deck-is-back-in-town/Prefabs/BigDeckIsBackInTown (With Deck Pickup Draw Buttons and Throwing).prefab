@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5988090890970693578}
   - component: {fileID: 3419434240943773184}
   - component: {fileID: 6665459940740410869}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResetMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4201699342370039215}
   - component: {fileID: 287021865830253331}
   - component: {fileID: 207465837509002490}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResetMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 4037028283203126592}
   - component: {fileID: 4977495509282240212}
   - component: {fileID: 4534358970467936493}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ResetMessage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,10 +419,10 @@ GameObject:
   - component: {fileID: 1328906257049415157}
   - component: {fileID: 7524216236894873697}
   - component: {fileID: 8573583035483152823}
-  - component: {fileID: 2416045107858045704}
   - component: {fileID: 2487762752817288884}
   - component: {fileID: 7107985482521702085}
-  m_Layer: 0
+  - component: {fileID: 2408523623955034521}
+  m_Layer: 13
   m_Name: RespawnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,27 +495,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
   m_PresetInfoIsWorld: 1
---- !u!65 &2416045107858045704
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4282816869770895616}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 92, y: 65, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2487762752817288884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +524,27 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2408523623955034521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282816869770895616}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 92, y: 65, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5340078625583382487
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 1863852094586019630}
   - component: {fileID: 5732109331606595120}
   - component: {fileID: 6370774068038696654}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4900255649367993340}
   - component: {fileID: 6169699740009518654}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Slider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 7443622057637974947}
   - component: {fileID: 7908111399014374468}
   - component: {fileID: 1282605359540533334}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 6756167278991089135}
   - component: {fileID: 444619080185883866}
   - component: {fileID: 6201268818203784425}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 4722170178079790033}
   - component: {fileID: 2326785542019273551}
   - component: {fileID: 7005883082609332070}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 8254853984382534693}
   - component: {fileID: 4559285061993242898}
   - component: {fileID: 2184565563943234253}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6333606563596894590}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 2385038202423869560}
   - component: {fileID: 8385325473366669734}
   - component: {fileID: 6747440622428833651}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 7593090024353386917}
   - component: {fileID: 2812276815478689713}
   - component: {fileID: 9060203662609973585}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PickupToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2184,6 +2184,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3806437240131498560, guid: 3043a7d44630898489988791dab6dfe5,
         type: 3}
+    - target: {fileID: 3922838773774636117, guid: 3043a7d44630898489988791dab6dfe5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3933924029693713595, guid: 3043a7d44630898489988791dab6dfe5,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -2429,7 +2434,7 @@ PrefabInstance:
     - target: {fileID: 5709001208131190640, guid: 3043a7d44630898489988791dab6dfe5,
         type: 3}
       propertyPath: m_Name
-      value: BigDeckIsBackInTown (With Deck Pickup Draw Buttons and Throwing) Variant
+      value: BigDeckIsBackInTown (With Deck Pickup Draw Buttons and Throwing)
       objectReference: {fileID: 0}
     - target: {fileID: 5736667398497199229, guid: 3043a7d44630898489988791dab6dfe5,
         type: 3}

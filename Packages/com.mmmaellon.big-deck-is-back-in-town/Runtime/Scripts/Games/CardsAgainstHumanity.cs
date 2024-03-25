@@ -19,6 +19,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         public CardThrowTarget magnifying_submission2;
         public CardThrowTarget white_card_submission1;
         public CardThrowTarget white_card_submission2;
+        public CardThrowTarget spread_cards;
 
         public CardThrowTarget black_card_dealer;
 
@@ -40,7 +41,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public float choose_black_card_timer = 30;
         public float choose_white_card_timer = 30;
-        public float choose_winner_timer = 120;
+        public float choose_winner_timer = 300;
 
         public const short STATE_STOPPED = -1001;
         public const short STATE_CZAR_TURN = 0;
@@ -98,7 +99,10 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
 
-        DataList submitted_white_cards = new DataList();
+        CardThrowing submitted_white_card1 = null;
+        CardThrowing submitted_white_card2 = null;
+        DataList submission1_cards = new DataList();
+        DataList submission2_cards = new DataList();
         CardThrowing throwing_temp;
         public override void OnChangeState(short old_state, short new_state)
         {
@@ -139,7 +143,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                                     continue;
                                 }
                                 throwing_temp = card.GetComponent<CardThrowing>();
-                                if (throwing_temp && (throwing_temp.target_id == white_card_submission1.id || throwing_temp.target_id == white_card_submission2.id || throwing_temp.target_id == magnifying_submission1.id || throwing_temp.target_id == magnifying_submission2.id))
+                                if (throwing_temp && (throwing_temp.target_id == spread_cards.id || throwing_temp.target_id == white_card_submission1.id || throwing_temp.target_id == white_card_submission2.id || throwing_temp.target_id == magnifying_submission1.id || throwing_temp.target_id == magnifying_submission2.id))
                                 {
                                     card.sync.Respawn();
                                 }
@@ -156,8 +160,8 @@ namespace MMMaellon.BigDeckIsBackInTown
                                     card.sync.Respawn();
                                 }
                             }
-                            two_blanks = false;
                         }
+                        two_blanks = false;
                         white_card_submission1.allow_throwing = false;
                         white_card_submission2.allow_throwing = false;
                         magnifying_submission1.allow_throwing = false;
@@ -167,6 +171,10 @@ namespace MMMaellon.BigDeckIsBackInTown
                         selected_black_card_text.text = "";
                         magnified_1 = null;
                         magnified_2 = null;
+                        submitted_white_card1 = null;
+                        submitted_white_card2 = null;
+                        submission1_cards.Clear();
+                        submission2_cards.Clear();
                         //wait for callback where we choose the czar
                         break;
                     }
@@ -177,22 +185,19 @@ namespace MMMaellon.BigDeckIsBackInTown
                         magnifying_submission2.allow_throwing = false;
                         if (local_player_obj)
                         {
-                            if (!cards_dealt && local_player_obj.throw_target && turn_player && !turn_player.IsLocal())
-                            {
-                                cards_dealt = true;
-                                local_player_obj.throw_target.DealMultiple(white_card_count);
-                            }
                             if (local_player_obj != turn_player)
                             {
                                 local_player_obj.selected_card = -1001;
                                 white_card_submission1.allow_throwing = true;
-                                white_card_submission2.allow_throwing = two_blanks;
+                                white_card_submission2.allow_throwing = false;
                             }
                             else
                             {
                                 white_card_submission1.allow_throwing = false;
                                 white_card_submission2.allow_throwing = false;
                             }
+                            submission1_cards.Clear();
+                            submission2_cards.Clear();
                         }
                         if (Networking.LocalPlayer.IsOwner(gameObject))
                         {
@@ -220,7 +225,8 @@ namespace MMMaellon.BigDeckIsBackInTown
                         {
                             EnableCardPickups();
                             magnifying_submission1.allow_throwing = true;
-                            magnifying_submission2.allow_throwing = true;
+                            magnifying_submission2.allow_throwing = two_blanks;
+
                         }
                         else
                         {
@@ -229,10 +235,34 @@ namespace MMMaellon.BigDeckIsBackInTown
                         }
                         break;
                     }
+                case STATE_STOPPED:
+                    {
+                        if (Networking.LocalPlayer.IsOwner(gameObject))
+                        {
+                            black_card_dealer.deck.ResetDeck();
+                            white_card_submission1.deck.ResetDeck();
+                        }
+                        break;
+                    }
                 default:
                     {
                         break;
                     }
+            }
+        }
+
+        public void SpreadCardLoop()
+        {
+            if (submission1_cards.Count == 0)
+            {
+                return;
+            }
+            throwing_temp = (CardThrowing)submission1_cards[0].Reference;
+            spread_cards.DealCard(throwing_temp);
+            submission1_cards.RemoveAt(0);
+            if (submission1_cards.Count > 0)
+            {
+                SendCustomEventDelayedSeconds(nameof(SpreadCardLoop), 0.1f);
             }
         }
 
@@ -249,7 +279,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             Player random_player = RandomPlayer();
             if (random_player)
             {
-                turn = random_player.id;
+                turn = (short)random_player.id;
                 state = STATE_CZAR_TURN;
             }
             else
@@ -287,7 +317,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                     new_turn_player.vrc_player.TeleportTo(czar_teleport_point.position, czar_teleport_point.rotation);
                 }
 
-                czar_name.text = "It's your turn <b><color=red>" + new_turn_player.vrc_player.displayName;
+                czar_name.text = "Card Czar: <b>" + new_turn_player.vrc_player.displayName + "<color=yellow>(You)";
 
                 new_turn_player.selected_card = -1001;
                 VRCPlayerApi.TrackingData head = new_turn_player.vrc_player.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
@@ -296,6 +326,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 Vector3 dealer_vector = black_card_dealer.deck.transform.position - head.position;
                 dealer_vector.y = 0;
                 black_card_dealer.transform.rotation = Quaternion.LookRotation(dealer_vector);
+                black_card_dealer.deck.ResetDeck();
                 black_card_dealer.DealMultiple(black_card_count);
                 black_card_submission.allow_throwing = true;
             }
@@ -303,25 +334,29 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 if (Utilities.IsValid(new_turn_player.vrc_player))
                 {
-                    czar_name.text = "Czar: <b>" + new_turn_player.vrc_player.displayName;
+                    czar_name.text = "Card Czar: <b>" + new_turn_player.vrc_player.displayName;
                 }
                 else
                 {
-                    czar_name.text = "ERROR: Could not find the czar???";
+                    czar_name.text = "ERROR: Could not find the Czar with id " + new_turn_player.player_id + ". Restart Game.";
                 }
 
                 black_card_submission.allow_throwing = false;
             }
         }
 
-        bool cards_dealt = false;
         public override void OnJoinGame(Player player)
         {
-            if (player && player.IsLocal() && state >= 0)
+            if (player && player.IsLocal())
             {
-                cards_dealt = true;
                 Networking.SetOwner(player.vrc_player, player.throw_target.gameObject);
                 player.throw_target.DealMultiple(white_card_count);
+                if (state >= STATE_PLAYER_TURN)
+                {
+                    var prev_time = last_state_change;
+                    state = state;
+                    last_state_change = prev_time;
+                }
             }
         }
 
@@ -329,10 +364,8 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             if (player && player.IsLocal())
             {
-                cards_dealt = false;
                 foreach (Card card in white_card_submission1.deck.cards)
                 {
-                    card.sync.EnablePickupable();
                     throwing_temp = card.GetComponent<CardThrowing>();
                     if (!card.IsActiveState() && throwing_temp.target_id == player.throw_target.id)
                     {
@@ -361,6 +394,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
+            card_text.SetText();
             if (target_index < 0 || target_index >= handler.targets.Length)
             {
                 return;
@@ -371,7 +405,6 @@ namespace MMMaellon.BigDeckIsBackInTown
                 if (card_text.text_id >= 0 && card_text.text_id < black_card_bank.texts.Length)
                 {
                     selected_black_card_text.text = black_card_bank.texts[card_text.text_id];
-                    Debug.LogWarning("Two Blanks : " + selected_black_card_text.text.IndexOf(blanks_variable) + " == " + selected_black_card_text.text.LastIndexOf(blanks_variable));
                     two_blanks = selected_black_card_text.text.IndexOf(blanks_variable) != selected_black_card_text.text.LastIndexOf(blanks_variable);
                 }
                 else
@@ -385,10 +418,9 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             else if (handler.targets[target_index] == white_card_submission1)
             {
-                card.sync.pickupable = false;
                 if (Networking.LocalPlayer.IsOwner(card.gameObject))
                 {
-                    submitted_white_cards.Add(card);
+                    submitted_white_card1 = card;
                     if (local_player_obj)
                     {
                         local_player_obj.throw_target.Deal1();
@@ -399,41 +431,68 @@ namespace MMMaellon.BigDeckIsBackInTown
                         white_card_submission2.allow_throwing = true;
                     }
                 }
+                submission1_cards.Insert(Random.Range(0, submission1_cards.Count), card);
+                if (Networking.LocalPlayer.IsOwner(gameObject) && !two_blanks && submission1_cards.Count == joined_player_ids.Count - 1)
+                {
+                    state = STATE_PICK_WINNER;
+                }
             }
             else if (handler.targets[target_index] == white_card_submission2)
             {
-                card.sync.pickupable = false;
                 if (Networking.LocalPlayer.IsOwner(card.gameObject))
                 {
-                    submitted_white_cards.Add(card);
+                    submitted_white_card2 = card;
                     if (local_player_obj)
                     {
                         local_player_obj.throw_target.Deal1();
                     }
                     white_card_submission2.allow_throwing = false;
                 }
+                submission2_cards.Add(card);
+                if (Networking.LocalPlayer.IsOwner(gameObject) && two_blanks && submission2_cards.Count == joined_player_ids.Count - 1)
+                {
+                    state = STATE_PICK_WINNER;
+                }
             }
             else if (handler.targets[target_index] == magnifying_submission1)
             {
-                card.sync.pickupable = true;
                 if (card_text.text_id >= 0 && card_text.text_id < white_card_bank.texts.Length)
                 {
                     magnified_1 = card_text;
-                    magnified_white_card_text1.text = white_card_bank.texts[card_text.text_id];
+                    magnified_white_card_text1.text = card_text.text.text;
                 }
+                card.sync.AddListener(this);
+                magnifying_submission1.allow_throwing = false;
             }
             else if (handler.targets[target_index] == magnifying_submission2)
             {
-                card.sync.pickupable = true;
                 if (card_text.text_id >= 0 && card_text.text_id < white_card_bank.texts.Length)
                 {
                     magnified_2 = card_text;
-                    magnified_white_card_text2.text = white_card_bank.texts[card_text.text_id];
+                    magnified_white_card_text2.text = card_text.text.text;
                 }
+                card.sync.AddListener(this);
+                magnifying_submission2.allow_throwing = false;
+            }
+            else if (handler.targets[target_index] == spread_cards)
+            {
+                if (card == submitted_white_card1 && submitted_white_card2)
+                {
+                    submitted_white_card2.sync.TakeOwnership(false);
+                    submitted_white_card2.sync.pos = card.sync.pos + new Vector3(0.02f, -0.02f, 0.01f);
+                    submitted_white_card2.sync.rot = card.sync.rot;
+                    submitted_white_card2.target_id = card.target_id;
+                    submitted_white_card2.EnterState();
+                }
+            }
+            else if (handler.targets[target_index] == black_card_dealer)
+            {
+            }
+            else if (local_player_obj && handler.targets[target_index] == local_player_obj.throw_target)
+            {
             }
             else
             {
-                card.sync.pickupable = true;
             }
         }
 
@@ -474,50 +533,60 @@ namespace MMMaellon.BigDeckIsBackInTown
                 return;
             }
 
+            if (Networking.LocalPlayer.IsOwner(gameObject) && state > STATE_CZAR_TURN && !turn_player)
+            {
+                NextTurn();
+            }
+
             switch (state)
             {
                 case STATE_CZAR_TURN:
                     {
+                        timer_number = Mathf.CeilToInt(last_state_change + choose_black_card_timer - Time.timeSinceLevelLoad);
                         if (timer)
                         {
-                            timer_number = Mathf.CeilToInt(last_state_change + choose_white_card_timer - Time.timeSinceLevelLoad);
-                            timer.text = timer_number + "s";
-                            if (timer_number <= 0 && turn_player && turn_player.IsLocal())
+                            timer.text = Mathf.Max(0, timer_number) + "s";
+                        }
+                        if (timer_number <= 0 && turn_player && turn_player.IsLocal())
+                        {
+                            //timer ran out before prompt was submitted
+                            turn_player.Leave();
+                            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, nameof(NextTurn));
+                        }
+                        else if (timer_number <= -5 && Networking.LocalPlayer.IsOwner(gameObject))//give them like 2 seconds of leeway
+                        {
+                            if (turn_player)
                             {
-                                //timer ran out before prompt was submitted
                                 turn_player.Leave();
-                                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, nameof(NextTurn));
                             }
-                            else if (timer_number <= -2 && Networking.LocalPlayer.IsOwner(gameObject))//give them like 2 seconds of leeway
-                            {
-                                NextTurn();
-                            }
+                            NextTurn();
                         }
                         break;
                     }
                 case STATE_PLAYER_TURN:
                     {
+                        timer_number = Mathf.CeilToInt(last_state_change + choose_white_card_timer - Time.timeSinceLevelLoad);
                         if (timer)
                         {
-                            timer_number = Mathf.CeilToInt(last_state_change + choose_black_card_timer - Time.timeSinceLevelLoad);
-                            timer.text = timer_number + "s";
-                            if (timer_number <= 0 && Networking.LocalPlayer.IsOwner(gameObject))
-                            {
-                                state = STATE_PICK_WINNER;
-                            }
+                            timer.text = Mathf.Max(0, timer_number) + "s";
+                        }
+                        if (timer_number <= 0 && Networking.LocalPlayer.IsOwner(gameObject))
+                        {
+                            state = STATE_PICK_WINNER;
                         }
                         break;
                     }
                 case STATE_PICK_WINNER:
                     {
+                        timer_number = Mathf.CeilToInt(last_state_change + choose_winner_timer - Time.timeSinceLevelLoad);
                         if (timer)
                         {
-                            timer_number = Mathf.CeilToInt(last_state_change + choose_winner_timer - Time.timeSinceLevelLoad);
-                            timer.text = timer_number + "s";
-                            if (timer_number <= 0 && Networking.LocalPlayer.IsOwner(gameObject))
-                            {
-                                state = STATE_CZAR_TURN;
-                            }
+                            timer.text = Mathf.Max(0, timer_number) + "s";
+                        }
+                        timer.text = Mathf.Max(0, timer_number) + "s";
+                        if (timer_number <= 0 && Networking.LocalPlayer.IsOwner(gameObject))
+                        {
+                            state = STATE_CZAR_TURN;
                         }
                         break;
                     }
@@ -543,7 +612,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public void SubmitWinner()
         {
-            if (turn_player && turn_player.IsLocal() && turn_player.selected_card >= 0 && magnified_1)
+            if (turn_player && turn_player.IsLocal() && magnified_1)
             {
                 SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(CheckIfIWon));
             }
@@ -556,9 +625,9 @@ namespace MMMaellon.BigDeckIsBackInTown
                 return;
             }
 
-            if (magnified_1 && magnified_2)
+            if (magnified_1)
             {
-                if (submitted_white_cards.Contains(magnified_1) && submitted_white_cards.Contains(magnified_2))
+                if (magnified_1.throwing == submitted_white_card1)
                 {
                     local_player_obj.score++;
                     SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, nameof(WinCallback));
@@ -574,6 +643,26 @@ namespace MMMaellon.BigDeckIsBackInTown
         public void ResetTimerCallback()
         {
             last_state_change = Time.timeSinceLevelLoad;
+            animator.SetTrigger("reset");
+        }
+
+        public void RefreshCards()
+        {
+            if (!local_player_obj)
+            {
+                return;
+            }
+
+            foreach (Card card in white_card_submission1.deck.cards)
+            {
+                throwing_temp = card.GetComponent<CardThrowing>();
+                if (!card.IsActiveState() && throwing_temp.target_id == local_player_obj.throw_target.id)
+                {
+                    card.sync.Respawn();
+                }
+            }
+            Networking.SetOwner(local_player_obj.vrc_player, local_player_obj.throw_target.gameObject);
+            local_player_obj.throw_target.DealMultiple(white_card_count);
         }
 
         //Animation Callbacks
@@ -585,13 +674,24 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             if (Networking.LocalPlayer.IsOwner(gameObject))
             {
-                var next_turn = NextPlayerId(1);
-                if (next_turn == turn)
+                short next_turn = NextPlayerId();
+                if (next_turn == turn || next_turn < 0)
                 {
                     state = STATE_STOPPED;
                     return;
                 }
+                two_blanks = false;
                 turn = next_turn;
+            }
+        }
+
+        public void SpreadCards()
+        {
+            if (turn_player && turn_player.IsLocal())
+            {
+                spread_cards.deal_multiple_count = submission1_cards.Count;
+                spread_cards.cards_to_deal = submission1_cards.Count;
+                SendCustomEventDelayedSeconds(nameof(SpreadCardLoop), 0.5f);
             }
         }
 
@@ -603,5 +703,36 @@ namespace MMMaellon.BigDeckIsBackInTown
                 SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(ResetTimerCallback));
             }
         }
+
+        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
+        {
+            if (magnified_1 && magnified_1.sync == sync)
+            {
+                if (!magnified_1.throwing || magnified_1.throwing.IsActiveState())
+                {
+                    return;
+                }
+                magnified_1 = null;
+                magnified_white_card_text1.text = "";
+                magnifying_submission1.allow_throwing = turn_player && turn_player.IsLocal() && state == STATE_PICK_WINNER;
+            }
+            else if (magnified_2 && magnified_2.sync == sync)
+            {
+                if (!magnified_2.throwing || magnified_2.throwing.IsActiveState())
+                {
+                    return;
+                }
+                magnified_2 = null;
+                magnified_white_card_text2.text = "";
+                magnifying_submission2.allow_throwing = two_blanks && turn_player && turn_player.IsLocal() && state == STATE_PICK_WINNER;
+            }
+            sync.RemoveListener(this);
+        }
+
+        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
+        {
+
+        }
+
     }
 }

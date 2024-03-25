@@ -10,9 +10,13 @@ namespace MMMaellon.BigDeckIsBackInTown
         public int id;
         public Deck deck;
         public Transform target_center;
+        [Tooltip("0 or negative means unlimited")]
+        public int card_limit = 0;
         [Header("Visiblity")]
         public bool change_card_visibility = false;
         public bool visible_only_to_owners = false;
+        public bool change_card_pickupable = false;
+        public bool pickupable_only_by_owners = false;
         [Header("Throw arc properties")]
         public Vector3 start_vel = Vector3.up * 10f;
         public Vector3 end_vel = Vector3.down * 5f;
@@ -76,6 +80,8 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             return GetTargetPosition(deal_multiple_count - cards_to_deal, deal_multiple_count);
         }
+        [System.NonSerialized]
+        public int cards_dealt = 0;
         public virtual void DealCard(CardThrowing card)
         {
             if (!card)
@@ -96,17 +102,33 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 card.card.visible_only_to_owner = visible_only_to_owners;
             }
+            if (change_card_pickupable)
+            {
+                card.card.pickupable_only_by_owner = pickupable_only_by_owners;
+            }
             card.EnterState();
             cards_to_deal--;
+            if (card_limit > 0)
+            {
+                cards_dealt++;
+                card.sync.AddListener(this);
+                allow_throwing = cards_dealt < card_limit;
+            }
         }
+        CardThrowing throwing_temp;
         public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
         {
-            //for extending if you make custom spots
+
+            throwing_temp = sync.GetComponent<CardThrowing>();
+            if (throwing_temp && (throwing_temp.target_id != id || !throwing_temp.IsActiveState()))
+            {
+                cards_dealt--;
+                allow_throwing = cards_dealt < card_limit;
+            }
         }
 
         public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
-            //for extending if you make custom spots
         }
         public int row_length = 4;
         public float horizontal_spacing = 0.08f;

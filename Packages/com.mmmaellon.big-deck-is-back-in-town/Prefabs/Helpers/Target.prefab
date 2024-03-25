@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3106335092684583417}
   - component: {fileID: 26921542581328411}
   - component: {fileID: 7090999029525363457}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2001188249432309639}
   - component: {fileID: 3845197866416124969}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5590543641986393554}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: target_center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4768535953771234978}
   - component: {fileID: 4719143597721463536}
   - component: {fileID: 8162980887346557123}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResetMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 6719371769489671702}
   - component: {fileID: 5734067206558130851}
   - component: {fileID: 2884649259813613270}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 1644991529198781027}
   - component: {fileID: 1964615037708401021}
   - component: {fileID: 8459100100567514860}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,9 @@ MonoBehaviour:
   deck: {fileID: 0}
   target_center: {fileID: 5590543641986393554}
   change_card_visibility: 0
-  force_invisible_to_others: 0
+  visible_only_to_owners: 0
+  change_card_pickupable: 0
+  pickupable_only_by_owners: 0
   start_vel: {x: 0, y: 3, z: 0}
   end_vel: {x: 0, y: -3, z: 0}
   throw_duration: 0.25
@@ -521,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1628805233296653275}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,10 +561,10 @@ GameObject:
   - component: {fileID: 2064278609199065158}
   - component: {fileID: 4448268376453522240}
   - component: {fileID: 1033911277474120705}
-  - component: {fileID: 5846825854364198884}
   - component: {fileID: 5146181429592084958}
   - component: {fileID: 7895001934129064380}
-  m_Layer: 0
+  - component: {fileID: 1704163064364833224}
+  m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,27 +637,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
   m_PresetInfoIsWorld: 1
---- !u!65 &5846825854364198884
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6630547576399562525}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 100, y: 61, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5146181429592084958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +666,27 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1704163064364833224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630547576399562525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 61, z: 1}
+  m_Center: {x: 0, y: -30.5, z: 0}
 --- !u!1 &7563726318190952290
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +702,7 @@ GameObject:
   - component: {fileID: 2553393627140204911}
   - component: {fileID: 1263324531220049255}
   - component: {fileID: 7426554267896319262}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Deal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

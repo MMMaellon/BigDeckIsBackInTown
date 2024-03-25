@@ -77,7 +77,6 @@ namespace MMMaellon.BigDeckIsBackInTown
                     player_id_cache = players[i].playerId;
                 }
             }
-            Debug.LogWarning("Returning " + cached_position);
             return cached_position;
         }
 

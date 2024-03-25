@@ -8,7 +8,7 @@ namespace MMMaellon.BigDeckIsBackInTown
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(SmartObjectSync))]
     public class Card : SmartObjectSyncState
     {
-        [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(visible_only_to_owner))]
+        [UdonSynced, FieldChangeCallback(nameof(visible_only_to_owner))]
         public bool _visible_only_to_owner = false;
         public bool visible_only_to_owner
         {
@@ -17,6 +17,21 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 _visible_only_to_owner = value;
                 SetVisibility(IsActiveState());
+                if (sync.IsLocalOwner())
+                {
+                    RequestSerialization();
+                }
+            }
+        }
+        [UdonSynced, FieldChangeCallback(nameof(pickupable_only_by_owner))]
+        public bool _pickupable_only_by_owner = false;
+        public bool pickupable_only_by_owner
+        {
+            get => _pickupable_only_by_owner;
+            set
+            {
+                _pickupable_only_by_owner = value;
+                SetPickupable(IsActiveState());
                 if (sync.IsLocalOwner())
                 {
                     RequestSerialization();
@@ -49,6 +64,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             collider_component.isTrigger = true;
             render_component.enabled = false;
             SetVisibility(true);
+            SetPickupable(true);
             transform.position = deck.cards_in_deck_parent.position;
             transform.rotation = deck.cards_in_deck_parent.rotation;
             sync.rigid.isKinematic = true;
@@ -64,6 +80,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             collider_component.isTrigger = false;
             render_component.enabled = true;
             SetVisibility(false);
+            SetPickupable(false);
             sync.rigid.isKinematic = !card_physics;
             if (deck.reparent_cards)
             {
@@ -125,9 +142,14 @@ namespace MMMaellon.BigDeckIsBackInTown
                 child.SetActive(!visible_only_to_owner || sync.IsLocalOwner());
             }
         }
+        public void SetPickupable(bool state_active)
+        {
+            sync.pickupable = state_active || !pickupable_only_by_owner || sync.IsLocalOwner();
+        }
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {
             SetVisibility(IsActiveState());
+            SetPickupable(IsActiveState());
         }
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public override void Reset()

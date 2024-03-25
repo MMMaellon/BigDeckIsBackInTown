@@ -248,7 +248,6 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
         public void ParseCallback()
         {
-            Debug.LogWarning("PARSE CALLBACK -----------------------------");
             parse_callback_called = true;
             foreach (CardText card in cards)
             {

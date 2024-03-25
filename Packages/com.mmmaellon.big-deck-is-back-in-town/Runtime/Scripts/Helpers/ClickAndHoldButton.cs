@@ -1,8 +1,10 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using VRC.SDK3.Components;
+using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Common;
 
@@ -62,6 +64,22 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             AbortHold();
         }
+
+        int hover_time = -1001;
+        public void OnHover()
+        {
+            hover_time = Time.frameCount;
+        }
+
+        Button button;
+        public void UIHold()
+        {
+            if (hover_time < Time.frameCount - 2)
+            {
+                StartHold();
+            }
+        }
+
         float hold_start = -1001f;
         public void StartHold()
         {
@@ -83,6 +101,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             if (hold_start < 0)
             {
+
                 return;
             }
             holding_left = holding_left && left_trigger;
@@ -121,14 +140,21 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             if (args.handType == HandType.LEFT)
             {
-                left_trigger = value;
+                left_trigger = value && !Networking.LocalPlayer.GetPickupInHand(VRC_Pickup.PickupHand.Left);
             }
 
             if (args.handType == HandType.RIGHT)
             {
-                right_trigger = value;
+                right_trigger = value && !Networking.LocalPlayer.GetPickupInHand(VRC_Pickup.PickupHand.Right);
             }
+            SendCustomEventDelayedFrames(nameof(CheckPickup), 2);
         }
 
+        public void CheckPickup()
+        {
+
+            left_trigger = left_trigger && !Networking.LocalPlayer.GetPickupInHand(VRC_Pickup.PickupHand.Left);
+            right_trigger = right_trigger && !Networking.LocalPlayer.GetPickupInHand(VRC_Pickup.PickupHand.Right);
+        }
     }
 }

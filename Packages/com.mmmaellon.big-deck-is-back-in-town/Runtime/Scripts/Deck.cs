@@ -90,7 +90,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
 
         [System.NonSerialized]
-        public readonly DataList cards_in_decks = new DataList();
+        public DataList cards_in_decks = new DataList();
         [HideInInspector]
         public SmartObjectSync deck_sync;
         public void OnEnable()
@@ -104,7 +104,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 if (cards[i].sync.state == cards[i].stateID)
                 {
-                    cards_in_decks.Add(new DataToken(cards[i]));
+                    cards_in_decks.Add(cards[i]);
                 }
             }
             if (Networking.LocalPlayer.IsOwner(gameObject))
@@ -186,9 +186,9 @@ namespace MMMaellon.BigDeckIsBackInTown
             if (newState == temp_card.stateID + SmartObjectSync.STATE_CUSTOM)
             {
                 //sync is entering card state, which means it's being returned to the deck
-                if (!cards_in_decks.Contains(new DataToken(temp_card)))
+                if (!cards_in_decks.Contains(temp_card))
                 {
-                    cards_in_decks.Add(new DataToken(temp_card));
+                    cards_in_decks.Add(temp_card);
                     if (draw_cards_with_grab && !pick_next_card_requested)
                     {
                         if (deck_sync && deck_sync.IsHeld())
@@ -213,7 +213,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             else if (oldState == temp_card.stateID + SmartObjectSync.STATE_CUSTOM)
             {
                 //card just left the deck; pick a new next card if we need to
-                cards_in_decks.Remove(new DataToken(temp_card));
+                cards_in_decks.Remove(temp_card);
                 if (next_card == temp_card.id)
                 {
                     if (deck_sync && deck_sync.IsHeld())

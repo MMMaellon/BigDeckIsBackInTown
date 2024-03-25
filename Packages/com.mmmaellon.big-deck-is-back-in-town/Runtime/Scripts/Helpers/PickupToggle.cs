@@ -18,7 +18,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             get => _pickupable;
             set
             {
-                Debug.LogWarning("Setting toggle to " + value);
                 _pickupable = value;
                 if (toggle)
                 {

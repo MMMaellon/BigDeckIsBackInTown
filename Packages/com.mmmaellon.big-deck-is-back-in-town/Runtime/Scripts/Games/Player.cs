@@ -19,8 +19,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         [System.NonSerialized]
         public float last_turn = -1001;
 
-        [HideInInspector]
-        public short id;
+        public int id;
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(selected_card))]
         public int _selected_card;
         public int selected_card
@@ -31,7 +30,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 _selected_card = value;
                 OnSubmitCard(value);
                 game.OnSelectCard(this, value);
-                if (local_player.IsOwner(gameObject))
+                if (Networking.LocalPlayer.IsOwner(gameObject))
                 {
                     RequestSerialization();
                 }
@@ -52,7 +51,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 OnScoreChange(_score, value);
                 game.OnScoreChange(this, _score, value);
                 _score = value;
-                if (local_player.IsOwner(gameObject))
+                if (Networking.LocalPlayer.IsOwner(gameObject))
                 {
                     RequestSerialization();
                 }
@@ -72,22 +71,11 @@ namespace MMMaellon.BigDeckIsBackInTown
                     game.OnLeftGame(this);
                 }
                 _player_id = value;
-                if (value >= 0)
-                {
-                    OnJoin();
-                    game.OnJoinGame(this);
-                }
-                Debug.LogWarning("setting player id " + value);
-                if (!Utilities.IsValid(local_player))
-                {
-                    return;
-                }
-                if (local_player.playerId == value && !local_player.IsOwner(gameObject))
+                if (Networking.LocalPlayer.playerId == value && !Networking.LocalPlayer.IsOwner(gameObject))
                 {
                     //world owner is asking us to take ownership of this object
-                    Networking.SetOwner(local_player, gameObject);
+                    Networking.SetOwner(Networking.LocalPlayer, gameObject);
                 }
-                Debug.LogWarning("value is " + value);
 
                 if (value >= 0)
                 {
@@ -109,9 +97,12 @@ namespace MMMaellon.BigDeckIsBackInTown
                         game.local_player_obj = this;
                         if (throw_target)
                         {
-                            Networking.SetOwner(local_player, throw_target.gameObject);
+                            Networking.SetOwner(Networking.LocalPlayer, throw_target.gameObject);
                         }
                     }
+                    OnJoin();
+                    game.OnJoinGame(this);
+
                 }
                 else
                 {
@@ -128,12 +119,11 @@ namespace MMMaellon.BigDeckIsBackInTown
                     game.joined_player_ids.RemoveAll(id);
                     if (game.local_player_obj == this)
                     {
-                        Debug.LogWarning("local player obj is being set to null from " + gameObject.name);
                         game.local_player_obj = null;
                     }
                 }
 
-                if (local_player.IsOwner(gameObject))
+                if (Networking.LocalPlayer.IsOwner(gameObject))
                 {
                     RequestSerialization();
                 }

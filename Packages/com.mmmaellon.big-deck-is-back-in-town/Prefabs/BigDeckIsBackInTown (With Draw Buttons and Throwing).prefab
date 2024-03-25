@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 5867063594073767260}
   - component: {fileID: 7442436697546781077}
   - component: {fileID: 3063586539890597352}
-  - component: {fileID: 6445890652950278663}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,35 +207,6 @@ MonoBehaviour:
             m_StringArgument: StartHold
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &6445890652950278663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599446651965024757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5724672796745604257}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: SendCustomEvent
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: StartResetHold
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &2932768707645122478
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +218,7 @@ GameObject:
   - component: {fileID: 2512723490864061846}
   - component: {fileID: 105330988874489518}
   - component: {fileID: 4240733403183624623}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7562407031294659251}
   - component: {fileID: 8847173200744364479}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,6 +565,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 7578181290298478456}
+  deck: {fileID: 0}
   only_while_pickup_use_down: 0
 --- !u!114 &7578181290298478456
 MonoBehaviour:
@@ -645,6 +616,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 7420603058512441282}
   deck: {fileID: 1929897418011374986}
+  game: {fileID: 0}
   targets:
   - {fileID: 1791694900988096912}
   - {fileID: 7758762242020183357}
@@ -658,7 +630,7 @@ MonoBehaviour:
   - {fileID: 2276063734446336573}
   - {fileID: 3937327324955274661}
   - {fileID: 2993821857505254622}
-  throw_boost: 5
+  desktop_throw_boost: 5
   allow_throwing: 1
   first_throw_only: 1
   prime_throw_on_pickup_use_down: 1
@@ -783,7 +755,7 @@ GameObject:
   - component: {fileID: 8490243367746437012}
   - component: {fileID: 1753879589569411837}
   - component: {fileID: 6129613791320395437}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +830,7 @@ GameObject:
   - component: {fileID: 1465129976974738034}
   - component: {fileID: 10053344336492577}
   - component: {fileID: 2048206932118825015}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResetMessage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +964,7 @@ GameObject:
   - component: {fileID: 5419940904682489864}
   - component: {fileID: 8804298540299169924}
   - component: {fileID: 9168851490951983101}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResetMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4924038705587031025}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,10 +1444,10 @@ GameObject:
   - component: {fileID: 9054594154499596816}
   - component: {fileID: 4295573082642710205}
   - component: {fileID: 1096735127852894044}
-  - component: {fileID: 6960897593028401602}
   - component: {fileID: 3618152931549221974}
   - component: {fileID: 6104148185690706802}
-  m_Layer: 0
+  - component: {fileID: 2997795069469986699}
+  m_Layer: 13
   m_Name: ResetButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1548,27 +1520,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
   m_PresetInfoIsWorld: 1
---- !u!65 &6960897593028401602
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8563919711872987777}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 92, y: 65, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3618152931549221974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,6 +1549,27 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2997795069469986699
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563919711872987777}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 92, y: 65, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &163322386620720311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1909,6 +1881,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1964615037708401021, guid: d8a86568462e77f408ec07e201027963,
         type: 3}
+    - target: {fileID: 2513378348122217608, guid: d8a86568462e77f408ec07e201027963,
+        type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5452595275210912203, guid: d8a86568462e77f408ec07e201027963,
         type: 3}
       propertyPath: m_Name
@@ -2206,7 +2183,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8215589831309954648}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 22
   card_physics: 1
   render_component: {fileID: 441182742007446129}
@@ -2596,7 +2574,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 9034799407086490082}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 28
   card_physics: 1
   render_component: {fileID: 888491213946665410}
@@ -3092,7 +3071,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1958435453251730688}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 50
   card_physics: 1
   render_component: {fileID: 1286665376611067490}
@@ -3476,7 +3456,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5736667398497199229}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 12
   card_physics: 1
   render_component: {fileID: 1428492018391337616}
@@ -3866,7 +3847,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 4649224549166069577}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 45
   card_physics: 1
   render_component: {fileID: 1642614502809251563}
@@ -4244,7 +4226,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 743150486919727895}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 30
   card_physics: 1
   render_component: {fileID: 1772995300389760436}
@@ -4628,7 +4611,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 206940054806188263}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 13
   card_physics: 1
   render_component: {fileID: 1773010767628684518}
@@ -5024,7 +5008,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6813075428821965793}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 35
   card_physics: 1
   render_component: {fileID: 1820848543805349634}
@@ -5408,7 +5393,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3806437240131498560}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 44
   card_physics: 1
   render_component: {fileID: 1984773674667254239}
@@ -5786,7 +5772,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3279851776894783355}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 38
   card_physics: 1
   render_component: {fileID: 2042687551649382324}
@@ -6176,7 +6163,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1893502509392473599}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 3
   card_physics: 1
   render_component: {fileID: 2062929406469626316}
@@ -6560,7 +6548,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1704318328873130862}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 23
   card_physics: 1
   render_component: {fileID: 2078925871335263952}
@@ -6938,7 +6927,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5790863883508138876}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 18
   card_physics: 1
   render_component: {fileID: 2209543203832116200}
@@ -7328,7 +7318,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2784587431135401342}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 49
   card_physics: 1
   render_component: {fileID: 2313043553229985564}
@@ -7712,7 +7703,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8852104393052719455}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 6
   card_physics: 1
   render_component: {fileID: 2382810115016696655}
@@ -8096,7 +8088,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 4023222596911145127}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 51
   card_physics: 1
   render_component: {fileID: 2432669645226162220}
@@ -8474,7 +8467,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2327322985452657411}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 41
   card_physics: 1
   render_component: {fileID: 2463522643910650210}
@@ -8864,7 +8858,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3948048854971972609}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 20
   card_physics: 1
   render_component: {fileID: 2563145820771573242}
@@ -9242,7 +9237,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6334442398705432258}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 48
   card_physics: 1
   render_component: {fileID: 2665888691743411651}
@@ -9750,7 +9746,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6547473324551465377}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 31
   card_physics: 1
   render_component: {fileID: 3031838711564123884}
@@ -10128,7 +10125,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 4868625295660739902}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 5
   card_physics: 1
   render_component: {fileID: 3173508591825770284}
@@ -10512,7 +10510,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8455661830358569395}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 29
   card_physics: 1
   render_component: {fileID: 3188353156777327965}
@@ -11014,7 +11013,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1103712418518167536}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 7
   card_physics: 1
   render_component: {fileID: 3466702862638622562}
@@ -11398,7 +11398,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 4503364233814815051}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 14
   card_physics: 1
   render_component: {fileID: 3505993372790685747}
@@ -11900,7 +11901,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3783178314881736981}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 11
   card_physics: 1
   render_component: {fileID: 3847953839261206866}
@@ -12284,7 +12286,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1607458729674096342}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 46
   card_physics: 1
   render_component: {fileID: 3970484946467903608}
@@ -12745,7 +12748,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7339596833707427966}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 17
   card_physics: 1
   render_component: {fileID: 4678588553099535299}
@@ -13129,7 +13133,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2630944733149720697}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 37
   card_physics: 1
   render_component: {fileID: 4997812326619253354}
@@ -13507,7 +13512,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 4105348566215115191}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 4
   card_physics: 1
   render_component: {fileID: 5057146940532769411}
@@ -13897,7 +13903,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6943646511376031403}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 24
   card_physics: 1
   render_component: {fileID: 5090608052752765634}
@@ -14399,7 +14406,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7541838266978459005}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 40
   card_physics: 1
   render_component: {fileID: 5394368439481160363}
@@ -14777,7 +14785,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2123313729513562449}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 43
   card_physics: 1
   render_component: {fileID: 5638171459318970453}
@@ -15173,7 +15182,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3260181964505911923}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 9
   card_physics: 1
   render_component: {fileID: 5760365610254462003}
@@ -15551,7 +15561,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2397863880103962673}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 25
   card_physics: 1
   render_component: {fileID: 5880143657351572277}
@@ -15941,7 +15952,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 9192736994265343354}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 16
   card_physics: 1
   render_component: {fileID: 6498192270289159558}
@@ -16319,7 +16331,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 840449642129325042}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 27
   card_physics: 1
   render_component: {fileID: 7088368916775023580}
@@ -16815,7 +16828,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7324798954677700010}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 1
   card_physics: 1
   render_component: {fileID: 7196893869931322358}
@@ -17211,7 +17225,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1922923652581473793}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 32
   card_physics: 1
   render_component: {fileID: 7275273195434725843}
@@ -17589,7 +17604,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3140137296344097943}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 26
   card_physics: 1
   render_component: {fileID: 7608725862184756337}
@@ -17967,7 +17983,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8578260325887475151}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 33
   card_physics: 1
   render_component: {fileID: 7622193940342219539}
@@ -18357,7 +18374,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2876729312927928186}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 15
   card_physics: 1
   render_component: {fileID: 7897526201772090125}
@@ -18735,7 +18753,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7992062935865789923}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 21
   card_physics: 1
   render_component: {fileID: 8018414120290304585}
@@ -19367,7 +19386,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 6684126522692987305}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 10
   card_physics: 1
   render_component: {fileID: 8172042829624624266}
@@ -19869,7 +19889,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 3933924029693713595}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 39
   card_physics: 1
   render_component: {fileID: 8363470974273607328}
@@ -20247,7 +20268,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2986090390434071029}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 2
   card_physics: 1
   render_component: {fileID: 8612733553937112785}
@@ -20631,7 +20653,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2401059552218247178}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 8
   card_physics: 1
   render_component: {fileID: 8644146661850961253}
@@ -21015,7 +21038,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5541329558582170555}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 42
   card_physics: 1
   render_component: {fileID: 8759684850409544830}
@@ -21399,7 +21423,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 5686084740838719606}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 19
   card_physics: 1
   render_component: {fileID: 8779098055446503728}
@@ -21777,7 +21802,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 8938263730234071963}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 36
   card_physics: 1
   render_component: {fileID: 8937342163493199082}
@@ -22173,7 +22199,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 1357689955769556771}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 0
   card_physics: 1
   render_component: {fileID: 8944167611672666329}
@@ -22545,7 +22572,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 2062065820986725345}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 34
   card_physics: 1
   render_component: {fileID: 8975231410700458873}
@@ -22941,7 +22969,8 @@ MonoBehaviour:
   SetupRan: 1
   stateID: 0
   sync: {fileID: 7282689354592919844}
-  invisible_to_others: 0
+  _visible_only_to_owner: 0
+  _pickupable_only_by_owner: 0
   id: 47
   card_physics: 1
   render_component: {fileID: 9190634620860040842}
