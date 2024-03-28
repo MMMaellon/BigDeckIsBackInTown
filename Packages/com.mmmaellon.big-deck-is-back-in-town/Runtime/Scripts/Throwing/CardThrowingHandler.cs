@@ -24,6 +24,10 @@ namespace MMMaellon.BigDeckIsBackInTown
         float best_score = -1001f;
         CardThrowTarget best_spot;
         float dist;
+        float dot;
+        public float vertical_scale = 0.5f;
+        public float distance_bias = 0.1f;
+        Vector3 target_aim_dir;
         public virtual CardThrowTarget LocateBestTarget(Vector3 position, Vector3 velocity)
         {
             best_score = -1001f;
@@ -35,14 +39,20 @@ namespace MMMaellon.BigDeckIsBackInTown
                     //don't skip velocity here so we can have the thing where it forces it by setting distance to 0
                     continue;
                 }
-                dist = Mathf.Pow(Vector3.Distance(target.GetAimPosition(position, velocity), position), 0.3f);
+                // dist = Mathf.Pow(Vector3.Distance(target.GetAimPosition(position, velocity), position), 0.3f);
+                dist = Vector3.Distance(target.GetAimPosition(position, velocity), position);
                 if (dist == 0)
                 {
                     best_score = 1001;
                     best_spot = target;
                     break;
                 }
-                new_score = target.power_multiplier * Vector3.Dot(velocity, (target.GetAimPosition(position, velocity) - position).normalized) / dist;
+                target_aim_dir = target.GetAimPosition(position, velocity) - position;
+                target_aim_dir.y *= vertical_scale;
+                velocity.y *= vertical_scale;
+                dot = Vector3.Dot(velocity.normalized, target_aim_dir.normalized);
+                dist = Mathf.Lerp(1f, dist, distance_bias);//cut the influence of distance
+                new_score = target.power_multiplier * Mathf.Pow(dot, 3f) / dist;
 
                 if (new_score < target.power_threshold || velocity.magnitude < target.velocity_threshold)
                 {

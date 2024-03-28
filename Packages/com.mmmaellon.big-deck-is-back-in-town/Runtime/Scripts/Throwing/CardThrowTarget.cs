@@ -14,17 +14,19 @@ namespace MMMaellon.BigDeckIsBackInTown
         public int card_limit = 0;
         [Header("Visiblity")]
         public bool change_card_visibility = false;
-        public bool visible_only_to_owners = false;
+        public bool visible_only_to_owner = false;
+        public bool persist_visiblity_change = true;
         public bool change_card_pickupable = false;
-        public bool pickupable_only_by_owners = false;
+        public bool pickupable_only_by_owner = false;
+        public bool persist_pickupable_change = true;
         [Header("Throw arc properties")]
         public Vector3 start_vel = Vector3.up * 10f;
         public Vector3 end_vel = Vector3.down * 5f;
         public float throw_duration = 0.25f;
         [Header("Aiming properties")]
-        public float velocity_threshold = 3f;
+        public float velocity_threshold = 1.5f;
         public float power_multiplier = 1.0f;
-        public float power_threshold = 5f;
+        public float power_threshold = 0.25f;
         public string active_parameter = "allow_throwing";
         public bool _allow_throwing = true;
         [Header("Delay between cards when multiple cards are dealt.")]
@@ -98,14 +100,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             card.sync.vel = GetEndVelocity(deal_multiple_count - cards_to_deal, deal_multiple_count);
             card.sync.rigid.velocity += GetStartVelocity(deal_multiple_count - cards_to_deal, deal_multiple_count);
             card.target_id = id;
-            if (change_card_visibility)
-            {
-                card.card.visible_only_to_owner = visible_only_to_owners;
-            }
-            if (change_card_pickupable)
-            {
-                card.card.pickupable_only_by_owner = pickupable_only_by_owners;
-            }
             card.EnterState();
             cards_to_deal--;
             if (card_limit > 0)

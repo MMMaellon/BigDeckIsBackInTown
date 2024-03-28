@@ -18,6 +18,9 @@ namespace MMMaellon.BigDeckIsBackInTown
         [System.NonSerialized]
         public Color start_color;
 
+        public bool visible_only_to_owner = true;
+        public bool pickupable_only_by_owner = false;
+
         public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
 

@@ -470,6 +470,7 @@ MonoBehaviour:
   id: 0
   deck: {fileID: 0}
   target_center: {fileID: 5590543641986393554}
+  card_limit: 0
   change_card_visibility: 0
   visible_only_to_owners: 0
   change_card_pickupable: 0
@@ -477,9 +478,9 @@ MonoBehaviour:
   start_vel: {x: 0, y: 3, z: 0}
   end_vel: {x: 0, y: -3, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
+  velocity_threshold: 1.5
   power_multiplier: 1
-  power_threshold: 3
+  power_threshold: 0.25
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2
@@ -686,7 +687,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 100, y: 61, z: 1}
-  m_Center: {x: 0, y: -30.5, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7563726318190952290
 GameObject:
   m_ObjectHideFlags: 0

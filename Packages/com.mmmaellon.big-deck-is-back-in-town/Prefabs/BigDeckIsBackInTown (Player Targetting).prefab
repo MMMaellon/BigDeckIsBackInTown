@@ -791,6 +791,7 @@ MonoBehaviour:
   id: 0
   deck: {fileID: 3269579944684850011}
   target_center: {fileID: 2063384444517811817}
+  card_limit: 0
   change_card_visibility: 1
   visible_only_to_owners: 1
   change_card_pickupable: 0
@@ -798,9 +799,9 @@ MonoBehaviour:
   start_vel: {x: 0, y: 3, z: 0}
   end_vel: {x: 0, y: -3, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
+  velocity_threshold: 4
   power_multiplier: 1
-  power_threshold: 3
+  power_threshold: 0.85
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2

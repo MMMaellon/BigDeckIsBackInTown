@@ -1324,9 +1324,11 @@ MonoBehaviour:
   target_center: {fileID: 3142328919967310946}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 1
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
   change_card_pickupable: 0
-  pickupable_only_by_owners: 0
+  pickupable_only_by_owner: 0
+  persist_pickupable_change: 1
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.5
@@ -3662,9 +3664,11 @@ MonoBehaviour:
   target_center: {fileID: 3111631917977405659}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 0
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
   change_card_pickupable: 1
-  pickupable_only_by_owners: 0
+  pickupable_only_by_owner: 1
+  persist_pickupable_change: 0
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
@@ -4933,15 +4937,17 @@ MonoBehaviour:
   target_center: {fileID: 5193553892775401833}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 0
-  change_card_pickupable: 0
-  pickupable_only_by_owners: 0
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
+  change_card_pickupable: 1
+  pickupable_only_by_owner: 0
+  persist_pickupable_change: 1
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
   velocity_threshold: 3
   power_multiplier: 10
-  power_threshold: 1
+  power_threshold: 0.1
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2
@@ -5341,9 +5347,11 @@ MonoBehaviour:
   target_center: {fileID: 6574906012812185013}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 0
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
   change_card_pickupable: 1
-  pickupable_only_by_owners: 0
+  pickupable_only_by_owner: 1
+  persist_pickupable_change: 0
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
@@ -5653,6 +5661,7 @@ MonoBehaviour:
   first_throw_only: 0
   prime_throw_on_pickup_use_down: 0
   desktop_throw_assist: 1
+  vertical_scale: 0.5
 --- !u!114 &7457479901160686944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11369,9 +11378,11 @@ MonoBehaviour:
   target_center: {fileID: 8269590815791437731}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 0
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
   change_card_pickupable: 1
-  pickupable_only_by_owners: 0
+  pickupable_only_by_owner: 0
+  persist_pickupable_change: 1
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
@@ -11570,15 +11581,17 @@ MonoBehaviour:
   target_center: {fileID: 5906601513692396936}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 0
-  change_card_pickupable: 0
-  pickupable_only_by_owners: 0
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
+  change_card_pickupable: 1
+  pickupable_only_by_owner: 0
+  persist_pickupable_change: 1
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
   velocity_threshold: 3
   power_multiplier: 10
-  power_threshold: 1
+  power_threshold: 0.1
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2
@@ -12207,15 +12220,17 @@ MonoBehaviour:
   target_center: {fileID: 2111142126790328053}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 0
+  visible_only_to_owner: 0
+  persist_visiblity_change: 1
   change_card_pickupable: 0
-  pickupable_only_by_owners: 0
+  pickupable_only_by_owner: 0
+  persist_pickupable_change: 1
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
   velocity_threshold: 3
   power_multiplier: 10
-  power_threshold: 1
+  power_threshold: 0.1
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2
@@ -12414,6 +12429,7 @@ MonoBehaviour:
   first_throw_only: 0
   prime_throw_on_pickup_use_down: 0
   desktop_throw_assist: 1
+  vertical_scale: 0.5
 --- !u!114 &6789586897477500595
 MonoBehaviour:
   m_ObjectHideFlags: 0

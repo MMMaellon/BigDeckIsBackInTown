@@ -24,7 +24,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 }
                 else
                 {
-                    holder = manager.holders[value].transform;
+                    holder = manager.holders[value];
                     AttachIfSynced();
                 }
                 if (sync.IsOwnerLocal())
@@ -34,7 +34,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
         [System.NonSerialized]
-        public Transform holder = null;
+        public CardHolder holder = null;
         public override void Interpolate(float interpolation)
         {
             if (holder != null)
@@ -87,7 +87,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             if (holder != null && IsActiveState())
             {
-                transform.SetParent(holder, true);
+                transform.SetParent(holder.transform, true);
                 sync.rigid.isKinematic = true;
                 if (sync.interpolation >= 1)
                 {
@@ -98,6 +98,9 @@ namespace MMMaellon.BigDeckIsBackInTown
                     start_pos = transform.localPosition;
                     start_rot = transform.localRotation;
                 }
+
+                card.SetVisibility(true, !holder.visible_only_to_owner);
+                card.SetPickupable(true, !holder.pickupable_only_by_owner);
             }
         }
         public void Detach()
@@ -106,11 +109,10 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 holder_id = -1001;
             }
-            if (sync.state < SmartObjectSync.STATE_CUSTOM)
-            {
-                transform.SetParent(card.deck.cards_outside_deck_parent);
-                sync.rigid.isKinematic = !card.card_physics;
-            }
+            transform.SetParent(card.deck.cards_outside_deck_parent);
+            sync.rigid.isKinematic = !card.card_physics;
+            card.SetVisibility(true, !card.visible_only_to_owner);
+            card.SetPickupable(true, !card.pickupable_only_by_owner);
         }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR

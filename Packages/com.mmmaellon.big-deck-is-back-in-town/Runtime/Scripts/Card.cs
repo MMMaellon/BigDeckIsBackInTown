@@ -16,7 +16,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             set
             {
                 _visible_only_to_owner = value;
-                SetVisibility(IsActiveState());
+                SetVisibility(!IsActiveState(), !IsActiveState() && !value);
                 if (sync.IsLocalOwner())
                 {
                     RequestSerialization();
@@ -31,7 +31,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             set
             {
                 _pickupable_only_by_owner = value;
-                SetPickupable(IsActiveState());
+                SetPickupable(true, IsActiveState() || !value);
                 if (sync.IsLocalOwner())
                 {
                     RequestSerialization();
@@ -63,8 +63,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             collider_component.enabled = deck.next_card == id;
             collider_component.isTrigger = true;
             render_component.enabled = false;
-            SetVisibility(true);
-            SetPickupable(true);
+            SetVisibility(false, false);
+            SetPickupable(true, true);
             transform.position = deck.cards_in_deck_parent.position;
             transform.rotation = deck.cards_in_deck_parent.rotation;
             sync.rigid.isKinematic = true;
@@ -79,8 +79,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             collider_component.enabled = true;
             collider_component.isTrigger = false;
             render_component.enabled = true;
-            SetVisibility(false);
-            SetPickupable(false);
+            SetVisibility(true, !visible_only_to_owner);
+            SetPickupable(true, !pickupable_only_by_owner);
             sync.rigid.isKinematic = !card_physics;
             if (deck.reparent_cards)
             {
@@ -108,11 +108,21 @@ namespace MMMaellon.BigDeckIsBackInTown
             return false;
         }
 
-        public void SetVisibility(bool state_active)
+        public void SetVisibility(bool visible_to_self, bool visible_to_others)
         {
-            if (state_active)
+            if ((visible_to_self && sync.IsLocalOwner()) || (visible_to_others && !sync.IsLocalOwner()))
             {
-                //invisible while in deck
+                if (deck.card_material)
+                {
+                    render_component.sharedMaterial = deck.card_material;
+                }
+                if (child)
+                {
+                    child.SetActive(true);
+                }
+            }
+            else
+            {
                 if (deck.hidden_card_material)
                 {
                     render_component.sharedMaterial = deck.hidden_card_material;
@@ -121,35 +131,19 @@ namespace MMMaellon.BigDeckIsBackInTown
                 {
                     child.SetActive(false);
                 }
-                return;
-            }
-            if (visible_only_to_owner && !sync.IsLocalOwner())
-            {
-                if (deck.hidden_card_material)
-                {
-                    render_component.sharedMaterial = deck.hidden_card_material;
-                }
-            }
-            else
-            {
-                if (deck.card_material)
-                {
-                    render_component.sharedMaterial = deck.card_material;
-                }
-            }
-            if (child)
-            {
-                child.SetActive(!visible_only_to_owner || sync.IsLocalOwner());
             }
         }
-        public void SetPickupable(bool state_active)
+        public void SetPickupable(bool pickupable_by_owner, bool pickupable_by_others)
         {
-            sync.pickupable = state_active || !pickupable_only_by_owner || sync.IsLocalOwner();
+            sync.pickupable = (sync.IsLocalOwner() && pickupable_by_owner) || (sync.IsLocalOwner() && pickupable_by_others);
         }
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {
-            SetVisibility(IsActiveState());
-            SetPickupable(IsActiveState());
+            if (IsActiveState() || sync.state < SmartObjectSync.STATE_CUSTOM)
+            {
+                SetVisibility(!IsActiveState(), !IsActiveState() && !visible_only_to_owner);
+                SetPickupable(true, IsActiveState() || !pickupable_only_by_owner);
+            }
         }
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public override void Reset()
