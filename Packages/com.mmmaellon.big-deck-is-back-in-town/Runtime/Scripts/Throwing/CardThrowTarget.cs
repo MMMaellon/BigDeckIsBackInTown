@@ -29,6 +29,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         public float power_threshold = 0.25f;
         public string active_parameter = "allow_throwing";
         public bool _allow_throwing = true;
+        public bool _limit_reached = false;
         [Header("Delay between cards when multiple cards are dealt.")]
         public float deal_delay = 0.2f;
 
@@ -39,7 +40,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         public TextMeshPro nameplate;
         public virtual bool allow_throwing
         {
-            get => _allow_throwing;
+            get => _allow_throwing && !_limit_reached;
             set
             {
                 _allow_throwing = value;
@@ -106,7 +107,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 cards_dealt++;
                 card.sync.AddListener(this);
-                allow_throwing = cards_dealt < card_limit;
+                _limit_reached = cards_dealt >= card_limit;
             }
         }
         CardThrowing throwing_temp;
@@ -117,7 +118,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             if (throwing_temp && (throwing_temp.target_id != id || !throwing_temp.IsActiveState()))
             {
                 cards_dealt--;
-                allow_throwing = cards_dealt < card_limit;
+                _limit_reached = card_limit <= 0 || cards_dealt >= card_limit;
+                sync.RemoveListener(this);
             }
         }
 

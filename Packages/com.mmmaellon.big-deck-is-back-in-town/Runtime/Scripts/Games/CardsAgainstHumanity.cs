@@ -462,7 +462,6 @@ namespace MMMaellon.BigDeckIsBackInTown
                     magnified_white_card_text1.text = card_text.text.text;
                 }
                 card.sync.AddListener(this);
-                magnifying_submission1.allow_throwing = false;
             }
             else if (handler.targets[target_index] == magnifying_submission2)
             {
@@ -472,7 +471,6 @@ namespace MMMaellon.BigDeckIsBackInTown
                     magnified_white_card_text2.text = card_text.text.text;
                 }
                 card.sync.AddListener(this);
-                magnifying_submission2.allow_throwing = false;
             }
             else if (handler.targets[target_index] == spread_cards)
             {

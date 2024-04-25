@@ -279,9 +279,6 @@ namespace MMMaellon.BigDeckIsBackInTown
             Vector3 m = (n * sumxy - sumx * sumy) / denom;
             Vector3 b = (sumy * sumx2 - sumx * sumxy) / denom;
 
-            Debug.LogWarning("m: " + m);
-            Debug.LogWarning("b: " + b);
-            Debug.LogWarning("x[n-1]: " + x[n - 1]);
             return m * x[n - 1] + b;
         }
 

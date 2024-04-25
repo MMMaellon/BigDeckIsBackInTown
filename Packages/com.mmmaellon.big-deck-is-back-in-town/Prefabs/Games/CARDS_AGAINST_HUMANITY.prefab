@@ -3662,7 +3662,7 @@ MonoBehaviour:
   id: 4
   deck: {fileID: 3765633195765062594}
   target_center: {fileID: 3111631917977405659}
-  card_limit: 0
+  card_limit: 1
   change_card_visibility: 1
   visible_only_to_owner: 0
   persist_visiblity_change: 1
@@ -3672,9 +3672,9 @@ MonoBehaviour:
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
+  velocity_threshold: 1
   power_multiplier: 1
-  power_threshold: 5
+  power_threshold: 0.1
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2
@@ -4945,7 +4945,7 @@ MonoBehaviour:
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
+  velocity_threshold: 1
   power_multiplier: 10
   power_threshold: 0.1
   active_parameter: allow_throwing
@@ -5345,7 +5345,7 @@ MonoBehaviour:
   id: 2
   deck: {fileID: 3765633195765062594}
   target_center: {fileID: 6574906012812185013}
-  card_limit: 0
+  card_limit: 1
   change_card_visibility: 1
   visible_only_to_owner: 0
   persist_visiblity_change: 1
@@ -5355,9 +5355,9 @@ MonoBehaviour:
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
-  power_multiplier: 1.25
-  power_threshold: 5
+  velocity_threshold: 1
+  power_multiplier: 1
+  power_threshold: 0.1
   active_parameter: allow_throwing
   _allow_throwing: 1
   deal_delay: 0.2
@@ -5662,6 +5662,7 @@ MonoBehaviour:
   prime_throw_on_pickup_use_down: 0
   desktop_throw_assist: 1
   vertical_scale: 0.5
+  distance_bias: 0.1
 --- !u!114 &7457479901160686944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11589,7 +11590,7 @@ MonoBehaviour:
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
+  velocity_threshold: 1
   power_multiplier: 10
   power_threshold: 0.1
   active_parameter: allow_throwing
@@ -12228,7 +12229,7 @@ MonoBehaviour:
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
-  velocity_threshold: 3
+  velocity_threshold: 1
   power_multiplier: 10
   power_threshold: 0.1
   active_parameter: allow_throwing
@@ -12430,6 +12431,7 @@ MonoBehaviour:
   prime_throw_on_pickup_use_down: 0
   desktop_throw_assist: 1
   vertical_scale: 0.5
+  distance_bias: 0.1
 --- !u!114 &6789586897477500595
 MonoBehaviour:
   m_ObjectHideFlags: 0

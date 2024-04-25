@@ -194,9 +194,11 @@ MonoBehaviour:
   target_center: {fileID: 1602918680384514627}
   card_limit: 0
   change_card_visibility: 1
-  visible_only_to_owners: 1
+  visible_only_to_owner: 1
+  persist_visiblity_change: 1
   change_card_pickupable: 1
-  pickupable_only_by_owners: 1
+  pickupable_only_by_owner: 0
+  persist_pickupable_change: 1
   start_vel: {x: 0, y: 10, z: 0}
   end_vel: {x: 0, y: -5, z: 0}
   throw_duration: 0.25
@@ -1518,6 +1520,7 @@ MonoBehaviour:
   preventStealWhileAttachedToPlayer: 1
   respawnIntoStartingState: 1
   startingState: {fileID: 0}
+  checkSyncTimes: 0
   pickup: {fileID: 1211592773511962343}
   rigid: {fileID: 6434113364662623889}
   states: []

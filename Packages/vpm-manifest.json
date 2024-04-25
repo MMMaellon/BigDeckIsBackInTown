@@ -9,11 +9,11 @@
     "si.iwa.udontask": {
       "version": "1.1.1"
     },
-    "com.mmmaellon.smartobjectsync": {
-      "version": "3.10.11"
-    },
     "com.vrchat.worlds": {
       "version": "3.5.2"
+    },
+    "com.mmmaellon.smartobjectsync": {
+      "version": "3.10.12"
     }
   },
   "locked": {
@@ -31,12 +31,6 @@
         "com.vrchat.worlds": "^3.5.x"
       }
     },
-    "com.mmmaellon.smartobjectsync": {
-      "version": "3.10.11",
-      "dependencies": {
-        "com.vrchat.worlds": "^3.4.0"
-      }
-    },
     "com.vrchat.worlds": {
       "version": "3.5.2",
       "dependencies": {
@@ -46,6 +40,12 @@
     "com.vrchat.base": {
       "version": "3.5.2",
       "dependencies": {}
+    },
+    "com.mmmaellon.smartobjectsync": {
+      "version": "3.10.12",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4.0"
+      }
     }
   }
 }
