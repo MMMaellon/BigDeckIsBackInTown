@@ -135,7 +135,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
         public void SetPickupable(bool pickupable_by_owner, bool pickupable_by_others)
         {
-            sync.pickupable = (sync.IsLocalOwner() && pickupable_by_owner) || (sync.IsLocalOwner() && pickupable_by_others);
+            sync.pickupable = (pickupable_by_owner && sync.IsLocalOwner()) || (pickupable_by_others && !sync.IsLocalOwner());
         }
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {

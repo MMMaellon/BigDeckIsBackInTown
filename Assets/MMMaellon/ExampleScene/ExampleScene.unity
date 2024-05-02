@@ -32308,7 +32308,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 4585386928861941208}
   id: 1
-  deck: {fileID: 2981052365257916263}
+  deck: {fileID: 2088200482}
   target_center: {fileID: 5053643559185934608}
   card_limit: 0
   change_card_visibility: 1
@@ -61227,7 +61227,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 4951551643015422915}
   id: 2
-  deck: {fileID: 2981052365257916263}
+  deck: {fileID: 2088200482}
   target_center: {fileID: 3905281245419433086}
   card_limit: 0
   change_card_visibility: 1
