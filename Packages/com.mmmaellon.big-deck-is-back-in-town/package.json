@@ -1,6 +1,7 @@
 {
   "name": "com.mmmaellon.big-deck-is-back-in-town",
   "displayName": "Big Deck Is Back In Town",
+  "description": "VRChat prefab for performant (hopefully) playing cards.",
   "version": "4.2.2",
   "unity": "2019.1",
   "url": "https://github.com/MMMaellon/BigDeckIsBackInTown.git",
