@@ -3,16 +3,26 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.SDK3.Data;
+using MMMaellon.LightSync;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+
+
+
+
+
+
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
+using VRC.SDKBase.Editor.BuildPipeline;
 #endif
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class Deck : SmartObjectSyncListener
+    public class Deck : LightSyncListener
     {
         public Card[] cards;
         public CardThrowingHandler throwing_handler;
@@ -92,7 +102,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         [System.NonSerialized]
         public DataList cards_in_decks = new DataList();
         [HideInInspector]
-        public SmartObjectSync deck_sync;
+        public LightSync.LightSync deck_sync;
         public void OnEnable()
         {
             next_card = next_card;
@@ -175,7 +185,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         Card temp_card;
         bool pick_next_card_requested = false;
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
+        public override void OnChangeState(LightSync.LightSync sync, int oldState, int newState)
         {
 
             temp_card = sync.GetComponent<Card>();
@@ -183,7 +193,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
-            if (newState == temp_card.stateID + SmartObjectSync.STATE_CUSTOM)
+            if (temp_card.IsActiveState())
             {
                 //sync is entering card state, which means it's being returned to the deck
                 if (!cards_in_decks.Contains(temp_card))
@@ -191,9 +201,9 @@ namespace MMMaellon.BigDeckIsBackInTown
                     cards_in_decks.Add(temp_card);
                     if (draw_cards_with_grab && !pick_next_card_requested)
                     {
-                        if (deck_sync && deck_sync.IsHeld())
+                        if (deck_sync && deck_sync.IsHeld)
                         {
-                            if (deck_sync.IsOwnerLocal())
+                            if (deck_sync.IsOwner())
                             {
                                 pick_next_card_requested = true;
                                 SendCustomEventDelayedFrames(nameof(PickNextCard), 1);
@@ -201,7 +211,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                         }
                         else
                         {
-                            if (sync.IsOwnerLocal())
+                            if (sync.IsOwner())
                             {
                                 pick_next_card_requested = true;
                                 SendCustomEventDelayedFrames(nameof(PickNextCard), 1);
@@ -210,22 +220,22 @@ namespace MMMaellon.BigDeckIsBackInTown
                     }
                 }
             }
-            else if (oldState == temp_card.stateID + SmartObjectSync.STATE_CUSTOM)
+            else if (oldState == temp_card.stateID)
             {
                 //card just left the deck; pick a new next card if we need to
                 cards_in_decks.Remove(temp_card);
                 if (next_card == temp_card.id)
                 {
-                    if (deck_sync && deck_sync.IsHeld())
+                    if (deck_sync && deck_sync.IsHeld)
                     {
-                        if (draw_cards_with_grab && deck_sync.IsOwnerLocal())
+                        if (draw_cards_with_grab && deck_sync.IsOwner())
                         {
                             PickNextCard();
                         }
                     }
                     else
                     {
-                        if (draw_cards_with_grab && sync.IsOwnerLocal())
+                        if (draw_cards_with_grab && sync.IsOwner())
                         {
                             Networking.SetOwner(Networking.LocalPlayer, gameObject);
                             PickNextCard();
@@ -235,46 +245,87 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
+        public override void OnChangeOwner(LightSync.LightSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
 
         }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public void OnValidate()
-        {
-            deck_sync = GetComponent<SmartObjectSync>();
-
-            if (cards.Length > 0)
-            {
-                HashSet<Card> valid_cards = new HashSet<Card>();
-
-                for (int i = 0; i < cards.Length; i++)
-                {
-                    if (cards[i])
-                    {
-                        valid_cards.Add(cards[i]);
-                    }
-                }
-                cards = valid_cards.ToArray<Card>();
-            }
-            else
-            {
-                cards = GetComponentsInChildren<Card>();
-            }
-
-            for (int i = 0; i < cards.Length; i++)
-            {
-                cards[i].id = i;
-                cards[i].deck = this;
-                cards[i].sync.AddListener(this);
-            }
-        }
         public void Reset()
         {
             cards_in_deck_parent = transform;
         }
 
+        public void Setup()
+        {
+            PrefabUtility.RecordPrefabInstancePropertyModifications(this);
+            if (!deck_sync)
+            {
+                deck_sync = GetComponent<LightSync.LightSync>();
+            }
+            if (cards != null && cards.Length > 0)
+            {
+                cards = cards.Where(x => x != null).Distinct().ToArray();
+            }
+            else
+            {
+                cards = GetComponentsInChildren<Card>();
+            }
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i].id = i;
+                cards[i].deck = this;
+                cards[i].sync.eventListeners.Union(new Component[] { this });
+                cards[i].sync.AddClassListener(this);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(cards[i].sync);
+                cards[i].Setup();
+                new SerializedObject(cards[i]).Update();
+                new SerializedObject(cards[i].sync).Update();
+            }
+            new SerializedObject(this).Update();
+        }
 #endif
     }
 }
+
+#if UNITY_EDITOR && !COMPILER_UDONSHARP
+namespace MMMaellon.BigDeckIsBackInTown
+{
+
+    public class DeckBuildHandler : IVRCSDKBuildRequestedCallback
+    {
+        public int callbackOrder => 1;
+
+        [InitializeOnLoadMethod]
+        public static void Initialize()
+        {
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+        }
+
+        public static void OnPlayModeStateChanged(PlayModeStateChange change)
+        {
+            if (change != PlayModeStateChange.ExitingEditMode)
+            {
+                return;
+            }
+            AutoSetup();
+        }
+
+        public bool OnBuildRequested(VRCSDKRequestedBuildType requestedBuildType)
+        {
+            AutoSetup();
+            return true;
+        }
+
+        public static void AutoSetup()
+        {
+            foreach (Deck deck in GameObject.FindObjectsOfType<Deck>(true))
+            {
+                deck.Setup();
+            }
+            EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
+        }
+    }
+}
+
+#endif

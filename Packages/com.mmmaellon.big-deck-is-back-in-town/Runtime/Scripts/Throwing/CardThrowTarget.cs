@@ -1,21 +1,23 @@
 ﻿
+using MMMaellon.LightSync;
 using TMPro;
+using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
-    public class CardThrowTarget : SmartObjectSyncListener
+    public class CardThrowTarget : UdonSharpBehaviour
     {
         public int id;
         public Deck deck;
         public Transform target_center;
         [Tooltip("0 or negative means unlimited")]
         public int card_limit = 0;
-        [Header("Visiblity")]
+        [Header("Visibility")]
         public bool change_card_visibility = false;
         public bool visible_only_to_owner = false;
-        public bool persist_visiblity_change = true;
+        public bool persist_visibility_change = true;
         public bool change_card_pickupable = false;
         public bool pickupable_only_by_owner = false;
         public bool persist_pickupable_change = true;
@@ -92,9 +94,9 @@ namespace MMMaellon.BigDeckIsBackInTown
                 cards_to_deal--;
                 return;
             }
-            if (!card.sync.IsLocalOwner())
+            if (!card.sync.IsOwner())
             {
-                card.sync.TakeOwnership(false);
+                card.sync.TakeOwnership();
             }
             card.sync.pos = GetTargetPosition(deal_multiple_count - cards_to_deal, deal_multiple_count);
             card.sync.rot = GetTargetRotation(deal_multiple_count - cards_to_deal, deal_multiple_count);
@@ -106,26 +108,21 @@ namespace MMMaellon.BigDeckIsBackInTown
             if (card_limit > 0)
             {
                 cards_dealt++;
-                card.sync.AddListener(this);
+                // card.sync.AddClassListener((LightSyncListener)this);
                 _limit_reached = cards_dealt >= card_limit;
             }
         }
-        CardThrowing throwing_temp;
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
-        {
 
-            throwing_temp = sync.GetComponent<CardThrowing>();
-            if (throwing_temp && (throwing_temp.target_id != id || !throwing_temp.IsActiveState()))
-            {
-                cards_dealt--;
-                _limit_reached = card_limit <= 0 || cards_dealt >= card_limit;
-                sync.RemoveListener(this);
-            }
+        public void RemoveCard()
+        {
+            cards_dealt--;
+            _limit_reached = card_limit <= 0 || cards_dealt >= card_limit;
         }
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
-        {
-        }
+        // public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
+        // {
+        //
+        // }
         public int row_length = 4;
         public float horizontal_spacing = 0.08f;
         public float vertical_spacing = 0.15f;

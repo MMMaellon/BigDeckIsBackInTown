@@ -1,11 +1,12 @@
 ﻿
+using MMMaellon.LightSync;
 using UdonSharp;
 using UnityEngine;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Card))]
-    public class CardHolderState : SmartObjectSyncState
+    public class CardHolderState : LightSyncState
     {
         public CardHolderManager manager;
         public Card card;
@@ -27,7 +28,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                     holder = manager.holders[value];
                     AttachIfSynced();
                 }
-                if (sync.IsOwnerLocal())
+                if (sync.IsOwner())
                 {
                     RequestSerialization();
                 }
@@ -35,13 +36,13 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
         [System.NonSerialized]
         public CardHolder holder = null;
-        public override void Interpolate(float interpolation)
+        public override bool OnLerp(float elapsedTime, float autoSmoothedLerp)
         {
             if (holder != null)
             {
-                transform.localPosition = sync.HermiteInterpolatePosition(start_pos, Vector3.zero, sync.pos, Vector3.zero, interpolation);
-                transform.localRotation = sync.HermiteInterpolateRotation(start_rot, Vector3.zero, sync.rot, Vector3.zero, interpolation);
+                sync.ApplyRelativeTransforms(holder.transform.position, holder.transform.rotation, sync.HermiteInterpolatePosition(start_pos, Vector4.zero, sync.pos, Vector3.zero, autoSmoothedLerp, elapsedTime), Quaternion.Slerp(start_rot, sync.rot, autoSmoothedLerp));
             }
+            return autoSmoothedLerp >= 0;
         }
 
         Vector3 start_pos;
@@ -56,28 +57,11 @@ namespace MMMaellon.BigDeckIsBackInTown
             Detach();
         }
 
-        public override bool OnInterpolationEnd()
-        {
-            transform.localPosition = sync.pos;
-            transform.localRotation = sync.rot;
-            return false;
-        }
-
-        public override void OnInterpolationStart()
-        {
-        }
-
-        public override void OnSmartObjectSerialize()
-        {
-            sync.pos = transform.localPosition;
-            sync.rot = transform.localRotation;
-        }
-
         public void Attach(CardHolder holder)
         {
-            if (!sync.IsLocalOwner())
+            if (!sync.IsOwner())
             {
-                sync.TakeOwnership(false);
+                sync.TakeOwnership();
             }
             holder_id = holder.id;
             EnterState();
@@ -89,15 +73,8 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 transform.SetParent(holder.transform, true);
                 sync.rigid.isKinematic = true;
-                if (sync.interpolation >= 1)
-                {
-                    OnInterpolationEnd();
-                }
-                else
-                {
-                    start_pos = transform.localPosition;
-                    start_rot = transform.localRotation;
-                }
+                start_pos = transform.localPosition;
+                start_rot = transform.localRotation;
 
                 card.SetVisibility(true, !holder.visible_only_to_owner);
                 card.SetPickupable(true, !holder.pickupable_only_by_owner);
@@ -125,6 +102,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             card = GetComponent<Card>();
             base.Reset();
         }
+
 #endif
     }
 }

@@ -1,12 +1,14 @@
 ﻿
+using MMMaellon.LightSync;
 using UdonSharp;
+using UnityEditor;
 using UnityEngine;
 using VRC.SDKBase;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(SmartObjectSync))]
-    public class Card : SmartObjectSyncState
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(LightSync.LightSync))]
+    public class Card : LightSyncState
     {
         [UdonSynced, FieldChangeCallback(nameof(visible_only_to_owner))]
         public bool _visible_only_to_owner = false;
@@ -17,7 +19,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 _visible_only_to_owner = value;
                 SetVisibility(!IsActiveState(), !IsActiveState() && !value);
-                if (sync.IsLocalOwner())
+                if (sync.IsOwner())
                 {
                     RequestSerialization();
                 }
@@ -32,7 +34,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 _pickupable_only_by_owner = value;
                 SetPickupable(true, IsActiveState() || !value);
-                if (sync.IsLocalOwner())
+                if (sync.IsOwner())
                 {
                     RequestSerialization();
                 }
@@ -44,19 +46,8 @@ namespace MMMaellon.BigDeckIsBackInTown
         public GameObject child;
         public CardThrowing throwing;
         public Collider collider_component;
-        public Deck deck;
 
-        public override void OnDrop()
-        {
-            SendCustomEventDelayedFrames(nameof(AfterDrop), 2);
-        }
-        public void AfterDrop()
-        {
-            if (sync.state < SmartObjectSync.STATE_CUSTOM)
-            {
-                sync.rigid.isKinematic = !card_physics;
-            }
-        }
+        public Deck deck;
 
         public override void OnEnterState()
         {
@@ -81,36 +72,21 @@ namespace MMMaellon.BigDeckIsBackInTown
             render_component.enabled = true;
             SetVisibility(true, !visible_only_to_owner);
             SetPickupable(true, !pickupable_only_by_owner);
-            sync.rigid.isKinematic = !card_physics;
+            sync.rigid.isKinematic = sync.kinematicFlag;
             if (deck.reparent_cards)
             {
                 transform.SetParent(deck.cards_outside_deck_parent, true);
             }
         }
 
-        public override void OnSmartObjectSerialize()
-        {
-
-        }
-
-        public override void OnInterpolationStart()
-        {
-
-        }
-
-        public override void Interpolate(float interpolation)
-        {
-
-        }
-
-        public override bool OnInterpolationEnd()
+        public override bool OnLerp(float elapsedTime, float autoSmoothedLerp)
         {
             return false;
         }
 
         public void SetVisibility(bool visible_to_self, bool visible_to_others)
         {
-            if ((visible_to_self && sync.IsLocalOwner()) || (visible_to_others && !sync.IsLocalOwner()))
+            if ((visible_to_self && sync.IsOwner()) || (visible_to_others && !sync.IsOwner()))
             {
                 if (deck.card_material)
                 {
@@ -133,28 +109,37 @@ namespace MMMaellon.BigDeckIsBackInTown
                 }
             }
         }
+
         public void SetPickupable(bool pickupable_by_owner, bool pickupable_by_others)
         {
-            sync.pickupable = (pickupable_by_owner && sync.IsLocalOwner()) || (pickupable_by_others && !sync.IsLocalOwner());
+            sync.pickup.pickupable = (pickupable_by_owner && sync.IsOwner()) || (pickupable_by_others && !sync.IsOwner());
         }
+
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {
-            if (IsActiveState() || sync.state < SmartObjectSync.STATE_CUSTOM)
+            if (IsActiveState())
             {
                 SetVisibility(!IsActiveState(), !IsActiveState() && !visible_only_to_owner);
                 SetPickupable(true, IsActiveState() || !pickupable_only_by_owner);
             }
         }
+
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public override void Reset()
+        public virtual void Setup()
         {
-            render_component = GetComponent<Renderer>();
-            collider_component = GetComponent<Collider>();
-            base.Reset();
-        }
-        public virtual void OnValidate()
-        {
-            throwing = GetComponent<CardThrowing>();
+            if (!render_component)
+            {
+                render_component = GetComponent<Renderer>();
+            }
+            if (!collider_component)
+            {
+                collider_component = GetComponent<Collider>();
+            }
+            if (!throwing)
+            {
+                throwing = GetComponent<CardThrowing>();
+            }
+            PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
 #endif
     }

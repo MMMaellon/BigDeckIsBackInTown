@@ -1,4 +1,5 @@
 ﻿
+using MMMaellon.LightSync;
 using TMPro;
 using UdonSharp;
 using UnityEngine;
@@ -270,7 +271,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             foreach (Card card in white_card_submission1.deck.cards)
             {
-                card.sync.EnablePickupable();
+                card.sync.pickupableFlag = true;
             }
         }
 
@@ -401,7 +402,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             if (handler.targets[target_index] == black_card_submission)
             {
-                card.sync.pickupable = false;
+                card.sync.pickupableFlag = false;
                 if (card_text.text_id >= 0 && card_text.text_id < black_card_bank.texts.Length)
                 {
                     selected_black_card_text.text = black_card_bank.texts[card_text.text_id];
@@ -461,7 +462,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                     magnified_1 = card_text;
                     magnified_white_card_text1.text = card_text.text.text;
                 }
-                card.sync.AddListener(this);
+                card.sync.AddClassListener(this);
             }
             else if (handler.targets[target_index] == magnifying_submission2)
             {
@@ -470,13 +471,13 @@ namespace MMMaellon.BigDeckIsBackInTown
                     magnified_2 = card_text;
                     magnified_white_card_text2.text = card_text.text.text;
                 }
-                card.sync.AddListener(this);
+                card.sync.AddClassListener(this);
             }
             else if (handler.targets[target_index] == spread_cards)
             {
                 if (card == submitted_white_card1 && submitted_white_card2)
                 {
-                    submitted_white_card2.sync.TakeOwnership(false);
+                    submitted_white_card2.sync.TakeOwnership();
                     submitted_white_card2.sync.pos = card.sync.pos + new Vector3(0.02f, -0.02f, 0.01f);
                     submitted_white_card2.sync.rot = card.sync.rot;
                     submitted_white_card2.target_id = card.target_id;
@@ -702,7 +703,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
 
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
+        public override void OnChangeState(LightSync.LightSync sync, int oldState, int newState)
         {
             if (magnified_1 && magnified_1.sync == sync)
             {
@@ -724,10 +725,10 @@ namespace MMMaellon.BigDeckIsBackInTown
                 magnified_white_card_text2.text = "";
                 magnifying_submission2.allow_throwing = two_blanks && turn_player && turn_player.IsLocal() && state == STATE_PICK_WINNER;
             }
-            sync.RemoveListener(this);
+            sync.RemoveClassListener(this);
         }
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
+        public override void OnChangeOwner(LightSync.LightSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
 
         }

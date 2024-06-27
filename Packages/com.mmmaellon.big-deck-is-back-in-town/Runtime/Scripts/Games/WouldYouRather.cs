@@ -1,4 +1,5 @@
 ﻿
+using MMMaellon.LightSync;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -55,7 +56,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
+        public override void OnChangeOwner(LightSync.LightSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
 
         }
@@ -65,7 +66,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         }
 
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
+        public override void OnChangeState(LightSync.LightSync sync, int oldState, int newState)
         {
 
         }

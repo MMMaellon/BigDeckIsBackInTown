@@ -1,4 +1,5 @@
 ﻿
+using MMMaellon.LightSync;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -6,34 +7,44 @@ using VRC.SDKBase;
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
-    public class CardResetTrigger : SmartObjectSyncListener
+    public class CardResetTrigger : LightSyncListener
     {
         public Deck deck;
         Card card;
         public bool only_while_pickup_use_down = false;
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
-        {
-
-        }
-
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
-        {
-            sync.RemoveListener(this);
-            if (!sync.IsHeld() && sync.state < SmartObjectSync.STATE_CUSTOM)
-            {
-                sync.Respawn();
-            }
-        }
-
         public void OnTriggerEnter(Collider other)
         {
-            if (!Utilities.IsValid(other) || (only_while_pickup_use_down && !pickup_use_down))
+            if (!Utilities.IsValid(other))
             {
                 return;
             }
+            if (only_while_pickup_use_down)
+            {
+                if (pickup_use_down)
+                {
+                    card = other.GetComponent<Card>();
+                    if (!card)
+                    {
+                        return;
+                    }
+                    if (deck && deck != card.deck)
+                    {
+                        return;
+                    }
+                    if (card.sync.state == LightSync.LightSync.STATE_PHYSICS)
+                    {
+                        card.sync.Respawn();
+                    }
+                    else if (card.sync.IsHeld)
+                    {
+                        card.sync.AddClassListener(this);
+                    }
+                }
+                return;
+            }
             card = other.GetComponent<Card>();
-            if (!card || !card.sync.IsOwnerLocal())
+            if (!card || !card.sync.IsOwner())
             {
                 return;
             }
@@ -41,26 +52,28 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
-            if (!card.sync.IsHeld() && card.sync.state < SmartObjectSync.STATE_CUSTOM)
+            if (card.sync.state == LightSync.LightSync.STATE_PHYSICS)
             {
                 card.sync.Respawn();
-                return;
             }
-            card.sync.AddListener(this);
+            else if (card.sync.IsHeld)
+            {
+                card.sync.AddClassListener(this);
+            }
         }
-        SmartObjectSync sync;
+
         public void OnTriggerExit(Collider other)
         {
             if (!Utilities.IsValid(other))
             {
                 return;
             }
-            sync = other.GetComponent<SmartObjectSync>();
-            if (!sync)
+            card = other.GetComponent<Card>();
+            if (!card)
             {
                 return;
             }
-            sync.RemoveListener(this);
+            card.sync.RemoveClassListener(this);
         }
 
         bool pickup_use_down;
@@ -68,18 +81,32 @@ namespace MMMaellon.BigDeckIsBackInTown
         {
             pickup_use_down = true;
         }
-
-
         public override void OnPickupUseUp()
         {
             pickup_use_down = false;
+        }
+
+        public override void OnChangeState(LightSync.LightSync sync, int prevState, int currentState)
+        {
+            sync.RemoveClassListener(this);
+            if (currentState == LightSync.LightSync.STATE_PHYSICS)
+            {
+                sync.Respawn();
+            }
+        }
+
+        public override void OnChangeOwner(LightSync.LightSync sync, VRCPlayerApi prevOwner, VRCPlayerApi currentOwner)
+        {
+            sync.RemoveClassListener(this);
         }
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()
         {
             deck = GetComponent<Deck>();
         }
+
 #endif
+
 
     }
 }

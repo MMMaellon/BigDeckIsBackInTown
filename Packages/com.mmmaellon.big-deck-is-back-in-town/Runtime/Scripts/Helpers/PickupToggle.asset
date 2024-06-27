@@ -62,7 +62,7 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: MMMaellon.SmartObjectSync, com.mmmaellon.smartobjectsync
+      Data: MMMaellon.LightSync.LightSync, com.mmmaellon.lightsync
     - Name: 
       Entry: 8
       Data: 

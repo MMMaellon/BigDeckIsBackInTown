@@ -1,4 +1,5 @@
 ﻿
+using MMMaellon.LightSync;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Components;
@@ -7,7 +8,7 @@ using VRC.SDKBase;
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(VRCPickup))]
-    public class CardHolder : SmartObjectSyncListener
+    public class CardHolder : LightSyncListener
     {
         public short id;
         CardHolderState card;
@@ -21,12 +22,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         public bool visible_only_to_owner = true;
         public bool pickupable_only_by_owner = false;
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
-        {
-
-        }
-
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
+        public override void OnChangeState(LightSync.LightSync sync, int oldState, int newState)
         {
 
             card = sync.GetComponent<CardHolderState>();
@@ -34,18 +30,18 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
-            sync.RemoveListener(this);
+            sync.RemoveClassListener(this);
             listeners--;
             HighlightOff();
-            if (!sync.IsOwnerLocal())
+            if (!sync.IsOwner())
             {
                 return;
             }
-            if (oldState != SmartObjectSync.STATE_LEFT_HAND_HELD && oldState != SmartObjectSync.STATE_RIGHT_HAND_HELD && oldState != SmartObjectSync.STATE_NO_HAND_HELD)
+            if (oldState != LightSync.LightSync.STATE_HELD)
             {
                 return;
             }
-            if (newState != SmartObjectSync.STATE_FALLING && newState != SmartObjectSync.STATE_INTERPOLATING)
+            if (newState != LightSync.LightSync.STATE_PHYSICS)
             {
                 return;
             }
@@ -62,11 +58,11 @@ namespace MMMaellon.BigDeckIsBackInTown
                 return;
             }
             card = other.GetComponent<CardHolderState>();
-            if (!card || !card.sync.IsHeld() || !card.sync.IsLocalOwner())
+            if (!card || !card.sync.IsHeld || !card.sync.IsOwner())
             {
                 return;
             }
-            card.sync.AddListener(this);
+            card.sync.AddClassListener(this);
             listeners++;
             HighlightOn();
         }
@@ -81,7 +77,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
-            card.sync.RemoveListener(this);
+            card.sync.RemoveClassListener(this);
             listeners--;
             HighlightOff();
         }
@@ -93,6 +89,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 start_color = mesh.material.GetColor(highlight_color_variable_name);
             }
         }
+
         public void HighlightOn()
         {
             if (mesh)
@@ -100,17 +97,25 @@ namespace MMMaellon.BigDeckIsBackInTown
                 mesh.sharedMaterial.SetColor(highlight_color_variable_name, highlight_color);
             }
         }
+
         public void HighlightOff()
         {
             if (mesh && listeners <= 0)
             {
                 mesh.sharedMaterial.SetColor(highlight_color_variable_name, start_color);
-                if(listeners < 0){
+                if (listeners < 0)
+                {
                     listeners = 0;
                 }
             }
 
         }
+
+        public override void OnChangeOwner(LightSync.LightSync sync, VRCPlayerApi prevOwner, VRCPlayerApi currentOwner)
+        {
+
+        }
+
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()
         {

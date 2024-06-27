@@ -19,7 +19,7 @@ MonoBehaviour:
   sourceCsScript: {fileID: 11500000, guid: 40a104618da7b604cb733cd2ca0267a5, type: 3}
   scriptVersion: 2
   compiledVersion: 2
-  behaviourSyncMode: 4
+  behaviourSyncMode: 0
   hasInteractEvent: 0
   scriptID: -4782808685057047166
   serializationData:
@@ -230,7 +230,7 @@ MonoBehaviour:
       Data: 13|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: MMMaellon.SmartObjectSync, com.mmmaellon.smartobjectsync
+      Data: MMMaellon.LightSync.LightSync, com.mmmaellon.lightsync
     - Name: 
       Entry: 8
       Data: 

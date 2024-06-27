@@ -9,7 +9,7 @@ namespace MMMaellon.BigDeckIsBackInTown
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class PickupToggle : UdonSharpBehaviour
     {
-        public SmartObjectSync target;
+        public LightSync.LightSync target;
         public Toggle toggle;
         [UdonSynced, FieldChangeCallback(nameof(pickupable))]
         public bool _pickupable = false;
@@ -23,12 +23,12 @@ namespace MMMaellon.BigDeckIsBackInTown
                 {
                     toggle.isOn = value;
                 }
-                target.pickupable = value;
+                target.pickupableFlag = value;
                 if (disable_interaction)
                 {
                     target.DisableInteractive = !value;
                 }
-                if (!value && target.IsLocalOwner())
+                if (!value && target.IsOwner())
                 {
                     target.Respawn();
                 }

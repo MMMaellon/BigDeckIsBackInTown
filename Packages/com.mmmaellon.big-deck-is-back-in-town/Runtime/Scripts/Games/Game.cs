@@ -2,6 +2,9 @@
 using UnityEngine;
 using VRC.SDK3.Data;
 using VRC.SDKBase;
+using MMMaellon.LightSync;
+
+
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
 using System.Linq;
@@ -10,7 +13,7 @@ using System.Linq;
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Animator))]
-    public abstract class Game : SmartObjectSyncListener
+    public abstract class Game : LightSyncListener
     {
         [HideInInspector]
         public Animator animator;

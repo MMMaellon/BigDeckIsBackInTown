@@ -1,26 +1,25 @@
 ﻿
-using UdonSharp;
+using MMMaellon.LightSync;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
-    public class CardThrowTrigger : SmartObjectSyncListener
+    public class CardThrowTrigger : LightSyncListener
     {
         public CardThrowTarget target;
         public bool respect_allow_throwing_setting = true;
         CardThrowing card;
 
-        public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
+        public override void OnChangeOwner(LightSync.LightSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
 
         }
 
-        public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
+        public override void OnChangeState(LightSync.LightSync sync, int oldState, int newState)
         {
-            sync.RemoveListener(this);
-            if (!sync.IsHeld() && sync.state < SmartObjectSync.STATE_CUSTOM)
+            sync.RemoveClassListener(this);
+            if (card.sync.state == LightSync.LightSync.STATE_PHYSICS)
             {
                 card = sync.GetComponent<CardThrowing>();
                 if (card && (!respect_allow_throwing_setting || target.allow_throwing))
@@ -37,7 +36,7 @@ namespace MMMaellon.BigDeckIsBackInTown
                 return;
             }
             card = other.GetComponent<CardThrowing>();
-            if (!card || !card.sync.IsOwnerLocal())
+            if (!card || !card.sync.IsOwner())
             {
                 return;
             }
@@ -45,7 +44,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 return;
             }
-            if (!card.sync.IsHeld() && card.sync.state < SmartObjectSync.STATE_CUSTOM)
+            if (card.sync.state == LightSync.LightSync.STATE_PHYSICS)
             {
                 if (!respect_allow_throwing_setting || target.allow_throwing)
                 {
@@ -53,21 +52,21 @@ namespace MMMaellon.BigDeckIsBackInTown
                 }
                 return;
             }
-            card.sync.AddListener(this);
+            card.sync.AddClassListener(this);
         }
-        SmartObjectSync sync;
+        LightSync.LightSync sync;
         public void OnTriggerExit(Collider other)
         {
             if (!Utilities.IsValid(other))
             {
                 return;
             }
-            sync = other.GetComponent<SmartObjectSync>();
+            sync = other.GetComponent<LightSync.LightSync>();
             if (!sync)
             {
                 return;
             }
-            sync.RemoveListener(this);
+            sync.RemoveClassListener(this);
         }
 
 

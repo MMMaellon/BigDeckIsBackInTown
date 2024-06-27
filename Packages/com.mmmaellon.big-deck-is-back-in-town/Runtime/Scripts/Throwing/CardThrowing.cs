@@ -1,13 +1,13 @@
 ﻿
+using MMMaellon.LightSync;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
 
 namespace MMMaellon.BigDeckIsBackInTown
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), RequireComponent(typeof(Card))]
-    public class CardThrowing : SmartObjectSyncState
+    public class CardThrowing : LightSyncState
     {
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(target_id))]
         public int _target_id;
@@ -17,7 +17,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             set
             {
                 _target_id = value;
-                if (sync.IsLocalOwner())
+                if (sync.IsOwner())
                 {
                     RequestSerialization();
                 }
@@ -40,15 +40,26 @@ namespace MMMaellon.BigDeckIsBackInTown
         [Tooltip("Larger number requires better accuracy and shorter distances")]
         [System.NonSerialized]
         float real_interpolation;
-        public override void Interpolate(float interpolation)
+        public override bool OnLerp(float elapsedTime, float autoSmoothedLerp)
         {
+            if (autoSmoothedLerp == 0)
+            {
+                start_time = Time.timeSinceLevelLoad;
+                start_pos = transform.position;
+                start_rot = transform.rotation;
+                start_vel = sync.rigid.velocity;
+                start_spin = sync.rigid.angularVelocity;
+            }
             real_interpolation = duration_cache <= 0 ? 1.0f : Mathf.Min(1.0f, (Time.timeSinceLevelLoad - start_time) / duration_cache);
             transform.position = HermiteInterpolatePosition(start_pos, start_vel, sync.pos, sync.vel, real_interpolation);
             transform.rotation = HermiteInterpolateRotation(start_rot, sync.rot, real_interpolation);
             if (real_interpolation >= 1.0f)
             {
+                transform.position = sync.pos;
+                transform.rotation = sync.rot;
                 sync.rigid.detectCollisions = true;
             }
+            return real_interpolation < 1f;
         }
         Vector3 posControl1;
         Vector3 posControl2;
@@ -74,7 +85,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             {
                 if (target.change_card_visibility)
                 {
-                    if (target.persist_visiblity_change)
+                    if (target.persist_visibility_change)
                     {
                         card.visible_only_to_owner = target.visible_only_to_owner;
                     }
@@ -103,7 +114,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             sync.rigid.isKinematic = last_kinematic;
             if (target)
             {
-                if (target.change_card_visibility && !target.persist_visiblity_change)
+                if (target.change_card_visibility && !target.persist_visibility_change)
                 {
                     card.SetVisibility(true, !card.visible_only_to_owner);
                 }
@@ -114,36 +125,12 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
         }
 
-        public override bool OnInterpolationEnd()
-        {
-            if (real_interpolation >= 1.0f)
-            {
-                transform.position = sync.pos;
-                transform.rotation = sync.rot;
-                return false;
-            }
-            return true;
-        }
-
         Vector3 start_pos;
         Quaternion start_rot;
         Vector3 start_vel;
         Vector3 start_spin;
         float start_time;
         float power_cache;
-        public override void OnInterpolationStart()
-        {
-            start_time = Time.timeSinceLevelLoad;
-            start_pos = transform.position;
-            start_rot = transform.rotation;
-            start_vel = sync.rigid.velocity;
-            start_spin = sync.rigid.angularVelocity;
-        }
-
-        public override void OnSmartObjectSerialize()
-        {
-            //we already serialized in Place();
-        }
 
         CardThrowTarget temp_target;
         bool _throw_primed = false;
@@ -284,7 +271,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public override void OnPickup()
         {
-            throw_primed = throw_primed || sync.state == card.stateID + SmartObjectSync.STATE_CUSTOM || (sync.IsHeld() && sync.lastState == card.stateID + SmartObjectSync.STATE_CUSTOM);
+            throw_primed = throw_primed || sync.state == card.stateID || (sync.IsHeld && sync.prevState == card.stateID);
         }
         public override void OnDrop()
         {
@@ -308,13 +295,13 @@ namespace MMMaellon.BigDeckIsBackInTown
         VRCPlayerApi.TrackingData headData;
         public void OnThrow()
         {
-            if (!card.deck.throwing_handler && sync.state != SmartObjectSync.STATE_INTERPOLATING || !sync.IsLocalOwner())
+            if (!card.deck.throwing_handler && sync.state != LightSync.LightSync.STATE_PHYSICS || !sync.IsOwner())
             {
                 return;
             }
-            if (card.deck.throwing_handler.desktop_throw_assist && !sync.owner.IsUserInVR() && (card.deck.throwing_handler.last_right_click < 0 || card.deck.throwing_handler.last_right_click + 4 > Time.frameCount))
+            if (card.deck.throwing_handler.desktop_throw_assist && !sync.Owner.IsUserInVR() && (card.deck.throwing_handler.last_right_click < 0 || card.deck.throwing_handler.last_right_click + 4 > Time.frameCount))
             {
-                headData = sync.owner.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
+                headData = sync.Owner.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
                 sync.rigid.velocity = headData.rotation * Vector3.forward * card.deck.throwing_handler.desktop_throw_boost;
                 temp_target = card.deck.throwing_handler.LocateBestTarget(headData.position, sync.rigid.velocity);
             }
@@ -336,6 +323,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             card = GetComponent<Card>();
             base.Reset();
         }
+
 #endif
     }
 }

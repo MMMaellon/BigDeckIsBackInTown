@@ -22,7 +22,7 @@ namespace MMMaellon.BigDeckIsBackInTown
         public override void OnEnterState()
         {
             base.OnEnterState();
-            if (sync.IsOwnerLocal())
+            if (sync.IsOwner())
             {
                 PickCardText();
             }
@@ -36,7 +36,7 @@ namespace MMMaellon.BigDeckIsBackInTown
             }
             text_id = bank.RandomCardId();
             random_id = bank.RandomPlayerId();
-            owner_id = sync.owner.playerId;
+            owner_id = sync.Owner.playerId;
             RequestSerialization();
             SetText();
         }
@@ -86,7 +86,7 @@ namespace MMMaellon.BigDeckIsBackInTown
 
         public void OnBankParseComplete()
         {
-            if (sync.IsOwnerLocal())
+            if (sync.IsOwner())
             {
                 PickCardText();
                 RequestSerialization();
@@ -98,9 +98,9 @@ namespace MMMaellon.BigDeckIsBackInTown
         }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public override void OnValidate()
+        public override void Setup()
         {
-            base.OnValidate();
+            base.Setup();
             if (!text)
             {
                 text = GetComponentInChildren<TextMeshPro>();
